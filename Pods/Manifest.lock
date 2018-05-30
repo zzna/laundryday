@@ -63,7 +63,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -95,4 +95,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 44ec2cd1eb4acaa0c2ee784a01d96eb1a97223de
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
