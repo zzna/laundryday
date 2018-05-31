@@ -41,6 +41,16 @@ class ClosetViewController: UIViewController {
             })
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            let cell = sender as? ClosetCollectionViewCell
+            let detailVC = segue.destination as! DetailViewController
+            detailVC.itemId = cell?.item?.id
+           
+        }
+    }
+    
 
 
 }
