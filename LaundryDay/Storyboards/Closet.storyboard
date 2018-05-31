@@ -12,6 +12,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Master View Controller-->
+        <scene sceneID="zdO-AQ-ybj">
+            <objects>
+                <viewController id="PyQ-8i-P7N" customClass="MasterViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eca-ZO-fmj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DhE-ps-tux"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDT-WG-uw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="1378"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="MvU-bp-ynD">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" id="SeA-cP-D9v" customClass="TestViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o6o-un-Zte">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Qu-WOz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cTt-fG-XNm" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTt-fG-XNm" id="0hk-Ja-kix">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hd7-Qu-WOz" firstAttribute="leading" secondItem="AxW-tJ-apP" secondAttribute="leading" id="0e9-h2-kBU"/>
+                            <constraint firstItem="hd7-Qu-WOz" firstAttribute="top" secondItem="AxW-tJ-apP" secondAttribute="top" id="1Mf-sc-PM5"/>
+                            <constraint firstItem="hd7-Qu-WOz" firstAttribute="trailing" secondItem="AxW-tJ-apP" secondAttribute="trailing" id="iuk-vg-Uct"/>
+                            <constraint firstItem="hd7-Qu-WOz" firstAttribute="bottom" secondItem="AxW-tJ-apP" secondAttribute="bottom" id="kHb-R6-bdW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AxW-tJ-apP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="2094"/>
+        </scene>
         <!--Closet View Controller-->
         <scene sceneID="2oj-qh-bLh">
             <objects>
@@ -78,11 +130,43 @@
                                     <segue destination="f6x-oF-oca" kind="presentation" id="OCU-K8-GmH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-an-2xH">
-                                <rect key="frame" x="-210" y="104" width="200" height="563"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-an-2xH">
+                                <rect key="frame" x="0.0" y="104" width="200" height="563"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RX5-ZC-R6B">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="563"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Zoq-Lj-FKs" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zoq-Lj-FKs" id="ELv-vf-FvB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-dG-IJj">
+                                                            <rect key="frame" x="15" y="12" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="closetNameLabel" destination="A8B-dG-IJj" id="LGr-LI-s9h"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6X0-Tl-q18"/>
+                                    <constraint firstItem="RX5-ZC-R6B" firstAttribute="top" secondItem="aPg-an-2xH" secondAttribute="top" id="OGZ-PK-ZTd"/>
+                                    <constraint firstAttribute="bottom" secondItem="RX5-ZC-R6B" secondAttribute="bottom" id="YwB-GU-Hto"/>
+                                    <constraint firstAttribute="trailing" secondItem="RX5-ZC-R6B" secondAttribute="trailing" id="kSc-XM-EIY"/>
+                                    <constraint firstItem="RX5-ZC-R6B" firstAttribute="leading" secondItem="aPg-an-2xH" secondAttribute="leading" id="zV5-jB-5yK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niO-ep-TNN">
@@ -326,7 +410,7 @@
         <!--Item-->
         <scene sceneID="vZb-Jc-7FO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tDm-xd-aiH" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ClosetViewController" automaticallyAdjustsScrollViewInsets="NO" id="tDm-xd-aiH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="c89-nf-w7Q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gL7-aj-deo">

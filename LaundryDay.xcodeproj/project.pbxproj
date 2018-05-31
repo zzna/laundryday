@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		668900C020C04B9300D673EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900BF20C04B9300D673EC /* DetailViewController.swift */; };
+		668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */; };
+		668900CF20C0842A00D673EC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900CE20C0842A00D673EC /* TestViewController.swift */; };
+		668900D120C0851E00D673EC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900D020C0851D00D673EC /* MasterViewController.swift */; };
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
 		CC825A532081D43800A4BDCC /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A522081D43800A4BDCC /* Start.storyboard */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
 		668900BF20C04B9300D673EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetListTableViewCell.swift; sourceTree = "<group>"; };
+		668900CE20C0842A00D673EC /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		668900D020C0851D00D673EC /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaundryDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CC77448A20B58C090086464A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -121,6 +127,8 @@
 				CC825A622081E39A00A4BDCC /* ProfileViewController.swift */,
 				668900BF20C04B9300D673EC /* DetailViewController.swift */,
 				CCD1C0932092FED1005F6885 /* AddClothesViewController.swift */,
+				668900CE20C0842A00D673EC /* TestViewController.swift */,
+				668900D020C0851D00D673EC /* MasterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */,
+				668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,15 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */,
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				CCD1C0942092FED1005F6885 /* AddClothesViewController.swift in Sources */,
 				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
+				668900D120C0851E00D673EC /* MasterViewController.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
 				CCC83D6F20B304640031A766 /* UserApi.swift in Sources */,
 				CC825A5D2081E30B00A4BDCC /* ClosetViewController.swift in Sources */,
 				CCA8D65B20B3225400A33D90 /* ClothesApi.swift in Sources */,
+				668900CF20C0842A00D673EC /* TestViewController.swift in Sources */,
 				668900C020C04B9300D673EC /* DetailViewController.swift in Sources */,
 				CCC83D6B20B2FEA30031A766 /* Api.swift in Sources */,
 				CCC83D7120B305EA0031A766 /* UserInfo.swift in Sources */,

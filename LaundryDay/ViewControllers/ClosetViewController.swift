@@ -27,9 +27,10 @@ class ClosetViewController: UIViewController {
         collectionView.delegate = self
         fetchUser()
         fetchMyItems()
-        closetListView.layer.shadowOpacity = 1
-        closetListView.layer.shadowRadius = 6
-
+//        closetListView.layer.shadowOpacity = 1
+//        closetListView.layer.shadowRadius = 6
+        
+        updateChildView()
 
     }
     
@@ -53,14 +54,20 @@ class ClosetViewController: UIViewController {
     }
     
     @IBAction func openClosetList(_ sender: Any) {
-        if closetListShowing {
-            leadingViewConstraint.constant = -210
-        }else {
-            leadingViewConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
-
-        }
-        closetListShowing = !closetListShowing
+//        if closetListShowing {
+//            leadingViewConstraint.constant = -210
+//        }else {
+//            leadingViewConstraint.constant = 0
+//            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+//
+//        }
+//        closetListShowing = !closetListShowing
+          closetListShowing = !closetListShowing
+        
+    }
+    func updateChildView() {
+        testViewController.view.isHidden = closetListShowing
+        
     }
     
     
@@ -71,6 +78,28 @@ class ClosetViewController: UIViewController {
             detailVC.itemId = cell?.item?.id
            
         }
+    }
+
+    //테스트중
+    lazy var testViewController: TestViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        var viewController = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+
+        self.addViewControllerAsChildViewController(childViewController: viewController)
+        return viewController
+    }()
+
+
+    private func addViewControllerAsChildViewController(childViewController: UIViewController) {
+        addChildViewController(childViewController)
+
+        view.addSubview(childViewController.view)
+
+        childViewController.view.frame = view.bounds
+        childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        childViewController.didMove(toParentViewController: self)
     }
  
 
