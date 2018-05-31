@@ -27,38 +27,65 @@ class ClosetCollectionViewCell: UICollectionViewCell {
             let photoUrl = URL(string: photoUrlString)
             productImageView.sd_setImage(with: photoUrl)
         }
-        Api.Clothes.observeClothes(withId: item!.id!, completion: {item in
-            self.updateLike(item: item)
+        //like 방법2
+//        Api.Clothes.observeClothes(withId: item!.id!, completion: {item in
+//            self.updateLike(item: item)
+//        })
+        Api.Clothes.isLiked(itemId: item!.id!, completed: {value in
+            if value {
+                self.configureUnLike()
+            } else {
+                self.configureLike()
+            }
         })
         
-        
     }
-    
-    func updateLike(item: Clothes) {
-        let imageName = (item.isLiked)! ? "likeSelected" : "like"
-        likeImageView.image = UIImage(named: imageName)
-        print("update LIKE")
-    }
+    //like 방법2
+//    func updateLike(item: Clothes) {
+//        let imageName = (item.isLiked)! ? "likeSelected" : "like"
+//        likeImageView.image = UIImage(named: imageName)
+//        print("update LIKE")
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        //like 방법2
+//        let tapGestureForLikeImageView = UITapGestureRecognizer(target: self, action: #selector(self.likeImageView_TUI))
+//        likeImageView.addGestureRecognizer(tapGestureForLikeImageView)
+//        likeImageView.isUserInteractionEnabled = true
         
-        let tapGestureForLikeImageView = UITapGestureRecognizer(target: self, action: #selector(self.likeImageView_TUI))
+    }
+    //like 방법2
+//    @objc func likeImageView_TUI() {
+//        Api.Clothes.observeLiked(postId: item!.id!, onSuccess: {item in
+//            self.updateLike(item: item)
+//        }, onError: {errorMessage in
+//            ProgressHUD.showError(errorMessage)
+//        })
+//
+//    }
+    func configureLike() {
+        let tapGestureForLikeImageView = UITapGestureRecognizer(target: self, action: #selector(self.likeAction))
         likeImageView.addGestureRecognizer(tapGestureForLikeImageView)
         likeImageView.isUserInteractionEnabled = true
-        
+        likeImageView.image = UIImage(named: "like")
     }
+    func configureUnLike() {
+        let tapGestureForUnLikeImageView = UITapGestureRecognizer(target: self, action: #selector(self.unLikeAction))
+        likeImageView.addGestureRecognizer(tapGestureForUnLikeImageView)
+        likeImageView.isUserInteractionEnabled = true
+        likeImageView.image = UIImage(named: "likeSelected")
 
-    @objc func likeImageView_TUI() {
-        Api.Clothes.observeLiked(postId: item!.id!, onSuccess: {item in
-            self.updateLike(item: item)
-        }, onError: {errorMessage in
-            ProgressHUD.showError(errorMessage)
-        })
-        
     }
-   
     
+    @objc func likeAction() {
+        Api.Clothes.likeAction(withItem: item!.id!)
+        configureUnLike()
+    }
+    @objc func unLikeAction(){
+        Api.Clothes.unLikeAction(withItem: item!.id!)
+        configureLike()
+    }
     
 }

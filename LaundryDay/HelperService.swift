@@ -32,7 +32,7 @@ class HelperService {
             return
     }
         let currentUserID = currentUser.uid
-        newClothesRef.setValue(["productImgUrl":productImgURL, "productName": productName, "uid": currentUserID, "isLiked": false], withCompletionBlock: {(error, ref) in
+        newClothesRef.setValue(["productImgUrl":productImgURL, "productName": productName, "uid": currentUserID /*, "isLiked": false*/], withCompletionBlock: {(error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
