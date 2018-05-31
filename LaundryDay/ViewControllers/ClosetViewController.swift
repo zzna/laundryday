@@ -27,9 +27,8 @@ class ClosetViewController: UIViewController {
         collectionView.delegate = self
         fetchUser()
         fetchMyItems()
-//        closetListView.layer.shadowOpacity = 1
-//        closetListView.layer.shadowRadius = 6
-        
+
+        //closet list 
         updateChildView()
 
     }
@@ -54,22 +53,19 @@ class ClosetViewController: UIViewController {
     }
     
     @IBAction func openClosetList(_ sender: Any) {
-//        if closetListShowing {
-//            leadingViewConstraint.constant = -210
-//        }else {
-//            leadingViewConstraint.constant = 0
-//            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
-//
-//        }
-//        closetListShowing = !closetListShowing
-          closetListShowing = !closetListShowing
+   closetListShowing = !closetListShowing
+          updateChildView()
         
     }
     func updateChildView() {
-       
-        closetListViewController.view.isHidden = closetListShowing
-        
-        
+        if closetListShowing {
+            closetListViewController.view.frame = CGRect(x: -260, y: collectionView.frame.origin.y, width: 250, height: 600)
+            UIView.animate(withDuration: 0.3, animations: { self.closetListViewController.view.frame = CGRect(x: 0, y: self.collectionView.frame.origin.y, width: 250, height: 600)})
+        } else {
+            closetListViewController.view.frame = CGRect(x: 0, y: self.collectionView.frame.origin.y, width: 250, height: 600)
+            UIView.animate(withDuration: 0.3, animations: { self.closetListViewController.view.frame = CGRect(x: -260, y: self.collectionView.frame.origin.y, width: 250, height: 600)})
+        }
+
     }
     
     
@@ -99,7 +95,7 @@ class ClosetViewController: UIViewController {
         view.addSubview(childViewController.view)
         
         //사이즈 조정 필요
-        childViewController.view.frame = CGRect(x: 0, y: collectionView.frame.origin.y, width: 250, height: 600)
+        childViewController.view.frame = CGRect(x: -260, y: collectionView.frame.origin.y, width: 250, height: 600)
         //childViewController.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
 
         childViewController.didMove(toParentViewController: self)
