@@ -11,16 +11,26 @@ import SDWebImage
 
 class ClosetViewController: UIViewController {
 
+    @IBOutlet weak var leadingViewConstraint: NSLayoutConstraint!
+    var closetListShowing = false
+    
+    @IBOutlet weak var closetListView: UIView!
+    @IBOutlet weak var closetListButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     var user: UserInfo!
     var items = [Clothes]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchUser()
         fetchMyItems()
-        //loadData()
+        closetListView.layer.shadowOpacity = 1
+        closetListView.layer.shadowRadius = 6
+
+
     }
     
     func fetchUser() {
@@ -42,6 +52,18 @@ class ClosetViewController: UIViewController {
         })
     }
     
+    @IBAction func openClosetList(_ sender: Any) {
+        if closetListShowing {
+            leadingViewConstraint.constant = -210
+        }else {
+            leadingViewConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+
+        }
+        closetListShowing = !closetListShowing
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailViewController" {
             let cell = sender as? ClosetCollectionViewCell
@@ -50,8 +72,7 @@ class ClosetViewController: UIViewController {
            
         }
     }
-    
-
+ 
 
 }
 
