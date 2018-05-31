@@ -13,6 +13,7 @@ class Clothes  {
     var productName: String?
     var uid: String?
     var id: String?
+    var isLiked: Bool?
     
     
 }
@@ -23,6 +24,7 @@ extension Clothes {
         clothes.productName = dict["productName"] as? String
         clothes.uid = dict["uid"] as? String
         clothes.id = key
+        clothes.isLiked = dict["isLiked"] as? Bool
         return clothes
     }
 }

@@ -44,25 +44,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6k-51-i2t">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-p5-g1q">
                                                     <rect key="frame" x="54" y="119" width="46" height="41"/>
-                                                    <state key="normal" image="like"/>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="x6k-51-i2t" firstAttribute="bottom" secondItem="vUR-uS-Bkb" secondAttribute="bottom" id="1av-v3-8AH"/>
                                             <constraint firstAttribute="trailing" secondItem="vUR-uS-Bkb" secondAttribute="trailing" id="6Md-y5-WhO"/>
                                             <constraint firstItem="UUz-Nr-Pdf" firstAttribute="leading" secondItem="vUR-uS-Bkb" secondAttribute="leading" id="BhY-Kf-Wxy"/>
+                                            <constraint firstItem="a3R-p5-g1q" firstAttribute="trailing" secondItem="vUR-uS-Bkb" secondAttribute="trailing" id="MFm-h8-cy6"/>
                                             <constraint firstAttribute="bottom" secondItem="vUR-uS-Bkb" secondAttribute="bottom" id="cs5-NJ-Rov"/>
                                             <constraint firstItem="vUR-uS-Bkb" firstAttribute="leading" secondItem="bme-Mw-2gu" secondAttribute="leading" id="iyq-qL-1SZ"/>
-                                            <constraint firstItem="x6k-51-i2t" firstAttribute="trailing" secondItem="vUR-uS-Bkb" secondAttribute="trailing" id="jsN-ot-yO2"/>
+                                            <constraint firstItem="a3R-p5-g1q" firstAttribute="bottom" secondItem="vUR-uS-Bkb" secondAttribute="bottom" id="lGF-Vl-giA"/>
                                             <constraint firstItem="UUz-Nr-Pdf" firstAttribute="bottom" secondItem="vUR-uS-Bkb" secondAttribute="bottom" id="rwd-vY-AdK"/>
                                             <constraint firstItem="vUR-uS-Bkb" firstAttribute="top" secondItem="bme-Mw-2gu" secondAttribute="top" id="veB-Cp-RR7"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="160"/>
                                         <connections>
-                                            <outlet property="likeButton" destination="x6k-51-i2t" id="nrG-Wz-WoP"/>
+                                            <outlet property="likeImageView" destination="a3R-p5-g1q" id="ERJ-5S-sjv"/>
                                             <outlet property="productImageView" destination="vUR-uS-Bkb" id="vm9-Lv-YIm"/>
                                             <outlet property="productName" destination="UUz-Nr-Pdf" id="2ht-p9-RUd"/>
                                         </connections>

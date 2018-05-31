@@ -20,4 +20,32 @@ class ClothesApi {
         })
         
     }
+    func observeLiked(postId: String,  onSuccess: @escaping (Clothes)->Void, onError:@escaping (_ errorMessage: String?) -> Void) {
+        let itemRef = Api.Clothes.REF_ITEMS.child(postId)
+        itemRef.runTransactionBlock({(currentData: MutableData) -> TransactionResult in
+            if var item = currentData.value as? [String: AnyObject] {
+                var isLiked = item["isLiked"] as? Bool
+                if isLiked == true {
+                    isLiked = false
+                } else {
+                    isLiked = true
+                }
+                item["isLiked"] = isLiked as AnyObject?
+                currentData.value = item
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                onError(error.localizedDescription)
+            }
+            if let dict = snapshot?.value as? [String: Any] {
+                let item = Clothes.transformClothes(dict: dict, key: snapshot!.key)
+                onSuccess(item)
+            }
+            
+        }
+    }
+    
+
 }
