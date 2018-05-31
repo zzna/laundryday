@@ -28,7 +28,7 @@ class ClosetViewController: UIViewController {
         fetchUser()
         fetchMyItems()
 
-        //closet list 
+        //closet list
         updateChildView()
 
     }
@@ -85,6 +85,7 @@ class ClosetViewController: UIViewController {
         var viewController = storyboard.instantiateViewController(withIdentifier: "ClosetListViewController") as! ClosetListViewController
 
         self.addViewControllerAsChildViewController(childViewController: viewController)
+        
         return viewController
     }()
 
