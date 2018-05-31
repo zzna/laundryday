@@ -12,25 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller-->
-        <scene sceneID="zdO-AQ-ybj">
-            <objects>
-                <viewController id="PyQ-8i-P7N" customClass="MasterViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eca-ZO-fmj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="DhE-ps-tux"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CDT-WG-uw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-759" y="1378"/>
-        </scene>
-        <!--Test View Controller-->
+        <!--Closet List View Controller-->
         <scene sceneID="MvU-bp-ynD">
             <objects>
-                <viewController storyboardIdentifier="TestViewController" id="SeA-cP-D9v" customClass="TestViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosetListViewController" id="SeA-cP-D9v" customClass="ClosetListViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6o-un-Zte">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="2094"/>
+            <point key="canvasLocation" x="-337" y="1834"/>
         </scene>
         <!--Closet View Controller-->
         <scene sceneID="2oj-qh-bLh">
@@ -130,45 +115,6 @@
                                     <segue destination="f6x-oF-oca" kind="presentation" id="OCU-K8-GmH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aPg-an-2xH">
-                                <rect key="frame" x="0.0" y="104" width="200" height="563"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RX5-ZC-R6B">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="563"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Zoq-Lj-FKs" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zoq-Lj-FKs" id="ELv-vf-FvB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-dG-IJj">
-                                                            <rect key="frame" x="15" y="12" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="closetNameLabel" destination="A8B-dG-IJj" id="LGr-LI-s9h"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="6X0-Tl-q18"/>
-                                    <constraint firstItem="RX5-ZC-R6B" firstAttribute="top" secondItem="aPg-an-2xH" secondAttribute="top" id="OGZ-PK-ZTd"/>
-                                    <constraint firstAttribute="bottom" secondItem="RX5-ZC-R6B" secondAttribute="bottom" id="YwB-GU-Hto"/>
-                                    <constraint firstAttribute="trailing" secondItem="RX5-ZC-R6B" secondAttribute="trailing" id="kSc-XM-EIY"/>
-                                    <constraint firstItem="RX5-ZC-R6B" firstAttribute="leading" secondItem="aPg-an-2xH" secondAttribute="leading" id="zV5-jB-5yK"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niO-ep-TNN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <subviews>
@@ -196,15 +142,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aPg-an-2xH" firstAttribute="top" secondItem="niO-ep-TNN" secondAttribute="bottom" id="0KN-cJ-yVM"/>
                             <constraint firstItem="kE0-nI-yYn" firstAttribute="trailing" secondItem="IKQ-Al-Fun" secondAttribute="trailing" constant="30" id="F9B-4I-Ub9"/>
                             <constraint firstItem="niO-ep-TNN" firstAttribute="top" secondItem="kE0-nI-yYn" secondAttribute="top" id="O0Z-H5-CHr"/>
                             <constraint firstItem="niO-ep-TNN" firstAttribute="leading" secondItem="kE0-nI-yYn" secondAttribute="leading" id="RNK-vi-KJt"/>
                             <constraint firstItem="niO-ep-TNN" firstAttribute="trailing" secondItem="kE0-nI-yYn" secondAttribute="trailing" id="SLp-WD-ovc"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="bottom" secondItem="kE0-nI-yYn" secondAttribute="bottom" id="WNn-Vm-VOj"/>
-                            <constraint firstItem="aPg-an-2xH" firstAttribute="bottom" secondItem="kE0-nI-yYn" secondAttribute="bottom" id="cnJ-la-6l2"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="leading" secondItem="kE0-nI-yYn" secondAttribute="leading" id="elV-hy-s60"/>
-                            <constraint firstItem="aPg-an-2xH" firstAttribute="leading" secondItem="kE0-nI-yYn" secondAttribute="leading" constant="-210" id="f6Z-jM-C2m"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="top" secondItem="niO-ep-TNN" secondAttribute="bottom" id="h6Q-Lt-Iec"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="trailing" secondItem="kE0-nI-yYn" secondAttribute="trailing" id="rGs-SI-AWM"/>
                             <constraint firstItem="kE0-nI-yYn" firstAttribute="bottom" secondItem="IKQ-Al-Fun" secondAttribute="bottom" constant="45" id="znh-aj-jW2"/>
@@ -214,9 +157,7 @@
                     <navigationItem key="navigationItem" id="1gP-yo-0cw"/>
                     <connections>
                         <outlet property="closetListButton" destination="sL7-Rl-aag" id="7Uh-jK-XJK"/>
-                        <outlet property="closetListView" destination="aPg-an-2xH" id="zf5-9H-QYS"/>
                         <outlet property="collectionView" destination="xhl-cc-Jjf" id="0yE-yS-AJ3"/>
-                        <outlet property="leadingViewConstraint" destination="f6Z-jM-C2m" id="Ozr-Sd-p4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNK-xx-rsb" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -66,7 +66,9 @@ class ClosetViewController: UIViewController {
         
     }
     func updateChildView() {
-        testViewController.view.isHidden = closetListShowing
+       
+        closetListViewController.view.isHidden = closetListShowing
+        
         
     }
     
@@ -81,10 +83,10 @@ class ClosetViewController: UIViewController {
     }
 
     //테스트중
-    lazy var testViewController: TestViewController = {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    lazy var closetListViewController: ClosetListViewController = {
+        let storyboard = UIStoryboard(name: "Closet", bundle: Bundle.main)
 
-        var viewController = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        var viewController = storyboard.instantiateViewController(withIdentifier: "ClosetListViewController") as! ClosetListViewController
 
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
@@ -95,9 +97,10 @@ class ClosetViewController: UIViewController {
         addChildViewController(childViewController)
 
         view.addSubview(childViewController.view)
-
-        childViewController.view.frame = view.bounds
-        childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        //사이즈 조정 필요
+        childViewController.view.frame = CGRect(x: 0, y: collectionView.frame.origin.y, width: 250, height: 600)
+        //childViewController.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
 
         childViewController.didMove(toParentViewController: self)
     }
