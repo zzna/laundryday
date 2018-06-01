@@ -235,10 +235,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-8A-O4x">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-8A-O4x">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-gC-oAJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-gC-oAJ">
                                                     <rect key="frame" x="70" y="130" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="coY-6T-ESm"/>
@@ -258,13 +258,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-Kk-tAW">
+                                <rect key="frame" x="293" y="592" width="52" height="30"/>
+                                <state key="normal" title="추가하기"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S6D-sk-ueq" firstAttribute="trailing" secondItem="JMK-Jo-FgT" secondAttribute="trailing" id="452-BQ-rFK"/>
                             <constraint firstItem="S6D-sk-ueq" firstAttribute="bottom" secondItem="JMK-Jo-FgT" secondAttribute="bottom" id="8J6-BV-U4t"/>
                             <constraint firstItem="S6D-sk-ueq" firstAttribute="leading" secondItem="JMK-Jo-FgT" secondAttribute="leading" id="8Px-rA-xk7"/>
+                            <constraint firstItem="JMK-Jo-FgT" firstAttribute="trailing" secondItem="OJd-Kk-tAW" secondAttribute="trailing" constant="30" id="W2C-h9-tdx"/>
                             <constraint firstItem="S6D-sk-ueq" firstAttribute="top" secondItem="JMK-Jo-FgT" secondAttribute="top" id="eNd-zU-8o3"/>
+                            <constraint firstItem="JMK-Jo-FgT" firstAttribute="bottom" secondItem="OJd-Kk-tAW" secondAttribute="bottom" constant="45" id="u3t-2D-VtF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JMK-Jo-FgT"/>
                     </view>
