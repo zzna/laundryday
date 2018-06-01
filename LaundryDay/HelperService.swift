@@ -11,6 +11,7 @@ import FirebaseStorage
 import ProgressHUD
 
 class HelperService {
+    //MARK: -add clothes
     static func updataToServer(data: Data, productName: String, onSuccess: @escaping () -> Void) {
         
         let imageString = NSUUID().uuidString
@@ -45,11 +46,40 @@ class HelperService {
                     return
                 }
             })
-        
-            
+
             ProgressHUD.showSuccess("Success")
             onSuccess()
         })
         
     }
+    
+    
+    
+    //MARK: -add closet
+    static func sendClosetDataToDatabase(closetName: String, onSuccess: @escaping ()->Void) {
+        let newClosetID = Api.Closets.REF_CLOSETS.childByAutoId().key
+        let newClosetRef = Api.Closets.REF_CLOSETS.child(newClosetID)
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+        let currentUserID = currentUser.uid
+        newClosetRef.setValue(["closetName": closetName, "uid": currentUserID], withCompletionBlock: { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError(error?.localizedDescription)
+                return
+            }
+            let myClosetsRef = Api.MyClosets.REF_MYCLOSETS.child(currentUserID).child(newClosetID)
+            myClosetsRef.setValue(true, withCompletionBlock: { (error,ref) in
+                if error != nil {
+                    ProgressHUD.showError(error?.localizedDescription)
+                    return
+                }
+            })
+            ProgressHUD.showSuccess("Success")
+            onSuccess()
+        })
+    }
+    
+    
+    
 }

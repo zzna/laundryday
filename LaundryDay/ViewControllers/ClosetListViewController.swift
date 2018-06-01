@@ -40,8 +40,11 @@ class ClosetListViewController: UIViewController {
             ProgressHUD.show("Waiting")
             self.closetName = actionSheet.textFields?[0].text
             if let closetNameText = self.closetName {
-                print(closetNameText)
+                HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
+                    print("success")
+                    })
             } else {
+                //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
                 ProgressHUD.showError("텍스트를 입력해주세요")
             }
             

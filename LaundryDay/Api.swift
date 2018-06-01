@@ -12,4 +12,5 @@ struct Api {
     static var MyItems = MyItemsApi()
     static var Clothes = ClothesApi()
     static var Closets = ClosetsApi()
+    static var MyClosets = MyClosetsApi()
 }
