@@ -14,12 +14,12 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var leadingViewConstraint: NSLayoutConstraint!
     var closetListShowing = false
     
+    
     @IBOutlet weak var closetListView: UIView!
     @IBOutlet weak var closetListButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     var user: UserInfo!
     var items = [Clothes]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class ClosetViewController: UIViewController {
         collectionView.delegate = self
         fetchUser()
         fetchMyItems()
+        collectionView.isUserInteractionEnabled = true
 
         //closet list
         updateChildView()
@@ -51,10 +52,19 @@ class ClosetViewController: UIViewController {
             })
         })
     }
-    
+    //TODO: touch enable
     @IBAction func openClosetList(_ sender: Any) {
-   closetListShowing = !closetListShowing
-          updateChildView()
+        closetListShowing = !closetListShowing
+        //뒤에 컬렉션뷰 터치 안되게 하는건데 다른 더 좋은 방법 없을까?..
+        //다른 뷰 하나 추가해서 block? insertView 생각해봅세
+        
+        if closetListShowing {
+            collectionView.isUserInteractionEnabled = false
+        } else {
+            collectionView.isUserInteractionEnabled = true
+        }
+        updateChildView()
+        
         
     }
     func updateChildView() {
@@ -95,6 +105,7 @@ class ClosetViewController: UIViewController {
 
         view.addSubview(childViewController.view)
         
+        //TODO: closet list view resize
         //사이즈 조정 필요
         childViewController.view.frame = CGRect(x: -260, y: collectionView.frame.origin.y, width: 250, height: 600)
         //childViewController.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
@@ -104,6 +115,8 @@ class ClosetViewController: UIViewController {
  
 
 }
+
+//MARK: - collection view extension
 
 extension ClosetViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

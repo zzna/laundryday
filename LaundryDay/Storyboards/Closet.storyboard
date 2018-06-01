@@ -23,13 +23,52 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hd7-Qu-WOz">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Et3-It-Lku">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 옷장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-uZ-2Mj">
+                                            <rect key="frame" x="8" y="12" width="63" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Dt-eKz">
+                                            <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="추가"/>
+                                            <connections>
+                                                <action selector="addListButton:" destination="SeA-cP-D9v" eventType="touchUpInside" id="rRw-ST-Lw7"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="XeI-uZ-2Mj" firstAttribute="leading" secondItem="Et3-It-Lku" secondAttribute="leading" constant="8" id="RVR-kV-D7R"/>
+                                        <constraint firstItem="yOg-Dt-eKz" firstAttribute="centerY" secondItem="XeI-uZ-2Mj" secondAttribute="centerY" id="dBt-8m-Z3a"/>
+                                        <constraint firstItem="XeI-uZ-2Mj" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="rAa-NW-URd"/>
+                                        <constraint firstAttribute="trailing" secondItem="yOg-Dt-eKz" secondAttribute="trailing" constant="8" id="ujq-iC-5Fs"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cTt-fG-XNm" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClosetListTableViewCell" id="cTt-fG-XNm" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTt-fG-XNm" id="0hk-Ja-kix">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f9-4q-k52">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5f9-4q-k52" firstAttribute="centerY" secondItem="0hk-Ja-kix" secondAttribute="centerY" id="OUp-K7-GxP"/>
+                                                <constraint firstItem="5f9-4q-k52" firstAttribute="leading" secondItem="0hk-Ja-kix" secondAttribute="leading" constant="8" id="vg1-xZ-d47"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -44,6 +83,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AxW-tJ-apP"/>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
+                        <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

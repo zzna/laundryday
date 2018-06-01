@@ -10,6 +10,8 @@
 		668900C020C04B9300D673EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900BF20C04B9300D673EC /* DetailViewController.swift */; };
 		668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */; };
 		668900CF20C0842A00D673EC /* ClosetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668900CE20C0842A00D673EC /* ClosetListViewController.swift */; };
+		66C5E3E620C1621E00314391 /* ClosetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5E3E520C1621E00314391 /* ClosetsApi.swift */; };
+		66C5E3E820C167F300314391 /* Closet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5E3E720C167F300314391 /* Closet.swift */; };
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
 		CC825A532081D43800A4BDCC /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A522081D43800A4BDCC /* Start.storyboard */; };
@@ -43,6 +45,8 @@
 		668900BF20C04B9300D673EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetListTableViewCell.swift; sourceTree = "<group>"; };
 		668900CE20C0842A00D673EC /* ClosetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetListViewController.swift; sourceTree = "<group>"; };
+		66C5E3E520C1621E00314391 /* ClosetsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetsApi.swift; sourceTree = "<group>"; };
+		66C5E3E720C167F300314391 /* Closet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closet.swift; sourceTree = "<group>"; };
 		C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LaundryDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CC77448A20B58C090086464A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CC92F2EA20AC8649006C04AB /* Clothes.swift */,
+				66C5E3E720C167F300314391 /* Closet.swift */,
 				CCC83D7020B305EA0031A766 /* UserInfo.swift */,
 			);
 			path = Model;
@@ -185,6 +190,7 @@
 				CCC83D6E20B304640031A766 /* UserApi.swift */,
 				CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */,
 				CCA8D65A20B3225400A33D90 /* ClothesApi.swift */,
+				66C5E3E520C1621E00314391 /* ClosetsApi.swift */,
 			);
 			path = LaundryDay;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				CCD1C0942092FED1005F6885 /* AddClothesViewController.swift in Sources */,
 				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
+				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
 				CCC83D6F20B304640031A766 /* UserApi.swift in Sources */,
@@ -336,6 +343,7 @@
 				CC825A612081E38900A4BDCC /* BoardViewController.swift in Sources */,
 				CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */,
 				CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */,
+				66C5E3E620C1621E00314391 /* ClosetsApi.swift in Sources */,
 				CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

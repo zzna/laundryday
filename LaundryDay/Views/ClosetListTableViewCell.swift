@@ -11,6 +11,11 @@ import UIKit
 class ClosetListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var closetNameLabel: UILabel!
+    
+    var closetListVC: ClosetListViewController?
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
