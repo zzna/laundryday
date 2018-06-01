@@ -16,13 +16,28 @@ class ClosetListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var closetName: String?
+    var myClosets = [Closet]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableHeaderView = headerView
+        
+        fetchMyClosets()
 
+    }
+    
+    func fetchMyClosets() {
+        guard let currentUser = Api.User.CURRENT_USER else {
+            return
+        }
+        Api.MyClosets.REF_MYCLOSETS.child(currentUser.uid).observe(.childAdded, with: {snapshot in
+            Api.Closets.observeCloset(withId: snapshot.key, completion: { closet in
+                self.myClosets.append(closet)
+                self.tableView.reloadData()
+            })
+        })
     }
     
     @IBAction func addListButton(_ sender: Any) {
@@ -41,6 +56,7 @@ class ClosetListViewController: UIViewController {
             self.closetName = actionSheet.textFields?[0].text
             if let closetNameText = self.closetName {
                 HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
+                    self.tableView.reloadData()
                     print("success")
                     })
             } else {
@@ -62,11 +78,13 @@ class ClosetListViewController: UIViewController {
 extension ClosetListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return myClosets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClosetListTableViewCell", for: indexPath) as! ClosetListTableViewCell
+        let closet = myClosets[indexPath.row]
+        cell.closet = closet
         return cell
     }
 

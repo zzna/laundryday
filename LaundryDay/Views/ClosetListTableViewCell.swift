@@ -12,8 +12,20 @@ class ClosetListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var closetNameLabel: UILabel!
     
-    var closetListVC: ClosetListViewController?
     
+    //var closetListVC: ClosetListViewController?
+    
+    var closet: Closet? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    func updateView() {
+        
+        closetNameLabel.text = closet?.closetName
+        
+    }
     
     
     override func awakeFromNib() {

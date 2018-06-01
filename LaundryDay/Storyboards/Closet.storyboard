@@ -70,6 +70,9 @@
                                                 <constraint firstItem="5f9-4q-k52" firstAttribute="leading" secondItem="0hk-Ja-kix" secondAttribute="leading" constant="8" id="vg1-xZ-d47"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="closetNameLabel" destination="5f9-4q-k52" id="PZF-2s-Eh0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

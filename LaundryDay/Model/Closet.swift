@@ -19,7 +19,7 @@ extension Closet {
     static func transformCloset(dict: [String: Any], key: String) -> Closet {
         let closet = Closet()
         closet.closetName = dict["closetName"] as? String
-        closet.id = dict["id"] as? String
+        closet.id = key
         closet.uid = dict["uid"] as? String
         
         return closet
