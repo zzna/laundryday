@@ -20,8 +20,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91u-wJ-Cfb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-Mc-Sh5">
+                                        <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                        <state key="normal" title="완료"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-As-Gai">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="cancelButton_TUI:" destination="ZLN-KW-qXf" eventType="touchUpInside" id="XAi-PY-A47"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ywh-Mc-Sh5" secondAttribute="trailing" constant="8" id="0io-23-9FI"/>
+                                    <constraint firstItem="Ywh-Mc-Sh5" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="top" constant="8" id="1ck-4C-dEE"/>
+                                    <constraint firstItem="wD5-As-Gai" firstAttribute="leading" secondItem="91u-wJ-Cfb" secondAttribute="leading" constant="8" id="T9N-fF-dd4"/>
+                                    <constraint firstAttribute="height" constant="50" id="brM-Ds-6pA"/>
+                                    <constraint firstItem="wD5-As-Gai" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="top" constant="8" id="gsG-t7-9r7"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krd-71-rjD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BTt-11-5yo">
                                     <size key="itemSize" width="50" height="50"/>
@@ -58,8 +82,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="krd-71-rjD" firstAttribute="top" secondItem="lhN-DU-64a" secondAttribute="top" id="Ghe-XH-yuS"/>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="leading" secondItem="lhN-DU-64a" secondAttribute="leading" id="5OG-Z3-b50"/>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="top" secondItem="lhN-DU-64a" secondAttribute="top" id="5rf-nY-Xyj"/>
+                            <constraint firstItem="krd-71-rjD" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="bottom" id="DcY-xx-nOh"/>
                             <constraint firstItem="krd-71-rjD" firstAttribute="bottom" secondItem="lhN-DU-64a" secondAttribute="bottom" id="Kef-T1-SV0"/>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="trailing" secondItem="lhN-DU-64a" secondAttribute="trailing" id="Tyi-gT-zOF"/>
                             <constraint firstItem="krd-71-rjD" firstAttribute="leading" secondItem="Cpg-4a-Xhf" secondAttribute="leading" id="ez0-L6-laa"/>
                             <constraint firstItem="krd-71-rjD" firstAttribute="trailing" secondItem="lhN-DU-64a" secondAttribute="trailing" id="pwE-iV-ipW"/>
                         </constraints>
@@ -73,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xj-2V-H7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1847" y="1964"/>
+            <point key="canvasLocation" x="-1847.2" y="1963.2683658170915"/>
         </scene>
         <!--Closet List View Controller-->
         <scene sceneID="MvU-bp-ynD">

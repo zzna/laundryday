@@ -41,6 +41,9 @@ class AddClothesToClosetViewController: UIViewController {
             })
         })
     }
+    @IBAction func cancelButton_TUI(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     /*
