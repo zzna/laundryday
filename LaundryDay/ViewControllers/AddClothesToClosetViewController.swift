@@ -18,6 +18,7 @@ class AddClothesToClosetViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.allowsMultipleSelection = true
         fetchUser()
         fetchMyItems()
         collectionView.isUserInteractionEnabled = true
@@ -46,29 +47,26 @@ class AddClothesToClosetViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
 
 extension AddClothesToClosetViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddClothesToClosetCollectionViewCell", for: indexPath) as! AddClothesToClosetCollectionViewCell
         let item = items[indexPath.row]
-        cell.item = item
         
+        cell.item = item
+    
+
         return cell
     }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }
 extension AddClothesToClosetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
