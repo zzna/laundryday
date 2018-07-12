@@ -14,6 +14,7 @@ class AddClothesToClosetViewController: UIViewController {
     var user: UserInfo!
     var items = [Clothes]()
     var closetItemsID = [String]()
+    var closetName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

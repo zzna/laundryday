@@ -51,13 +51,18 @@ class ClosetListViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "취소", style: .default, handler: {(_) in
             
         }))
-        actionSheet.addAction(UIAlertAction(title: "추가", style: .default, handler: {(_) in
+        actionSheet.addAction(UIAlertAction(title: "다음", style: .default, handler: {(_) in
             ProgressHUD.show("Waiting")
             self.closetName = actionSheet.textFields?[0].text
+            
             if let closetNameText = self.closetName {
                 HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
+                    if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController
+                    {
+                        self.present(vc, animated: true, completion: nil)
+                        vc.closetName = closetNameText
+                    }
                     self.tableView.reloadData()
-                    print("success")
                     })
             } else {
                 //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
@@ -67,6 +72,7 @@ class ClosetListViewController: UIViewController {
         }))
         self.present(actionSheet,animated: true,completion: nil)
     }
+  
     
     
     

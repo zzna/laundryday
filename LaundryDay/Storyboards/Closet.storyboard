@@ -15,7 +15,7 @@
         <!--Add Clothes To Closet View Controller-->
         <scene sceneID="lGO-7J-0Yh">
             <objects>
-                <viewController id="ZLN-KW-qXf" customClass="AddClothesToClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddClothesToClosetViewController" id="ZLN-KW-qXf" customClass="AddClothesToClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cpg-4a-Xhf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xj-2V-H7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2098" y="1995"/>
+            <point key="canvasLocation" x="-1935" y="1835"/>
         </scene>
         <!--Closet List View Controller-->
         <scene sceneID="MvU-bp-ynD">
@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
                         <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
+                        <segue destination="ZLN-KW-qXf" kind="presentation" identifier="AddClothesToClosetViewController" id="IJW-F8-xty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,4 +593,7 @@
         <image name="default" width="1290" height="1290"/>
         <image name="like" width="46" height="41"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IJW-F8-xty"/>
+    </inferredMetricsTieBreakers>
 </document>
