@@ -47,6 +47,7 @@ class ClosetViewController: UIViewController {
         }
         Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childAdded, with: {snapshot in
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
+                
                 self.items.append(clothes)
                 self.collectionView.reloadData()
             })

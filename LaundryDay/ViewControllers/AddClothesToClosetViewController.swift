@@ -13,6 +13,7 @@ class AddClothesToClosetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var user: UserInfo!
     var items = [Clothes]()
+    var closetItemsID = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +65,27 @@ extension AddClothesToClosetViewController: UICollectionViewDataSource {
 
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let itemCount = items[indexPath.row]
+        let itemKey = itemCount.id!
+        
+        
+        closetItemsID.append(itemKey)
+        print(closetItemsID)
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let itemDeCount = items[indexPath.row]
+        let cancelItemKey = itemDeCount.id!
+        if let itemIndex = closetItemsID.index(of: cancelItemKey) {
+            closetItemsID.remove(at: itemIndex)
+        }
+        print(closetItemsID)
+
+    }
 }
+
+
 extension AddClothesToClosetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
