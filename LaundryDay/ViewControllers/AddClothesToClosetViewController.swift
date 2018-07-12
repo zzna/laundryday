@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class AddClothesToClosetViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -16,6 +16,9 @@ class AddClothesToClosetViewController: UIViewController {
     var closetItemsID = [String]()
     var closetName: String?
     
+    @IBOutlet weak var createClosetBtn: UIButton!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -24,6 +27,9 @@ class AddClothesToClosetViewController: UIViewController {
         fetchUser()
         fetchMyItems()
         collectionView.isUserInteractionEnabled = true
+        
+        createClosetBtn.isUserInteractionEnabled = false
+
 
     }
     func fetchUser() {
@@ -44,11 +50,31 @@ class AddClothesToClosetViewController: UIViewController {
             })
         })
     }
+    
     @IBAction func cancelButton_TUI(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func createClosetBtn_TUI(_ sender: Any) {
+        ProgressHUD.show("Waiting")
+        HelperService.sendClosetDataToDatabase(closetName: closetName!, items: closetItemsID, onSuccess: {
+            self.dismiss(animated: true, completion: nil)
+            self.closetItemsID.removeAll()
+            ProgressHUD.showSuccess()
+            })
+        
+    }
+    
+    func checkArray() {
+        if closetItemsID.count <= 0 {
+            createClosetBtn.isUserInteractionEnabled = false
+            createClosetBtn.titleLabel?.textColor = .lightGray
+        } else {
+            createClosetBtn.isUserInteractionEnabled = true
+            createClosetBtn.titleLabel?.textColor = .blue
+        }
+    }
+    
    
 }
 
@@ -73,6 +99,7 @@ extension AddClothesToClosetViewController: UICollectionViewDataSource {
         
         
         closetItemsID.append(itemKey)
+        checkArray()
         print(closetItemsID)
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -81,6 +108,7 @@ extension AddClothesToClosetViewController: UICollectionViewDataSource {
         if let itemIndex = closetItemsID.index(of: cancelItemKey) {
             closetItemsID.remove(at: itemIndex)
         }
+        checkArray()
         print(closetItemsID)
 
     }

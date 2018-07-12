@@ -25,7 +25,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-Mc-Sh5">
                                         <rect key="frame" x="337" y="8" width="30" height="30"/>
-                                        <state key="normal" title="완료"/>
+                                        <state key="normal" title="완료">
+                                            <color key="titleColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createClosetBtn_TUI:" destination="ZLN-KW-qXf" eventType="touchUpInside" id="zK4-Tb-B4W"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-As-Gai">
                                         <rect key="frame" x="8" y="8" width="30" height="30"/>
@@ -96,11 +101,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="krd-71-rjD" id="oKP-vA-4VW"/>
+                        <outlet property="createClosetBtn" destination="Ywh-Mc-Sh5" id="nIW-8L-Uak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xj-2V-H7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1935" y="1835"/>
+            <point key="canvasLocation" x="-1113" y="1834"/>
         </scene>
         <!--Closet List View Controller-->
         <scene sceneID="MvU-bp-ynD">
@@ -129,14 +135,6 @@
                                             <state key="normal" title="추가"/>
                                             <connections>
                                                 <action selector="addListButton:" destination="SeA-cP-D9v" eventType="touchUpInside" id="rRw-ST-Lw7"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O91-ZX-JpL">
-                                            <rect key="frame" x="164" y="12" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                            <connections>
-                                                <segue destination="ZLN-KW-qXf" kind="presentation" id="A6D-yI-3WY"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -187,7 +185,6 @@
                     <connections>
                         <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
                         <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
-                        <segue destination="ZLN-KW-qXf" kind="presentation" identifier="AddClothesToClosetViewController" id="IJW-F8-xty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -593,7 +590,4 @@
         <image name="default" width="1290" height="1290"/>
         <image name="like" width="46" height="41"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="IJW-F8-xty"/>
-    </inferredMetricsTieBreakers>
 </document>

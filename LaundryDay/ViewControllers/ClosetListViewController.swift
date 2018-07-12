@@ -15,7 +15,7 @@ class ClosetListViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var closetName: String?
+    //var closetName: String?
     var myClosets = [Closet]()
 
     override func viewDidLoad() {
@@ -52,31 +52,33 @@ class ClosetListViewController: UIViewController {
             
         }))
         actionSheet.addAction(UIAlertAction(title: "다음", style: .default, handler: {(_) in
-            ProgressHUD.show("Waiting")
-            self.closetName = actionSheet.textFields?[0].text
-            
-            if let closetNameText = self.closetName {
-                HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
-                    if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController
-                    {
-                        self.present(vc, animated: true, completion: nil)
-                        vc.closetName = closetNameText
-                    }
-                    self.tableView.reloadData()
-                    })
-            } else {
-                //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
-                ProgressHUD.showError("텍스트를 입력해주세요")
+            //ProgressHUD.show("Waiting")
+            guard let closetName = actionSheet.textFields?[0].text else {
+                return
             }
-            
+            if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController {
+                self.present(vc, animated: true, completion: nil)
+                vc.closetName = closetName
+            }
+
+//            if let closetNameText = self.closetName {
+//                HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
+//                    if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController
+//                    {
+//                        self.present(vc, animated: true, completion: nil)
+//                        vc.closetName = closetNameText
+//                    }
+//                    self.tableView.reloadData()
+//                    })
+//            } else {
+//                //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
+//                ProgressHUD.showError("텍스트를 입력해주세요")
+//            }
+        
         }))
         self.present(actionSheet,animated: true,completion: nil)
     }
-  
-    
-    
-    
- 
+
 }
 
 

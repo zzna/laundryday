@@ -146,8 +146,8 @@
 		CC92F2E920AC8633006C04AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CC92F2EA20AC8649006C04AB /* Clothes.swift */,
 				66C5E3E720C167F300314391 /* Closet.swift */,
+				CC92F2EA20AC8649006C04AB /* Clothes.swift */,
 				CCC83D7020B305EA0031A766 /* UserInfo.swift */,
 			);
 			path = Model;
