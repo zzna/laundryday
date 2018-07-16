@@ -63,10 +63,20 @@ class HelperService {
             return
         }
         let currentUserID = currentUser.uid
-        newClosetRef.setValue(["closetName": closetName, "uid": currentUserID, "items": items], withCompletionBlock: { (error, ref) in
+        newClosetRef.setValue(["closetName": closetName, "uid": currentUserID], withCompletionBlock: { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
+            }
+            let itemsRef = newClosetRef.child("items")
+            for itemId in items {
+                itemsRef.child(itemId).setValue(true, withCompletionBlock: {(error,ref) in
+                    if error != nil {
+                        ProgressHUD.showError(error?.localizedDescription)
+                        return
+                    }
+                })
+                
             }
             let myClosetsRef = Api.MyClosets.REF_MYCLOSETS.child(currentUserID).child(newClosetID)
             myClosetsRef.setValue(true, withCompletionBlock: { (error,ref) in
