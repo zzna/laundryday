@@ -20,17 +20,26 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var user: UserInfo!
     var items = [Clothes]()
+    var closetId: String = "All"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchUser()
-        fetchMyItems()
+        if closetId == "All" {
+            fetchMyItems()
+        } else {
+            fetchItemsInCloset()
+        }
+            
+        
         collectionView.isUserInteractionEnabled = true
 
         //closet list
         updateChildView()
+        
+        print("viewDidLoad")
 
     }
     
@@ -53,6 +62,18 @@ class ClosetViewController: UIViewController {
             })
         })
     }
+    
+    func fetchItemsInCloset() {
+
+        Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childAdded, with: { snapshot in
+            Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
+                self.items.removeAll()
+                self.items.append(clothes)
+                self.collectionView.reloadData()
+            })
+        })
+    }
+    
     //TODO: touch enable
     @IBAction func openClosetList(_ sender: Any) {
         closetListShowing = !closetListShowing
@@ -78,6 +99,7 @@ class ClosetViewController: UIViewController {
         }
 
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

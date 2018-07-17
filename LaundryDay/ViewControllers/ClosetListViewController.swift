@@ -61,25 +61,28 @@ class ClosetListViewController: UIViewController {
                 vc.closetName = closetName
             }
 
-//            if let closetNameText = self.closetName {
-//                HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
-//                    if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController
-//                    {
-//                        self.present(vc, animated: true, completion: nil)
-//                        vc.closetName = closetNameText
-//                    }
-//                    self.tableView.reloadData()
-//                    })
-//            } else {
-//                //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
-//                ProgressHUD.showError("텍스트를 입력해주세요")
-//            }
-        
+
         }))
         self.present(actionSheet,animated: true,completion: nil)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ClosetViewController" {
+            let closetVC = segue.destination as! ClosetViewController
+            let id = sender as! String
+            closetVC.closetId = id
+
+            closetVC.closetListShowing = false
+
+        }
+    }
+    
+    
+    
 }
+
+
 
 
 
@@ -93,8 +96,17 @@ extension ClosetListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClosetListTableViewCell", for: indexPath) as! ClosetListTableViewCell
         let closet = myClosets[indexPath.row]
         cell.closet = closet
+        
+        
         return cell
+        
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = myClosets[indexPath.row]
+        let selectedCellClosetId = selectedCell.id
+        self.performSegue(withIdentifier: "ClosetViewController", sender: selectedCellClosetId)
+    }
+    
 
 }
 
