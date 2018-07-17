@@ -185,7 +185,7 @@
                     <connections>
                         <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
                         <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
-                        <segue destination="xsJ-hG-bxR" kind="show" identifier="ClosetViewController" animates="NO" id="4pi-Jz-tGw"/>
+                        <segue destination="xsJ-hG-bxR" kind="push" identifier="ClosetViewController" animates="NO" id="4pi-Jz-tGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>

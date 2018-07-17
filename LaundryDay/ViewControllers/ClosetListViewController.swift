@@ -67,21 +67,24 @@ class ClosetListViewController: UIViewController {
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ClosetViewController" {
-            let closetVC = segue.destination as! ClosetViewController
-            let id = sender as! String
-            closetVC.closetId = id
 
-            closetVC.closetListShowing = false
-
-        }
-    }
+   
+    var delegate: ClosetListViewControllerDelegate?
     
+    public class func removeViewController(childVC: UIViewController) {
+        childVC.willMove(toParentViewController: nil)
+        childVC.view.removeFromSuperview()
+        childVC.removeFromParentViewController()
+    }
+
+   
     
     
 }
 
+protocol ClosetListViewControllerDelegate {
+    func selectedValue(Value: String)
+}
 
 
 
@@ -104,7 +107,13 @@ extension ClosetListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = myClosets[indexPath.row]
         let selectedCellClosetId = selectedCell.id
-        self.performSegue(withIdentifier: "ClosetViewController", sender: selectedCellClosetId)
+
+        if (delegate != nil) {
+            delegate?.selectedValue(Value: selectedCellClosetId!)
+        }
+        
+        ClosetListViewController.removeViewController(childVC: self)
+        
     }
     
 
