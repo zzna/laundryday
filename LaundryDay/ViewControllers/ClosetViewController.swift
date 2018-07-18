@@ -40,6 +40,7 @@ class ClosetViewController: UIViewController {
     }
     
     func checkClosetId(closetID: String) {
+        self.items.removeAll()
         if closetID == "All" {
             fetchMyItems()
         } else {
@@ -72,7 +73,7 @@ class ClosetViewController: UIViewController {
 
         Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childAdded, with: { snapshot in
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
-                self.items.removeAll()
+                
                 self.items.append(clothes)
                 self.collectionView.reloadData()
             })

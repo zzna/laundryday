@@ -15,6 +15,8 @@ class ClosetListViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var allItems: UILabel!
+    
     //var closetName: String?
     var myClosets = [Closet]()
 
@@ -25,6 +27,7 @@ class ClosetListViewController: UIViewController {
         tableView.tableHeaderView = headerView
         
         fetchMyClosets()
+        changeToAll()
 
     }
     
@@ -71,6 +74,20 @@ class ClosetListViewController: UIViewController {
         
         ClosetListViewController.removeViewController(childVC: self)
         
+    }
+    
+    func changeToAll() {
+        let tapGestureForAllItems = UITapGestureRecognizer(target: self, action: #selector(self.setListToAll))
+        allItems.addGestureRecognizer(tapGestureForAllItems)
+        allItems.isUserInteractionEnabled = true
+    }
+    
+    @objc func setListToAll() {
+        if (delegate != nil) {
+            delegate?.selectedValue(Value: "All")
+        }
+        
+        ClosetListViewController.removeViewController(childVC: self)
     }
     
    

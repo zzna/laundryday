@@ -155,6 +155,23 @@
                                         <constraint firstItem="XeI-uZ-2Mj" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="rAa-NW-URd"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="c1x-fb-PWG">
+                                    <rect key="frame" x="0.0" y="116" width="375" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuK-iG-NlV">
+                                            <rect key="frame" x="8" y="9" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="MuK-iG-NlV" firstAttribute="centerY" secondItem="c1x-fb-PWG" secondAttribute="centerY" id="4cV-oR-bNL"/>
+                                        <constraint firstItem="MuK-iG-NlV" firstAttribute="leading" secondItem="c1x-fb-PWG" secondAttribute="leading" constant="8" id="8CN-wx-gum"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClosetListTableViewCell" id="cTt-fG-XNm" customClass="ClosetListTableViewCell" customModule="LaundryDay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -192,6 +209,7 @@
                         <viewLayoutGuide key="safeArea" id="AxW-tJ-apP"/>
                     </view>
                     <connections>
+                        <outlet property="allItems" destination="MuK-iG-NlV" id="JfQ-fU-c4m"/>
                         <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
                         <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
                         <segue destination="xsJ-hG-bxR" kind="push" identifier="ClosetViewController" animates="NO" id="4pi-Jz-tGw"/>
@@ -199,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337" y="1834"/>
+            <point key="canvasLocation" x="-338.39999999999998" y="1833.7331334332835"/>
         </scene>
         <!--Closet View Controller-->
         <scene sceneID="2oj-qh-bLh">
