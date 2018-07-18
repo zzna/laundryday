@@ -12,6 +12,102 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add Clothes To Closet View Controller-->
+        <scene sceneID="lGO-7J-0Yh">
+            <objects>
+                <viewController storyboardIdentifier="AddClothesToClosetViewController" id="ZLN-KW-qXf" customClass="AddClothesToClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cpg-4a-Xhf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91u-wJ-Cfb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywh-Mc-Sh5">
+                                        <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                        <state key="normal" title="완료">
+                                            <color key="titleColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createClosetBtn_TUI:" destination="ZLN-KW-qXf" eventType="touchUpInside" id="zK4-Tb-B4W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD5-As-Gai">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="cancelButton_TUI:" destination="ZLN-KW-qXf" eventType="touchUpInside" id="XAi-PY-A47"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ywh-Mc-Sh5" secondAttribute="trailing" constant="8" id="0io-23-9FI"/>
+                                    <constraint firstItem="Ywh-Mc-Sh5" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="top" constant="8" id="1ck-4C-dEE"/>
+                                    <constraint firstItem="wD5-As-Gai" firstAttribute="leading" secondItem="91u-wJ-Cfb" secondAttribute="leading" constant="8" id="T9N-fF-dd4"/>
+                                    <constraint firstAttribute="height" constant="50" id="brM-Ds-6pA"/>
+                                    <constraint firstItem="wD5-As-Gai" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="top" constant="8" id="gsG-t7-9r7"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krd-71-rjD">
+                                <rect key="frame" x="0.0" y="70" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BTt-11-5yo">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddClothesToClosetCollectionViewCell" id="OYn-5e-Ri6" customClass="AddClothesToClosetCollectionViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCI-sH-ZQG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OCI-sH-ZQG" secondAttribute="trailing" id="4xu-jH-BV6"/>
+                                            <constraint firstAttribute="bottom" secondItem="OCI-sH-ZQG" secondAttribute="bottom" id="TBB-3l-YI6"/>
+                                            <constraint firstItem="OCI-sH-ZQG" firstAttribute="top" secondItem="OYn-5e-Ri6" secondAttribute="top" id="aoH-qr-kaD"/>
+                                            <constraint firstItem="OCI-sH-ZQG" firstAttribute="leading" secondItem="OYn-5e-Ri6" secondAttribute="leading" id="h6E-gl-TbS"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="160"/>
+                                        <connections>
+                                            <outlet property="productImageView" destination="OCI-sH-ZQG" id="TV7-mw-NSA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="leading" secondItem="lhN-DU-64a" secondAttribute="leading" id="5OG-Z3-b50"/>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="top" secondItem="lhN-DU-64a" secondAttribute="top" id="5rf-nY-Xyj"/>
+                            <constraint firstItem="krd-71-rjD" firstAttribute="top" secondItem="91u-wJ-Cfb" secondAttribute="bottom" id="DcY-xx-nOh"/>
+                            <constraint firstItem="krd-71-rjD" firstAttribute="bottom" secondItem="lhN-DU-64a" secondAttribute="bottom" id="Kef-T1-SV0"/>
+                            <constraint firstItem="91u-wJ-Cfb" firstAttribute="trailing" secondItem="lhN-DU-64a" secondAttribute="trailing" id="Tyi-gT-zOF"/>
+                            <constraint firstItem="krd-71-rjD" firstAttribute="leading" secondItem="Cpg-4a-Xhf" secondAttribute="leading" id="ez0-L6-laa"/>
+                            <constraint firstItem="krd-71-rjD" firstAttribute="trailing" secondItem="lhN-DU-64a" secondAttribute="trailing" id="pwE-iV-ipW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lhN-DU-64a"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="krd-71-rjD" id="oKP-vA-4VW"/>
+                        <outlet property="createClosetBtn" destination="Ywh-Mc-Sh5" id="nIW-8L-Uak"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xj-2V-H7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1113" y="1834"/>
+        </scene>
         <!--Closet List View Controller-->
         <scene sceneID="MvU-bp-ynD">
             <objects>
@@ -33,8 +129,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kJ-q9-0f2">
+                                            <rect key="frame" x="337" y="7" width="30" height="30"/>
+                                            <state key="normal" title="취소"/>
+                                            <connections>
+                                                <action selector="cancelButton_TUI:" destination="SeA-cP-D9v" eventType="touchUpInside" id="ucI-Em-CwY"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Dt-eKz">
-                                            <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                            <rect key="frame" x="299" y="8" width="30" height="30"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="추가"/>
                                             <connections>
@@ -44,10 +147,29 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="7kJ-q9-0f2" firstAttribute="leading" secondItem="yOg-Dt-eKz" secondAttribute="trailing" constant="8" id="A5R-g4-xVG"/>
+                                        <constraint firstAttribute="trailing" secondItem="7kJ-q9-0f2" secondAttribute="trailing" constant="8" id="QM9-Ef-xHX"/>
                                         <constraint firstItem="XeI-uZ-2Mj" firstAttribute="leading" secondItem="Et3-It-Lku" secondAttribute="leading" constant="8" id="RVR-kV-D7R"/>
+                                        <constraint firstItem="7kJ-q9-0f2" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="XjK-mh-3Id"/>
                                         <constraint firstItem="yOg-Dt-eKz" firstAttribute="centerY" secondItem="XeI-uZ-2Mj" secondAttribute="centerY" id="dBt-8m-Z3a"/>
                                         <constraint firstItem="XeI-uZ-2Mj" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="rAa-NW-URd"/>
-                                        <constraint firstAttribute="trailing" secondItem="yOg-Dt-eKz" secondAttribute="trailing" constant="8" id="ujq-iC-5Fs"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="c1x-fb-PWG">
+                                    <rect key="frame" x="0.0" y="116" width="375" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuK-iG-NlV">
+                                            <rect key="frame" x="8" y="9" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="MuK-iG-NlV" firstAttribute="centerY" secondItem="c1x-fb-PWG" secondAttribute="centerY" id="4cV-oR-bNL"/>
+                                        <constraint firstItem="MuK-iG-NlV" firstAttribute="leading" secondItem="c1x-fb-PWG" secondAttribute="leading" constant="8" id="8CN-wx-gum"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -87,24 +209,26 @@
                         <viewLayoutGuide key="safeArea" id="AxW-tJ-apP"/>
                     </view>
                     <connections>
+                        <outlet property="allItems" destination="MuK-iG-NlV" id="JfQ-fU-c4m"/>
                         <outlet property="headerView" destination="Et3-It-Lku" id="QHO-6o-BEp"/>
                         <outlet property="tableView" destination="hd7-Qu-WOz" id="I5S-yN-XYx"/>
+                        <segue destination="xsJ-hG-bxR" kind="push" identifier="ClosetViewController" animates="NO" id="4pi-Jz-tGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7r-zg-dil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337" y="1834"/>
+            <point key="canvasLocation" x="-338.39999999999998" y="1833.7331334332835"/>
         </scene>
         <!--Closet View Controller-->
         <scene sceneID="2oj-qh-bLh">
             <objects>
-                <viewController id="xsJ-hG-bxR" customClass="ClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosetViewControllerVC" id="xsJ-hG-bxR" customClass="ClosetViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MVd-n5-Ypx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xhl-cc-Jjf">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8sE-Uu-Yb7">
                                     <size key="itemSize" width="100" height="160"/>
@@ -162,7 +286,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niO-ep-TNN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL7-Rl-aag">
                                         <rect key="frame" x="8" y="5" width="30" height="30"/>
@@ -295,7 +419,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-ED-z5K">
-                                <rect key="frame" x="0.0" y="64" width="375" height="936"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnd-eK-Vws">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -494,4 +618,7 @@
         <image name="default" width="1290" height="1290"/>
         <image name="like" width="46" height="41"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4pi-Jz-tGw"/>
+    </inferredMetricsTieBreakers>
 </document>

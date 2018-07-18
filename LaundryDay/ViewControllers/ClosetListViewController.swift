@@ -15,7 +15,9 @@ class ClosetListViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    var closetName: String?
+    @IBOutlet weak var allItems: UILabel!
+    
+    //var closetName: String?
     var myClosets = [Closet]()
 
     override func viewDidLoad() {
@@ -25,6 +27,7 @@ class ClosetListViewController: UIViewController {
         tableView.tableHeaderView = headerView
         
         fetchMyClosets()
+        changeToAll()
 
     }
     
@@ -51,27 +54,60 @@ class ClosetListViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "취소", style: .default, handler: {(_) in
             
         }))
-        actionSheet.addAction(UIAlertAction(title: "추가", style: .default, handler: {(_) in
-            ProgressHUD.show("Waiting")
-            self.closetName = actionSheet.textFields?[0].text
-            if let closetNameText = self.closetName {
-                HelperService.sendClosetDataToDatabase(closetName: closetNameText, onSuccess: {
-                    self.tableView.reloadData()
-                    print("success")
-                    })
-            } else {
-                //TODO: 텍스트 비워졌을때 오류 나야하는데ㅜㅜ
-                ProgressHUD.showError("텍스트를 입력해주세요")
+        actionSheet.addAction(UIAlertAction(title: "다음", style: .default, handler: {(_) in
+            //ProgressHUD.show("Waiting")
+            guard let closetName = actionSheet.textFields?[0].text else {
+                return
             }
-            
+            if let vc = UIStoryboard(name: "Closet", bundle: nil).instantiateViewController(withIdentifier: "AddClothesToClosetViewController") as? AddClothesToClosetViewController {
+                self.present(vc, animated: true, completion: nil)
+                vc.closetName = closetName
+            }
+
+
         }))
         self.present(actionSheet,animated: true,completion: nil)
     }
+
+    
+    @IBAction func cancelButton_TUI(_ sender: Any) {
+        
+        ClosetListViewController.removeViewController(childVC: self)
+        
+    }
+    
+    func changeToAll() {
+        let tapGestureForAllItems = UITapGestureRecognizer(target: self, action: #selector(self.setListToAll))
+        allItems.addGestureRecognizer(tapGestureForAllItems)
+        allItems.isUserInteractionEnabled = true
+    }
+    
+    @objc func setListToAll() {
+        if (delegate != nil) {
+            delegate?.selectedValue(Value: "All")
+        }
+        
+        ClosetListViewController.removeViewController(childVC: self)
+    }
+    
+   
+    var delegate: ClosetListViewControllerDelegate?
+    
+    public class func removeViewController(childVC: UIViewController) {
+        childVC.willMove(toParentViewController: nil)
+        childVC.view.removeFromSuperview()
+        childVC.removeFromParentViewController()
+    }
+
+   
     
     
-    
- 
 }
+
+protocol ClosetListViewControllerDelegate {
+    func selectedValue(Value: String)
+}
+
 
 
 
@@ -85,8 +121,23 @@ extension ClosetListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClosetListTableViewCell", for: indexPath) as! ClosetListTableViewCell
         let closet = myClosets[indexPath.row]
         cell.closet = closet
+        
+        
         return cell
+        
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = myClosets[indexPath.row]
+        let selectedCellClosetId = selectedCell.id
+
+        if (delegate != nil) {
+            delegate?.selectedValue(Value: selectedCellClosetId!)
+        }
+        
+        ClosetListViewController.removeViewController(childVC: self)
+        
+    }
+    
 
 }
 

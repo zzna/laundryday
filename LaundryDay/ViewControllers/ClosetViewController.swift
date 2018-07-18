@@ -20,18 +20,32 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var user: UserInfo!
     var items = [Clothes]()
+    var closetId: String = "All"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchUser()
-        fetchMyItems()
+        checkClosetId(closetID: closetId)
+        
         collectionView.isUserInteractionEnabled = true
 
         //closet list
-        updateChildView()
+        //updateChildView()
+        
+        print("viewDidLoad")
 
+    }
+    
+    func checkClosetId(closetID: String) {
+        self.items.removeAll()
+        if closetID == "All" {
+            fetchMyItems()
+        } else {
+            fetchItemsInCloset()
+        }
     }
     
     func fetchUser() {
@@ -47,36 +61,45 @@ class ClosetViewController: UIViewController {
         }
         Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childAdded, with: {snapshot in
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
+                
                 self.items.append(clothes)
                 self.collectionView.reloadData()
             })
         })
     }
-    //TODO: touch enable
+    
+    
+    func fetchItemsInCloset() {
+
+        Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childAdded, with: { snapshot in
+            Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
+                
+                self.items.append(clothes)
+                self.collectionView.reloadData()
+            })
+        })
+    }
+    
+    
     @IBAction func openClosetList(_ sender: Any) {
         closetListShowing = !closetListShowing
-        //뒤에 컬렉션뷰 터치 안되게 하는건데 다른 더 좋은 방법 없을까?..
-        //다른 뷰 하나 추가해서 block? insertView 생각해봅세
-        
-        if closetListShowing {
-            collectionView.isUserInteractionEnabled = false
-        } else {
-            collectionView.isUserInteractionEnabled = true
-        }
-        updateChildView()
-        
-        
-    }
-    func updateChildView() {
-        if closetListShowing {
-            closetListViewController.view.frame = CGRect(x: -260, y: collectionView.frame.origin.y, width: 250, height: 600)
-            UIView.animate(withDuration: 0.3, animations: { self.closetListViewController.view.frame = CGRect(x: 0, y: self.collectionView.frame.origin.y, width: 250, height: 600)})
-        } else {
-            closetListViewController.view.frame = CGRect(x: 0, y: self.collectionView.frame.origin.y, width: 250, height: 600)
-            UIView.animate(withDuration: 0.3, animations: { self.closetListViewController.view.frame = CGRect(x: -260, y: self.collectionView.frame.origin.y, width: 250, height: 600)})
-        }
 
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ClosetListViewController") as? ClosetListViewController
+        vc?.delegate = self
+        displayChildViewController(vc: vc!)
+        view.addSubview((vc?.view)!)
+        vc?.didMove(toParentViewController: self)
+        vc?.view.frame = CGRect(x: 0, y: self.collectionView.frame.origin.y, width: 250, height: 600)
+    
     }
+    
+    func displayChildViewController(vc: UIViewController) {
+        addChildViewController(vc)
+        self.view.addSubview(vc.view)
+        vc.didMove(toParentViewController: self)
+    }
+
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,31 +110,13 @@ class ClosetViewController: UIViewController {
            
         }
     }
+    
+    
+    
+    
+    
+    
 
-    //테스트중
-    lazy var closetListViewController: ClosetListViewController = {
-        let storyboard = UIStoryboard(name: "Closet", bundle: Bundle.main)
-
-        var viewController = storyboard.instantiateViewController(withIdentifier: "ClosetListViewController") as! ClosetListViewController
-
-        self.addViewControllerAsChildViewController(childViewController: viewController)
-        
-        return viewController
-    }()
-
-
-    private func addViewControllerAsChildViewController(childViewController: UIViewController) {
-        addChildViewController(childViewController)
-
-        view.addSubview(childViewController.view)
-        
-        //TODO: closet list view resize
-        //사이즈 조정 필요
-        childViewController.view.frame = CGRect(x: -260, y: collectionView.frame.origin.y, width: 250, height: 600)
-        //childViewController.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
-
-        childViewController.didMove(toParentViewController: self)
-    }
  
 
 }
@@ -142,4 +147,13 @@ extension ClosetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width / 3 - 2, height: 150)
     }
+}
+
+extension ClosetViewController: ClosetListViewControllerDelegate {
+    func selectedValue(Value: String) {
+        self.closetId = Value
+        checkClosetId(closetID: closetId)
+    }
+    
+
 }

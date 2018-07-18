@@ -56,7 +56,7 @@ class HelperService {
     
     
     //MARK: -add closet
-    static func sendClosetDataToDatabase(closetName: String, onSuccess: @escaping ()->Void) {
+    static func sendClosetDataToDatabase(closetName: String,items: [String], onSuccess: @escaping ()->Void) {
         let newClosetID = Api.Closets.REF_CLOSETS.childByAutoId().key
         let newClosetRef = Api.Closets.REF_CLOSETS.child(newClosetID)
         guard let currentUser = Api.User.CURRENT_USER else {
@@ -67,6 +67,16 @@ class HelperService {
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
+            }
+            let itemsRef = newClosetRef.child("items")
+            for itemId in items {
+                itemsRef.child(itemId).setValue(true, withCompletionBlock: {(error,ref) in
+                    if error != nil {
+                        ProgressHUD.showError(error?.localizedDescription)
+                        return
+                    }
+                })
+                
             }
             let myClosetsRef = Api.MyClosets.REF_MYCLOSETS.child(currentUserID).child(newClosetID)
             myClosetsRef.setValue(true, withCompletionBlock: { (error,ref) in
@@ -80,6 +90,7 @@ class HelperService {
         })
     }
     
+   
     
     
 }
