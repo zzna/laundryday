@@ -67,7 +67,12 @@ class ClosetListViewController: UIViewController {
     }
 
     
-
+    @IBAction func cancelButton_TUI(_ sender: Any) {
+        
+        ClosetListViewController.removeViewController(childVC: self)
+        
+    }
+    
    
     var delegate: ClosetListViewControllerDelegate?
     

@@ -129,8 +129,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kJ-q9-0f2">
+                                            <rect key="frame" x="337" y="7" width="30" height="30"/>
+                                            <state key="normal" title="취소"/>
+                                            <connections>
+                                                <action selector="cancelButton_TUI:" destination="SeA-cP-D9v" eventType="touchUpInside" id="ucI-Em-CwY"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-Dt-eKz">
-                                            <rect key="frame" x="337" y="8" width="30" height="30"/>
+                                            <rect key="frame" x="299" y="8" width="30" height="30"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="추가"/>
                                             <connections>
@@ -140,10 +147,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="7kJ-q9-0f2" firstAttribute="leading" secondItem="yOg-Dt-eKz" secondAttribute="trailing" constant="8" id="A5R-g4-xVG"/>
+                                        <constraint firstAttribute="trailing" secondItem="7kJ-q9-0f2" secondAttribute="trailing" constant="8" id="QM9-Ef-xHX"/>
                                         <constraint firstItem="XeI-uZ-2Mj" firstAttribute="leading" secondItem="Et3-It-Lku" secondAttribute="leading" constant="8" id="RVR-kV-D7R"/>
+                                        <constraint firstItem="7kJ-q9-0f2" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="XjK-mh-3Id"/>
                                         <constraint firstItem="yOg-Dt-eKz" firstAttribute="centerY" secondItem="XeI-uZ-2Mj" secondAttribute="centerY" id="dBt-8m-Z3a"/>
                                         <constraint firstItem="XeI-uZ-2Mj" firstAttribute="centerY" secondItem="Et3-It-Lku" secondAttribute="centerY" id="rAa-NW-URd"/>
-                                        <constraint firstAttribute="trailing" secondItem="yOg-Dt-eKz" secondAttribute="trailing" constant="8" id="ujq-iC-5Fs"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
