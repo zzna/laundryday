@@ -41,6 +41,7 @@
 		D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301470920F74A4C000BB5CE /* SSCheckMark.swift */; };
 		D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */; };
 		D30286C320F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */; };
+		D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9AAEF210086200004B4D9 /* TimeDelay.swift */; };
 		EB1C22131F99C043B11E17D1 /* Pods_LaundryDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		D301470920F74A4C000BB5CE /* SSCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckMark.swift; sourceTree = "<group>"; };
 		D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetViewController.swift; sourceTree = "<group>"; };
 		D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetCollectionViewCell.swift; sourceTree = "<group>"; };
+		D3B9AAEF210086200004B4D9 /* TimeDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDelay.swift; sourceTree = "<group>"; };
 		E7DE90ADAC7410455027245B /* Pods-LaundryDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				CC728F4820908962003B3805 /* Config.swift */,
 				CCC83D6A20B2FEA30031A766 /* Api.swift */,
 				CCA8D65E20B331D000A33D90 /* HelperService.swift */,
+				D3B9AAEF210086200004B4D9 /* TimeDelay.swift */,
 				CCC83D6E20B304640031A766 /* UserApi.swift */,
 				CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */,
 				66C5E3E920C1744500314391 /* MyClosetsApi.swift */,
@@ -343,6 +346,7 @@
 				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
+				D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */,
 				D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */,
 				CCC83D6F20B304640031A766 /* UserApi.swift in Sources */,
 				CC825A5D2081E30B00A4BDCC /* ClosetViewController.swift in Sources */,
