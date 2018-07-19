@@ -18,6 +18,7 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var closetListView: UIView!
     @IBOutlet weak var closetListButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addClothesBtn: UIButton!
     var user: UserInfo!
     var items = [Clothes]()
     var closetId: String = "All"
@@ -32,19 +33,26 @@ class ClosetViewController: UIViewController {
         
         collectionView.isUserInteractionEnabled = true
 
-        //closet list
-        //updateChildView()
+        
         
         print("viewDidLoad")
 
     }
+
+    
     
     func checkClosetId(closetID: String) {
+        print("checkClosetId 실행")
+        print(closetID)
         self.items.removeAll()
         if closetID == "All" {
             fetchMyItems()
+            addClothesBtn.setTitleColor(.blue, for: .normal)
+            addClothesBtn.isUserInteractionEnabled = true
         } else {
             fetchItemsInCloset()
+            addClothesBtn.setTitleColor(.lightGray, for: .normal)
+            addClothesBtn.isUserInteractionEnabled = false
         }
     }
     
@@ -53,6 +61,7 @@ class ClosetViewController: UIViewController {
             self.user = user
             self.collectionView.reloadData()
         })
+        print("fetchUser 실행")
     }
     
     func fetchMyItems() {
@@ -64,8 +73,10 @@ class ClosetViewController: UIViewController {
                 
                 self.items.append(clothes)
                 self.collectionView.reloadData()
+                print("fetchMyItems reloadData")
             })
         })
+        print("fetchMyItems 실행")
     }
     
     
@@ -76,8 +87,10 @@ class ClosetViewController: UIViewController {
                 
                 self.items.append(clothes)
                 self.collectionView.reloadData()
+                print("fetchItemsInCloset reloadData")
             })
         })
+        print("fetchItemsInCloset 실행")
     }
     
     
@@ -99,6 +112,15 @@ class ClosetViewController: UIViewController {
         vc.didMove(toParentViewController: self)
     }
 
+//    @IBAction func addClothesBtn_TUI(_ sender: Any) {
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "AddClothesViewController") as? AddClothesViewController
+//        vc?.delegate = self
+//        displayChildViewController(vc: vc!)
+//        view.addSubview((vc?.view)!)
+//        vc?.didMove(toParentViewController: self)
+//        vc?.view.frame = CGRect(x: 0, y: 0, width: 375, height: 647)
+//
+//    }
     
     
     
@@ -154,6 +176,12 @@ extension ClosetViewController: ClosetListViewControllerDelegate {
         self.closetId = Value
         checkClosetId(closetID: closetId)
     }
-    
 
+}
+
+extension ClosetViewController: AddClothesViewControllerDelegate {
+    func changeClosetIdToAll(id: String) {
+        self.closetId = id
+        checkClosetId(closetID: closetId)
+    }
 }

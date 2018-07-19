@@ -55,7 +55,15 @@ class AddClothesViewController: UIViewController {
         ProgressHUD.show("Waiting")
         if let productImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(productImg, 0.1) {
             HelperService.updataToServer(data: imageData, productName: productNameTextField.text!, onSuccess: {
-                self.dismiss(animated: true, completion: nil)
+//                if (self.delegate != nil) {
+//                    self.delegate?.changeClosetIdToAll(id: "All")
+//                }
+//
+//                ClosetListViewController.removeViewController(childVC: self)
+                TimeDelay.runThisAfterDelay(seconds: 0.5){
+                    self.dismiss(animated: true, completion: nil)
+                }
+                //self.dismiss(animated: true, completion: nil)
                 })
             
         } else {
@@ -68,27 +76,19 @@ class AddClothesViewController: UIViewController {
     
     //추가하기 창 취소
     @IBAction func cancelButton_TUI(_ sender: Any) {
+        //ClosetListViewController.removeViewController(childVC: self)
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var delegate: AddClothesViewControllerDelegate?
     
 
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+}
+protocol AddClothesViewControllerDelegate {
+    func changeClosetIdToAll(id: String)
 }
 
 extension AddClothesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
