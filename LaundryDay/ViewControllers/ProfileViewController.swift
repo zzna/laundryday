@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -44,4 +45,28 @@ class ProfileViewController: UIViewController {
     }
     */
 
+    
 }
+
+
+
+// 정아: 프로필 뷰 계정 정보
+/*
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell, for: IndexPath)
+        return cell
+    }
+    
+    func collectionview(_ collectionView: UICollectionView, viewforSupplementaryElementOfKind kind:String, at indexPath: IndexPath) ->UICollectionReusableView{
+        let upperViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "upperProfileCollectionReusableView", for: indexPath) as! upperProfileCollectionReusableView
+        upperViewCell.backgroundColor = UIColor.red
+        return upperViewCell
+    }
+    
+}
+*/
