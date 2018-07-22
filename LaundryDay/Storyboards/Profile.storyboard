@@ -35,7 +35,7 @@
                                 </view>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderProfileCollectionReusableView" id="wWE-dr-Zfz" customClass="HeaderProfileCollectionReusableViewdCollectionReusableView">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderProfileCollectionReusableView" id="wWE-dr-Zfz" customClass="HeaderProfileCollectionReusableView" customModule="LaundryDay" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="206"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>

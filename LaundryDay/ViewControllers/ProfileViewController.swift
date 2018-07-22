@@ -10,13 +10,14 @@ import UIKit
 import ProgressHUD
 
 class ProfileViewController: UIViewController {
-    //드래그해서 만듦 왜만들었지 45강.
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
+    
     
     @IBAction func logOutButton_TUI(_ sender: Any) {
        
@@ -58,6 +59,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     
     
     //이건 사진넣기 기능 같음. photocell만들어주는 것.
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         return cell
