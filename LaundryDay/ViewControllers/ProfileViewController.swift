@@ -12,11 +12,15 @@ import ProgressHUD
 class ProfileViewController: UIViewController {
     
     
+    //드래그해서 아울렛 불러오면 오류가 나길래(프로필뷰를 찾을 수 없다) 그냥 연결 없이 쓰기만 했는데 해결됨... 언제 터질지 모름. 엑스코드를 믿지 말자.
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
         
-        // Do any additional setup after loading the view.
     }
+        // Do any additional setup after loading the view.
+    
     
     
     @IBAction func logOutButton_TUI(_ sender: Any) {
