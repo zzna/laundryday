@@ -10,11 +10,11 @@ import UIKit
 import ProgressHUD
 
 class ProfileViewController: UIViewController {
-
+    //드래그해서 만듦 왜만들었지 45강.
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        collectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -51,22 +51,23 @@ class ProfileViewController: UIViewController {
 
 
 // 정아: 프로필 뷰 계정 정보
-/*
 extension ProfileViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return 1
     }
     
+    
+    //이건 사진넣기 기능 같음. photocell만들어주는 것.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell, for: IndexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         return cell
     }
     
-    func collectionview(_ collectionView: UICollectionView, viewforSupplementaryElementOfKind kind:String, at indexPath: IndexPath) ->UICollectionReusableView{
-        let upperViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "upperProfileCollectionReusableView", for: indexPath) as! upperProfileCollectionReusableView
-        upperViewCell.backgroundColor = UIColor.red
-        return upperViewCell
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
+        //headerViewCell.backgroundColor = UIColor.red
+        return headerViewCell
     }
-    
 }
-*/
+
+

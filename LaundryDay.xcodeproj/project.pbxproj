@@ -37,6 +37,8 @@
 		CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */; };
 		CCC83D6F20B304640031A766 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D6E20B304640031A766 /* UserApi.swift */; };
 		CCC83D7120B305EA0031A766 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D7020B305EA0031A766 /* UserInfo.swift */; };
+		CCF8E4AE21048809006CF986 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF8E4AD21048809006CF986 /* AddClothesViewController.swift */; };
+		CCF8E4B021048A9D006CF986 /* HeaderProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF8E4AF21048A9D006CF986 /* HeaderProfileCollectionReusableView.swift */; };
 		D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301470920F74A4C000BB5CE /* SSCheckMark.swift */; };
 		D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */; };
 		D30286C320F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */; };
@@ -79,6 +81,8 @@
 		CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsApi.swift; sourceTree = "<group>"; };
 		CCC83D6E20B304640031A766 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		CCC83D7020B305EA0031A766 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CCF8E4AD21048809006CF986 /* AddClothesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClothesViewController.swift; path = ../../../../../Downloads/AddClothesViewController.swift; sourceTree = "<group>"; };
+		CCF8E4AF21048A9D006CF986 /* HeaderProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 		D301470920F74A4C000BB5CE /* SSCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckMark.swift; sourceTree = "<group>"; };
 		D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetViewController.swift; sourceTree = "<group>"; };
 		D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				CC825A542081DE6800A4BDCC /* SignInViewController.swift */,
 				CC825A562081DE8800A4BDCC /* SignUpViewController.swift */,
 				D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */,
+				CCF8E4AD21048809006CF986 /* AddClothesViewController.swift */,
 				CC825A5C2081E30B00A4BDCC /* ClosetViewController.swift */,
 				CC825A602081E38900A4BDCC /* BoardViewController.swift */,
 				CC825A622081E39A00A4BDCC /* ProfileViewController.swift */,
@@ -158,6 +163,7 @@
 				CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */,
 				D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */,
 				668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */,
+				CCF8E4AF21048A9D006CF986 /* HeaderProfileCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,8 +344,10 @@
 				668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */,
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
+				CCF8E4AE21048809006CF986 /* AddClothesViewController.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
 				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
+				CCF8E4B021048A9D006CF986 /* HeaderProfileCollectionReusableView.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
 				D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */,
