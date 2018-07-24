@@ -14,9 +14,11 @@ class ProfileViewController: UIViewController {
     
     //드래그해서 아울렛 불러오면 오류가 나길래(프로필뷰를 찾을 수 없다) 그냥 연결 없이 쓰기만 했는데 해결됨... 언제 터질지 모름. 엑스코드를 믿지 말자.
     @IBOutlet weak var collectionView: UICollectionView!
+    var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        fetchUser() //정아: when profile view controller just loaded.
         //민정이 해결법
         //Api.User.observeCurrentUser(completion: {user in
             //self.currentUser = user
@@ -26,6 +28,12 @@ class ProfileViewController: UIViewController {
         
         
     }
+    func fetchUser() { //this method want curring(?) current user information
+        Api.User.observeCurrentUser{(user) in
+            self.user=user
+            self.collectionView.reloadData()
+            
+        }
         // Do any additional setup after loading the view.
     
     
@@ -78,7 +86,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
-        headerViewCell.updateView()
+        headerViewCell.user = self.user
         return headerViewCell
     }
 }
