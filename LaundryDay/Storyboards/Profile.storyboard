@@ -143,6 +143,14 @@
                                 <constraint firstItem="tdS-aN-jZP" firstAttribute="leading" secondItem="AZa-Vt-9pC" secondAttribute="trailing" constant="11" id="yeP-HD-QUg"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="tdS-aN-jZP" secondAttribute="trailing" constant="6" id="ywi-q0-pDq"/>
                             </constraints>
+                            <connections>
+                                <outlet property="myCommentsCountLabel" destination="ofj-D6-klJ" id="ESq-8R-8TQ"/>
+                                <outlet property="myFrendsCountLabel" destination="IJ6-WE-teW" id="DNF-cq-4GP"/>
+                                <outlet property="myPostsCountLabel" destination="aFq-O5-SNy" id="t65-6p-B8y"/>
+                                <outlet property="myPublicClosetCountLabel" destination="o8V-BY-fBj" id="Yvq-Rt-B54"/>
+                                <outlet property="nameLabel" destination="9A7-2f-f88" id="u1Y-TO-yh6"/>
+                                <outlet property="profileImage" destination="AZa-Vt-9pC" id="qEU-Zd-vGo"/>
+                            </connections>
                         </collectionReusableView>
                     </collectionView>
                     <navigationItem key="navigationItem" id="TVh-Rx-KFa">

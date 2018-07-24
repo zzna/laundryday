@@ -13,6 +13,8 @@ import FirebaseDatabase
 class UserApi {
     let REF_USERS = Database.database().reference().child("users")
     
+    
+    
     var REF_CURRENT_USER: DatabaseReference? {
         guard let currentUser = Auth.auth().currentUser else{
             return nil
@@ -39,4 +41,11 @@ class UserApi {
             }
         })
     }
+    /*
+    var REF_CURRENT_USER: FIRDatabaseReference {
+        guard let uid = FIRAuth.auth()?.currentUser else{
+            return nil
+        }
+        return REF_USERS.child(currentUser.uid)
+    }*/
 }
