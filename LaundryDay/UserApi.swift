@@ -14,6 +14,18 @@ class UserApi {
     let REF_USERS = Database.database().reference().child("users")
     
     
+    func observeCurrentUser(completion:@escaping (UserInfo) -> Void) {
+        guard let currentUser = /*FIR*/Auth.auth()/*?*/.currentUser else {
+            return
+        }
+        REF_USERS.child(currentUser.uid).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String:Any] {
+                let user = UserInfo.transformUser(dict: dict)
+                completion(user)
+            }
+        })
+    }
     
     var REF_CURRENT_USER: DatabaseReference? {
         guard let currentUser = Auth.auth().currentUser else{
@@ -28,24 +40,4 @@ class UserApi {
         }
         return nil
     }
-    
-    
-    func observeCurrentUser(completion:@escaping (UserInfo) -> Void) {
-        guard let currentUser = Auth.auth().currentUser else {
-            return
-        }
-        REF_USERS.child(currentUser.uid).observeSingleEvent(of: .value, with: { snapshot in
-            if let dict = snapshot.value as? [String:Any] {
-                let user = UserInfo.transformUser(dict: dict)
-                completion(user)
-            }
-        })
-    }
-    /*
-    var REF_CURRENT_USER: FIRDatabaseReference {
-        guard let uid = FIRAuth.auth()?.currentUser else{
-            return nil
-        }
-        return REF_USERS.child(currentUser.uid)
-    }*/
 }

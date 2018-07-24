@@ -17,14 +17,14 @@ class HeaderProfileCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var myPublicClosetCountLabel: UILabel!
     @IBOutlet weak var myFrendsCountLabel: UILabel!
     
-    var user: User? {
+    var user: UserInfo? {
         didSet{
             updateView()
         }
     }
     func updateView(){
-        self.nameLabel.text=user!.username
-        if let photoUrlString = user.profileImageUrl{
+        self.nameLabel.text=user!.userName
+        if let photoUrlString = user!.profileImageUrl{
             let photoUrl = URL(string: photoUrlString)
             self.profileImage.sd_setImage(with: photoUrl)
             
