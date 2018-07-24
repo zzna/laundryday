@@ -19,6 +19,7 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var closetListButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addClothesBtn: UIButton!
+    @IBOutlet weak var likeListBtn: UIButton!
     var user: UserInfo!
     var items = [Clothes]()
     var closetId: String = "All"
@@ -121,6 +122,25 @@ class ClosetViewController: UIViewController {
 //        vc?.view.frame = CGRect(x: 0, y: 0, width: 375, height: 647)
 //
 //    }
+    
+    
+    func configureLikeList() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.likeList))
+        likeListBtn.addGestureRecognizer(tapGesture)
+        likeListBtn.isUserInteractionEnabled = true
+    }
+    func configureAllList() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.allList))
+        likeListBtn.addGestureRecognizer(tapGesture)
+        likeListBtn.isUserInteractionEnabled = true
+    }
+    @objc func likeList() {
+        
+        
+    }
+    @objc func allList() {
+        
+    }
     
     
     

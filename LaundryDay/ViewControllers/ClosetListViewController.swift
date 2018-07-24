@@ -20,6 +20,7 @@ class ClosetListViewController: UIViewController {
     //var closetName: String?
     var myClosets = [Closet]()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -41,6 +42,15 @@ class ClosetListViewController: UIViewController {
                 self.tableView.reloadData()
             })
         })
+        
+        Api.MyClosets.REF_MYCLOSETS.child(currentUser.uid).observe(.childRemoved, with: {snap in
+            let snapId = snap.key
+            if let index = self.myClosets.index(where: {(item)-> Bool in item.id == snapId}) {
+                self.myClosets.remove(at: index)
+                self.tableView.reloadData()
+            }
+        })
+        
     }
     
     @IBAction func addListButton(_ sender: Any) {
@@ -137,6 +147,27 @@ extension ClosetListViewController: UITableViewDataSource {
         ClosetListViewController.removeViewController(childVC: self)
         
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let deleteCell = myClosets[indexPath.row]
+            guard let currentUser = Api.User.CURRENT_USER else{
+                return
+            }
+            //내 옷장에서 지움
+            Api.MyClosets.REF_MYCLOSETS.child(currentUser.uid).child(deleteCell.id!).removeValue()
+            //옷장 안에서 지움
+            Api.Closets.REF_CLOSETS.child(deleteCell.id!).removeValue()
+            setListToAll()
+            
+        }
+    }
+    
+    
     
 
 }

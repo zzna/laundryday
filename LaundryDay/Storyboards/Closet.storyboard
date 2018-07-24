@@ -288,9 +288,13 @@
                                             <action selector="openClosetList:" destination="xsJ-hG-bxR" eventType="touchUpInside" id="de4-3s-T7e"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfk-jZ-T6u">
-                                        <rect key="frame" x="337" y="5" width="30" height="30"/>
-                                        <state key="normal" title="정렬"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfk-jZ-T6u">
+                                        <rect key="frame" x="337" y="7.5" width="30" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="4gv-g4-vCX"/>
+                                            <constraint firstAttribute="height" constant="26" id="aqL-ho-YSD"/>
+                                        </constraints>
+                                        <state key="normal" image="like"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKQ-Al-Fun">
                                         <rect key="frame" x="277" y="5" width="52" height="30"/>
@@ -329,6 +333,7 @@
                         <outlet property="addClothesBtn" destination="IKQ-Al-Fun" id="6xu-TD-Fmz"/>
                         <outlet property="closetListButton" destination="sL7-Rl-aag" id="7Uh-jK-XJK"/>
                         <outlet property="collectionView" destination="xhl-cc-Jjf" id="0yE-yS-AJ3"/>
+                        <outlet property="likeListBtn" destination="Tfk-jZ-T6u" id="ZCK-c0-l3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNK-xx-rsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
