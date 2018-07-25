@@ -9,11 +9,29 @@
 import UIKit
 
 class DetailEditingViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var editItemImageView: UIImageView!
+    @IBOutlet weak var deleteItemImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTapToDeleteImageView()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func addTapToDeleteImageView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.deleteAction))
+        deleteItemImageView.addGestureRecognizer(tapGesture)
+        deleteItemImageView.isUserInteractionEnabled = true
+    }
+    @objc func deleteAction() {
+        let actionSheet = UIAlertController(title: "삭제된 옷은 복구할 수 없습니다", message: "삭제하시겠습니까?", preferredStyle: .alert)
+        actionSheet.addAction(UIAlertAction(title: "예", style: .cancel, handler: {(_) in
+            
+        }))
+        self.present(actionSheet,animated: true,completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
