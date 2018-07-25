@@ -12,11 +12,12 @@ import SDWebImage
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
+    var instantVC: UIViewController?
 
-    
     var itemId: String?
     var item: Clothes? {
         didSet {
@@ -25,9 +26,14 @@ class DetailViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         loadItem()
+        addTapGesture()
+
         
     }
+    
+    
     func updateView() {
         self.productNameLabel.text = item?.productName
         if let photoUrlString = item!.productImgUrl {
@@ -42,6 +48,50 @@ class DetailViewController: UIViewController {
             
         })
     }
+    func addTapGesture() {
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.singleTapAction))
+//        singleTapRecognizer.isEnabled = true
+//        singleTapRecognizer.numberOfTapsRequired = 1
+//        singleTapRecognizer.cancelsTouchesInView = false
+        detailView.addGestureRecognizer(singleTapRecognizer)
+        
+    }
+    func addDismissTapGesture() {
+        let singleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSingleTapAction))
+        detailView.addGestureRecognizer(singleTapRecognizer)
+    }
+    @objc func singleTapAction() {
+        editingView()
+        addDismissTapGesture()
+    }
+    @objc func dismissSingleTapAction() {
+        hideContentController(content: self.instantVC!)
+        addTapGesture()
+    }
+    
+    func editingView() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailEditingViewController") as? DetailEditingViewController
+        //vc?.delegate = self
+        self.instantVC = vc
+        displayChildViewController(vc: vc!)
+        view.addSubview((vc?.view)!)
+        vc?.didMove(toParentViewController: self)
+        vc?.view.frame = CGRect(x: 0, y: self.view.frame.height - 100, width: self.view.frame.width, height: 100)
+        // iphone X 일 경우 y 이상하다
+    }
+    func displayChildViewController(vc: UIViewController) {
+        addChildViewController(vc)
+        self.view.addSubview(vc.view)
+        vc.didMove(toParentViewController: self)
+    }
+    
+    
+    func hideContentController(content: UIViewController) {
+        content.willMove(toParentViewController: nil)
+        content.view.removeFromSuperview()
+        content.removeFromParentViewController()
+    }
+    
 
 
 }

@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTg-ld-QiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338.39999999999998" y="2602.8485757121443"/>
+            <point key="canvasLocation" x="-874" y="2603"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="fEf-lF-qvS">
@@ -474,6 +474,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vhh-i9-eFk" firstAttribute="trailing" secondItem="e5w-ED-z5K" secondAttribute="trailing" id="E2n-QJ-DEa"/>
                             <constraint firstItem="vhh-i9-eFk" firstAttribute="bottom" secondItem="e5w-ED-z5K" secondAttribute="bottom" id="EHG-LT-tZW"/>
@@ -488,11 +489,76 @@
                         <outlet property="detailView" destination="qnd-eK-Vws" id="qFZ-Rc-2uE"/>
                         <outlet property="productImageView" destination="FkI-aP-yNl" id="CJF-uP-zNA"/>
                         <outlet property="productNameLabel" destination="aPe-uq-PDj" id="2X6-Fe-lV6"/>
+                        <outlet property="scrollView" destination="e5w-ED-z5K" id="xiL-6i-tHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jq0-98-ZYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="2752.6236881559221"/>
+            <point key="canvasLocation" x="5.5999999999999996" y="2752.6236881559221"/>
+        </scene>
+        <!--Detail Editing View Controller-->
+        <scene sceneID="h2s-EL-SLS">
+            <objects>
+                <viewController storyboardIdentifier="DetailEditingViewController" id="kQj-oQ-gq9" customClass="DetailEditingViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yy1-Xi-dxw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sa-vf-7zN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-1W-8eU">
+                                        <rect key="frame" x="112.5" y="20" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Jfy-K4-FMC"/>
+                                            <constraint firstAttribute="height" constant="50" id="cBM-XV-T3D"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="jwu-7B-TXd">
+                                        <rect key="frame" x="212.5" y="20" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="p0e-hf-K2z"/>
+                                            <constraint firstAttribute="width" constant="50" id="yZc-hX-BLL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-PC-NfE">
+                                        <rect key="frame" x="125.5" y="75" width="25" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swr-82-RXp">
+                                        <rect key="frame" x="225.5" y="75" width="25" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BZt-PC-NfE" firstAttribute="centerX" secondItem="oPj-1W-8eU" secondAttribute="centerX" id="3nX-Yc-7dR"/>
+                                    <constraint firstItem="oPj-1W-8eU" firstAttribute="centerX" secondItem="9sa-vf-7zN" secondAttribute="centerX" constant="-50" id="5LA-zm-pbh"/>
+                                    <constraint firstItem="jwu-7B-TXd" firstAttribute="centerX" secondItem="9sa-vf-7zN" secondAttribute="centerX" constant="50" id="6IL-GN-p9O"/>
+                                    <constraint firstItem="oPj-1W-8eU" firstAttribute="centerY" secondItem="9sa-vf-7zN" secondAttribute="centerY" constant="-5" id="6Rs-od-04u"/>
+                                    <constraint firstAttribute="height" constant="100" id="CfN-zq-Qp6"/>
+                                    <constraint firstItem="BZt-PC-NfE" firstAttribute="top" secondItem="oPj-1W-8eU" secondAttribute="bottom" constant="5" id="PHy-Ju-oM8"/>
+                                    <constraint firstItem="jwu-7B-TXd" firstAttribute="centerY" secondItem="9sa-vf-7zN" secondAttribute="centerY" constant="-5" id="WBX-hm-mk9"/>
+                                    <constraint firstItem="swr-82-RXp" firstAttribute="top" secondItem="jwu-7B-TXd" secondAttribute="bottom" constant="5" id="bwj-nn-3Kk"/>
+                                    <constraint firstItem="swr-82-RXp" firstAttribute="centerX" secondItem="jwu-7B-TXd" secondAttribute="centerX" id="qF0-IQ-ABD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="9sa-vf-7zN" firstAttribute="trailing" secondItem="G3E-qL-k4K" secondAttribute="trailing" id="Gly-X2-ocO"/>
+                            <constraint firstItem="9sa-vf-7zN" firstAttribute="leading" secondItem="G3E-qL-k4K" secondAttribute="leading" id="p7t-aY-C9m"/>
+                            <constraint firstItem="9sa-vf-7zN" firstAttribute="top" secondItem="G3E-qL-k4K" secondAttribute="top" id="x9H-wr-DUa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G3E-qL-k4K"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lly-sJ-QST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="2769.2653673163422"/>
         </scene>
         <!--Add Clothes View Controller-->
         <scene sceneID="WBZ-bg-RFD">
@@ -623,6 +689,7 @@
     <resources>
         <image name="default" width="1290" height="1290"/>
         <image name="like" width="46" height="41"/>
+        <image name="likeSelected" width="46" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4pi-Jz-tGw"/>
