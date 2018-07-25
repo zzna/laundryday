@@ -75,6 +75,12 @@ class HelperService {
                         ProgressHUD.showError(error?.localizedDescription)
                         return
                     }
+                    Api.Clothes.REF_ITEMS.child(itemId).child("closetList").child(newClosetID).setValue(true, withCompletionBlock: {(error, ref) in
+                        if error != nil {
+                            ProgressHUD.showError(error?.localizedDescription)
+                            return
+                        }
+                    })
                 })
                 
             }
