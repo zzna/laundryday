@@ -31,6 +31,10 @@ class ClosetListViewController: UIViewController {
         changeToAll()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     func fetchMyClosets() {
         guard let currentUser = Api.User.CURRENT_USER else {

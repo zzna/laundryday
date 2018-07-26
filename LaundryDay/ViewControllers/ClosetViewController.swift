@@ -81,7 +81,13 @@ class ClosetViewController: UIViewController {
                 print("fetchMyItems reloadData")
             })
         })
-        print("fetchMyItems 실행")
+        Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childRemoved, with: {snap in
+            let snapId = snap.key
+            if let index = self.items.index(where: {(item)-> Bool in item.id == snapId}) {
+                self.items.remove(at: index)
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     
@@ -95,7 +101,13 @@ class ClosetViewController: UIViewController {
                 print("fetchItemsInCloset reloadData")
             })
         })
-        print("fetchItemsInCloset 실행")
+        Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childRemoved, with: {snap in
+            let snapId = snap.key
+            if let index = self.items.index(where: {(item)-> Bool in item.id == snapId}) {
+                self.items.remove(at: index)
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     

@@ -24,30 +24,36 @@ class ClothesApi {
     
     func removeClothesOnDatabase(clothesId id: String, uid: String, onSuccess: @escaping () -> Void, onError: @escaping(_ errorMessage: String?) -> Void ) {
         Api.Clothes.REF_ITEMS.child(id).child("closetList").observeSingleEvent(of: .value, with: {snapshot in
-            if let dict = snapshot.value as? [String: Any] {
-                let closets = dict.keys
-                for closet in closets {
-                    Api.Closets.REF_CLOSETS.child(closet).child("items").child(id).removeValue(completionBlock: {(error,ref)  in
-                        if error != nil {
-                            return
-                        }
-                        //전체 아이템에서 지우기
-                        Api.Clothes.REF_ITEMS.child(id).removeValue(completionBlock: {err, ref in
+            if snapshot != nil {
+                if let dict = snapshot.value as? [String: Any] {
+                    let closets = dict.keys
+                    
+                    for closet in closets {
+                        Api.Closets.REF_CLOSETS.child(closet).child("items").child(id).removeValue(completionBlock: {(error,ref)  in
                             if error != nil {
                                 return
                             }
-                            //내 아이템에서 지우기
-                            Api.MyItems.REF_MYITEMS.child(uid).child(id).removeValue(completionBlock: {er, ref in
-                                if error != nil {
-                                    return
-                                }
-                                onSuccess()
-                            })
-
+                            
                         })
-                    })
+                    }
                 }
+                
             }
+            //전체 아이템에서 지우기
+            Api.Clothes.REF_ITEMS.child(id).removeValue(completionBlock: {err, ref in
+                if err != nil {
+                        return
+                }
+                            //내 아이템에서 지우기
+                Api.MyItems.REF_MYITEMS.child(uid).child(id).removeValue(completionBlock: {er, ref in
+                        if er != nil {
+                            return
+                        }
+                        onSuccess()
+                    })
+
+                })
+
         })
     }
     
