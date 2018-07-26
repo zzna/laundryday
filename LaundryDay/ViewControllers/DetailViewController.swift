@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     var instantVC: UIViewController?
-
+    var uid: String?
     var itemId: String?
     var item: Clothes? {
         didSet {
@@ -72,6 +72,10 @@ class DetailViewController: UIViewController {
     func editingView() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailEditingViewController") as? DetailEditingViewController
         //vc?.delegate = self
+        vc?.clothesId = self.itemId
+        vc?.imageString = self.item?.imageString
+        vc?.uid = self.uid
+        
         self.instantVC = vc
         displayChildViewController(vc: vc!)
         view.addSubview((vc?.view)!)

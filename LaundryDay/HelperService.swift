@@ -22,18 +22,18 @@ class HelperService {
                 return
             }
             let productImgURL = metadata?.downloadURL()?.absoluteString
-            self.sendDataToDatabase(productImgURL: productImgURL!, productName: productName, onSuccess: onSuccess)
+            self.sendDataToDatabase(imageString: imageString,productImgURL: productImgURL!, productName: productName, onSuccess: onSuccess)
 
         }
     }
-    static func sendDataToDatabase(productImgURL:String, productName:String, onSuccess: @escaping ()->Void) {
+    static func sendDataToDatabase(imageString:String,productImgURL:String, productName:String, onSuccess: @escaping ()->Void) {
         let newClothesID = Api.Clothes.REF_ITEMS.childByAutoId().key
         let newClothesRef = Api.Clothes.REF_ITEMS.child(newClothesID)
         guard let currentUser = Api.User.CURRENT_USER else{
             return
     }
         let currentUserID = currentUser.uid
-        newClothesRef.setValue(["productImgUrl":productImgURL, "productName": productName, "uid": currentUserID /*, "isLiked": false*/], withCompletionBlock: {(error, ref) in
+        newClothesRef.setValue(["imageString": imageString, "productImgUrl":productImgURL, "productName": productName, "uid": currentUserID /*, "isLiked": false*/], withCompletionBlock: {(error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return

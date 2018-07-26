@@ -39,6 +39,10 @@ class ClosetViewController: UIViewController {
         print("viewDidLoad")
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
 
     
     
@@ -149,6 +153,8 @@ class ClosetViewController: UIViewController {
             let cell = sender as? ClosetCollectionViewCell
             let detailVC = segue.destination as! DetailViewController
             detailVC.itemId = cell?.item?.id
+            detailVC.uid = self.user.uid
+            
            
         }
     }

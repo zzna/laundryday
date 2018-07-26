@@ -14,6 +14,7 @@ class Clothes  {
     var uid: String?
     var id: String?
     var isLiked: Bool?
+    var imageString: String?
     //var isSelected: Bool?
     
 }
@@ -24,6 +25,7 @@ extension Clothes {
         clothes.productName = dict["productName"] as? String
         clothes.uid = dict["uid"] as? String
         clothes.id = key
+        clothes.imageString = dict["imageString"] as? String
         clothes.isLiked = dict["isLiked"] as? Bool
         //clothes.isSelected = false
         return clothes
