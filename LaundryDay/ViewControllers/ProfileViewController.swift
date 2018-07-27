@@ -65,14 +65,14 @@ class ProfileViewController: UIViewController {
 
 
 // 정아: 프로필 뷰 계정 정보
+
+
 extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return 1
     }
     
-    
-    //이건 사진넣기 기능 같음. photocell만들어주는 것.
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         return cell
