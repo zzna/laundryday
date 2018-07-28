@@ -13,21 +13,21 @@ class ProfileViewController: UIViewController {
     var currentUser: UserInfo?
     
     //드래그해서 아울렛 불러오면 오류가 나길래(프로필뷰를 찾을 수 없다) 그냥 연결 없이 쓰기만 했는데 해결됨... 언제 터질지 모름. 엑스코드를 믿지 말자.
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+    //0729 @IBOutlet weak var scrollView: UIViewController!
+    /*0729
     var user: UserInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
+        scrollView.dataSource = self
         fetchUser()
     
     }
     func fetchUser() { //this method want curring(?) current user information
         Api.User.observeCurrentUser{(user) in
             self.user=user
-            self.collectionView.reloadData()
+            self.scrollView.reloadData()
         }
-    }
+    }*/
         // Do any additional setup after loading the view.
     
     
@@ -66,12 +66,12 @@ class ProfileViewController: UIViewController {
 
 // 정아: 프로필 뷰 계정 정보
 
-
+/*
 extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return 1
     }
-    
+
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
@@ -79,9 +79,9 @@ extension ProfileViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerViewCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
+        let headerViewCell = colzlectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
         headerViewCell.user = self.user
         return headerViewCell
     }
 
-}
+}*/
