@@ -18,6 +18,8 @@
 		CC233A1C210AFEBF00F6DCDC /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A1B210AFEBF00F6DCDC /* NMapViewerSDK.framework */; };
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
+		CC7A2CFA210DCE6500FFF235 /* NaverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */; };
+		CC7A2CFC210DD80000FFF235 /* MoreNMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A2CFB210DD80000FFF235 /* MoreNMapViewController.swift */; };
 		CC825A532081D43800A4BDCC /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC825A522081D43800A4BDCC /* Start.storyboard */; };
 		CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A542081DE6800A4BDCC /* SignInViewController.swift */; };
 		CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC825A562081DE8800A4BDCC /* SignUpViewController.swift */; };
@@ -76,6 +78,8 @@
 		CC233A21210B078300F6DCDC /* naverMapForSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = naverMapForSwift.h; sourceTree = "<group>"; };
 		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CC77448A20B58C090086464A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaverMapViewController.swift; path = Laundryday/ViewControllers/NaverMapViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC7A2CFB210DD80000FFF235 /* MoreNMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreNMapViewController.swift; sourceTree = "<group>"; };
 		CC825A522081D43800A4BDCC /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		CC825A542081DE6800A4BDCC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CC825A562081DE8800A4BDCC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				CC825A622081E39A00A4BDCC /* ProfileViewController.swift */,
 				668900BF20C04B9300D673EC /* DetailViewController.swift */,
 				668900CE20C0842A00D673EC /* ClosetListViewController.swift */,
+				CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */,
+				CC7A2CFB210DD80000FFF235 /* MoreNMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -378,10 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7A2CFA210DCE6500FFF235 /* NaverMapViewController.swift in Sources */,
 				668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */,
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
 				CCF8E4AE21048809006CF986 /* AddClothesViewController.swift in Sources */,
+				CC7A2CFC210DD80000FFF235 /* MoreNMapViewController.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
 				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
