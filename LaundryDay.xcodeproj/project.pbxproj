@@ -31,7 +31,6 @@
 		CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC831C30208F1CAE002798A7 /* AuthService.swift */; };
 		CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2EA20AC8649006C04AB /* Clothes.swift */; };
 		CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */; };
-		CC934E70210C5EDF00EDC39A /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC934E6F210C5EDF00EDC39A /* ProfileInfoViewController.swift */; };
 		CCA8D65B20B3225400A33D90 /* ClothesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D65A20B3225400A33D90 /* ClothesApi.swift */; };
 		CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8D65E20B331D000A33D90 /* HelperService.swift */; };
 		CCC295E9207F93F80021BF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC295E8207F93F80021BF8E /* AppDelegate.swift */; };
@@ -90,7 +89,6 @@
 		CC831C30208F1CAE002798A7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CC92F2EA20AC8649006C04AB /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewCell.swift; sourceTree = "<group>"; };
-		CC934E6F210C5EDF00EDC39A /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInfoViewController.swift; path = Laundryday/Views/ProfileInfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		CCA8D65A20B3225400A33D90 /* ClothesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesApi.swift; sourceTree = "<group>"; };
 		CCA8D65E20B331D000A33D90 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		CCC295E5207F93F80021BF8E /* LaundryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaundryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +184,6 @@
 				CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */,
 				D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */,
 				668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */,
-				CC934E6F210C5EDF00EDC39A /* ProfileInfoViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 				CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */,
 				D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */,
 				66C5E3E620C1621E00314391 /* ClosetsApi.swift in Sources */,
-				CC934E70210C5EDF00EDC39A /* ProfileInfoViewController.swift in Sources */,
 				CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

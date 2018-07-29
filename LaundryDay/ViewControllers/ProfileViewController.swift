@@ -9,29 +9,63 @@
 import UIKit
 import ProgressHUD
 
-class ProfileViewController: UIViewController {
-    var currentUser: UserInfo?
+class ProfileViewController: UIViewController{
+    //정아 0729
     
-    //드래그해서 아울렛 불러오면 오류가 나길래(프로필뷰를 찾을 수 없다) 그냥 연결 없이 쓰기만 했는데 해결됨... 언제 터질지 모름. 엑스코드를 믿지 말자.
-    //0729 @IBOutlet weak var scrollView: UIViewController!
-    /*0729
-    var user: UserInfo!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        scrollView.dataSource = self
-        fetchUser()
     
-    }
-    func fetchUser() { //this method want curring(?) current user information
-        Api.User.observeCurrentUser{(user) in
-            self.user=user
-            self.scrollView.reloadData()
+    @IBOutlet weak var userInfoView : UIView!
+    @IBOutlet weak var userImage : UIImageView!
+    @IBOutlet weak var nameLabel : UILabel!
+    @IBOutlet weak var myPostsCount : UILabel!
+    @IBOutlet weak var myCommentsCount : UILabel!
+    @IBOutlet weak var myPublicClosetCount : UILabel!
+    @IBOutlet weak var myFriendsCount: UILabel!
+    
+    
+    var LabelName = String()
+    
+    var currentUser: UserInfo?{
+        didSet{
+            updateView()
         }
-    }*/
-        // Do any additional setup after loading the view.
+    }
+    
+    func updateView() {
+        self.nameLabel.text = currentUser?.userName
+        if let photoUrlString = currentUser?.profileImageUrl {
+            let photoUrl = URL(string: photoUrlString)
+            self.userImage.sd_setImage(with: photoUrl)
+        }
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        //userInfoView.dataSource = self
+        fetchUser()
+    }
+    
+    func fetchUser(){
+        Api.User.observeCurrentUser{(user) in
+            self.currentUser = user
+            //self.userInfoView.reloadData()
+        }
+    }
+    
+    //여기까지 정아 0729 프로필헤더뷰
+
+
     
     
     
+    
+
+    
+    
+    
+    
+    
+    
+
     @IBAction func logOutButton_TUI(_ sender: Any) {
        
         AuthService.logout(onSuccess: {let storyboard = UIStoryboard(name: "Start", bundle: nil)
@@ -47,7 +81,9 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+}
+
 
     /*
     // MARK: - Navigation
@@ -59,29 +95,4 @@ class ProfileViewController: UIViewController {
     }
     */
 
-    
-}
 
-
-
-// 정아: 프로필 뷰 계정 정보
-
-/*
-extension ProfileViewController : UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 1
-    }
-
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerViewCell = colzlectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderProfileCollectionReusableView", for: indexPath) as! HeaderProfileCollectionReusableView
-        headerViewCell.user = self.user
-        return headerViewCell
-    }
-
-}*/
