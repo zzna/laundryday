@@ -49,6 +49,18 @@ class DetailEditingViewController: UIViewController {
         }))
         self.present(actionSheet,animated: true,completion: nil)
     }
+    
+    //MARK: 추가된 부분(storyboard도 까먹지 않고 하기)
+    func addTapToEditImageView() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.moveToEditView))
+        deleteItemImageView.addGestureRecognizer(tapGesture)
+        deleteItemImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func moveToEditView() {
+        performSegue(withIdentifier: "AddClothesViewController", sender: self)
+        
+    }
 
     
 

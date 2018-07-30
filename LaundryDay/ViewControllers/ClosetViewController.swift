@@ -170,16 +170,9 @@ class ClosetViewController: UIViewController {
            
         }
     }
-    
-    
-    
-    
-    
-    
-
- 
-
 }
+
+
 
 //MARK: - collection view extension
 

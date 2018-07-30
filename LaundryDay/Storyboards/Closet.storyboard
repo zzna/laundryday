@@ -558,11 +558,20 @@
                     <connections>
                         <outlet property="deleteItemImageView" destination="jwu-7B-TXd" id="U1a-iV-FMJ"/>
                         <outlet property="editItemImageView" destination="oPj-1W-8eU" id="b1h-Ms-iFf"/>
+                        <segue destination="frm-EK-zCo" kind="show" identifier="AddClothesViewController" id="Q49-lm-33F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lly-sJ-QST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="2769.2653673163422"/>
+        </scene>
+        <!--AddClothesViewController-->
+        <scene sceneID="wrc-cE-paw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Closet" referencedIdentifier="AddClothesViewController" id="frm-EK-zCo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loU-kt-HPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="2769"/>
         </scene>
         <!--Add Clothes View Controller-->
         <scene sceneID="WBZ-bg-RFD">
