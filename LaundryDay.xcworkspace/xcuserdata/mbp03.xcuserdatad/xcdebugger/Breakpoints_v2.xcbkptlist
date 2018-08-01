@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LaundryDay/ViewControllers/SearchTheShopViewController.swift"
-            timestampString = "554807554.638961"
+            timestampString = "554811726.776975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "SearchTheShopViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -41,13 +41,15 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     //JF1pS2IjGb
     
     //https://openapi.naver.com/v1//v1/search/local.xml?query=SHOPNAME
+    //https://openapi.naver.com/v1/search/local.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&sort=random
     
     @IBAction func onSearch(_Sender: AnyObject) {
         if (queryText.text == "" ) {
+            print("내용없음")
             return
         }
-        
-        let urlString = "https://openapi.naver.com/v1//v1/search/local.xml?query=" + queryText.text!
+        print("실행됨")
+        let urlString = "https://openapi.naver.com/v1/search/local.xml?query=" + queryText.text!
         //URL 인코딩 반드시 해줄 것! (특수문자나 한글일 경우) : 인코딩을 해서 보내면 디코딩해서 해석하고 자료를 보내준다.
         let urlwithPercentEscapes = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         let url = URL(string: urlwithPercentEscapes!)
@@ -105,7 +107,6 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
         currentElement=elementName;
         if (elementName == "item") {
             item=LaundryShop()
-            //자꾸 오류났대 ㅠ
             item?.title = ""
             item?.roadAddress = ""
             //item?.telephone = ""
@@ -163,14 +164,14 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
         /*
         do {
             let data = ("<H3><font color='red'>"+row.title!+"</<font></h3>").data(using:String.Encoding.utf8)
-            let htmlAttrString = try NSAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            let htmlAttrString = try NSAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
             title?.attributedText = htmlAttrString
         } catch {
             print("An error occured")
             title?.text = row.title!
         }*/
-        title?.text = row.title
-        roadAddress?.text = row.roadAddress
+        title?.text = row.title!
+        roadAddress?.text = row.roadAddress!
         //telephone?.text = row.telephone!
         
         return cell!

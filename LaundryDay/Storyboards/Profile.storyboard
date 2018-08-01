@@ -276,7 +276,7 @@
         <!--Search The Shop View Controller-->
         <scene sceneID="cRi-ET-Djn">
             <objects>
-                <viewController id="d4W-DQ-MiR" customClass="SearchTheShopViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d4W-DQ-MiR" customClass="SearchTheShopViewController" customModule="LaundryDay" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YR9-Ua-MUa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,6 +342,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEn-QJ-a7d">
                                 <rect key="frame" x="321" y="91" width="30" height="30"/>
                                 <state key="normal" title="검색"/>
+                                <connections>
+                                    <action selector="onSearchWith_Sender:" destination="d4W-DQ-MiR" eventType="touchUpInside" id="DEP-Yz-yZH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
