@@ -9,14 +9,53 @@
 import UIKit
 import ProgressHUD
 
-class ProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class ProfileViewController: UIViewController{
+    //정아 0729
+    
+    
+    @IBOutlet weak var userInfoView : UIView!
+    @IBOutlet weak var userImage : UIImageView!
+    @IBOutlet weak var nameLabel : UILabel!
+    @IBOutlet weak var myPostsCount : UILabel!
+    @IBOutlet weak var myCommentsCount : UILabel!
+    @IBOutlet weak var myPublicClosetCount : UILabel!
+    @IBOutlet weak var myFriendsCount: UILabel!
+    @IBOutlet weak var searchTheLaundryShopButton: UIButton!
+    
+    
+    var LabelName = String()
+    
+    var currentUser: UserInfo?{
+        didSet{
+            updateView()
+        }
     }
     
+    func updateView() {
+        self.nameLabel.text = currentUser?.userName
+        if let photoUrlString = currentUser?.profileImageUrl {
+            let photoUrl = URL(string: photoUrlString)
+            self.userImage.sd_setImage(with: photoUrl)
+        }
+    }
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        //userInfoView.dataSource = self
+        fetchUser()
+    }
+    
+    func fetchUser(){
+        Api.User.observeCurrentUser{(user) in
+            self.currentUser = user
+            //self.userInfoView.reloadData()
+        }
+    }
+    
+    //여기까지 정아 0729 프로필헤더뷰
+
+ 
+
     @IBAction func logOutButton_TUI(_ sender: Any) {
        
         AuthService.logout(onSuccess: {let storyboard = UIStoryboard(name: "Start", bundle: nil)
@@ -32,7 +71,9 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+}
+
 
     /*
     // MARK: - Navigation
@@ -44,4 +85,4 @@ class ProfileViewController: UIViewController {
     }
     */
 
-}
+
