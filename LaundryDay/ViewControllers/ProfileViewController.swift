@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var myCommentsCount : UILabel!
     @IBOutlet weak var myPublicClosetCount : UILabel!
     @IBOutlet weak var myFriendsCount: UILabel!
+    @IBOutlet weak var searchTheLaundryShopButton: UIButton!
     
     
     var LabelName = String()
@@ -53,18 +54,7 @@ class ProfileViewController: UIViewController{
     
     //여기까지 정아 0729 프로필헤더뷰
 
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
+ 
 
     @IBAction func logOutButton_TUI(_ sender: Any) {
        

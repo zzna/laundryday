@@ -14,6 +14,27 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
    // @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var queryText: UITextField!
     
+    //@IBOutlet var searchingButton: UIButton!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /*
+        let button = UIButton(type: UIButtonType.system)
+        button.frame = CGRect(x: 50, y:100, width:150, height:30)
+        button.setTitle("검색", for: UIControlState.normal)
+        self.view.addSubview(button)
+        
+        button.addTarget(self, action: #selector(onSearch(_:)), for: .touchUpInside)
+        
+        */
+        //searchingButton.isEnabled = false
+        
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    
     //ClientID
     //w1PKeXUIDhM6E2GqUmgR
     //ClientSecret
@@ -159,11 +180,6 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
         NSLog("select %d", indexPath.row)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
 
     override func didReceiveMemoryWarning(){
