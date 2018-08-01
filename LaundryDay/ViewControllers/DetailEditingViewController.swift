@@ -19,8 +19,8 @@ class DetailEditingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTapToDeleteImageView()
+        addTapToEditImageView()
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -53,12 +53,13 @@ class DetailEditingViewController: UIViewController {
     //MARK: 추가된 부분(storyboard도 까먹지 않고 하기)
     func addTapToEditImageView() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.moveToEditView))
-        deleteItemImageView.addGestureRecognizer(tapGesture)
-        deleteItemImageView.isUserInteractionEnabled = true
+        editItemImageView.addGestureRecognizer(tapGesture)
+        editItemImageView.isUserInteractionEnabled = true
     }
     
     @objc func moveToEditView() {
-        performSegue(withIdentifier: "AddClothesViewController", sender: self)
+        print("move ??")
+        performSegue(withIdentifier: "EditClothesViewController", sender: self)
         
     }
 

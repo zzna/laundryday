@@ -41,6 +41,7 @@
 		D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301470920F74A4C000BB5CE /* SSCheckMark.swift */; };
 		D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */; };
 		D30286C320F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */; };
+		D30289F32111BB9700D725EB /* EditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30289F22111BB9700D725EB /* EditClothesViewController.swift */; };
 		D39B77022108752000C74FCB /* DetailEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39B77012108752000C74FCB /* DetailEditingViewController.swift */; };
 		D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9AAEF210086200004B4D9 /* TimeDelay.swift */; };
 		EB1C22131F99C043B11E17D1 /* Pods_LaundryDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */; };
@@ -85,6 +86,7 @@
 		D301470920F74A4C000BB5CE /* SSCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckMark.swift; sourceTree = "<group>"; };
 		D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetViewController.swift; sourceTree = "<group>"; };
 		D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetCollectionViewCell.swift; sourceTree = "<group>"; };
+		D30289F22111BB9700D725EB /* EditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClothesViewController.swift; sourceTree = "<group>"; };
 		D39B77012108752000C74FCB /* DetailEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditingViewController.swift; sourceTree = "<group>"; };
 		D3B9AAEF210086200004B4D9 /* TimeDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDelay.swift; sourceTree = "<group>"; };
 		E7DE90ADAC7410455027245B /* Pods-LaundryDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				CC825A602081E38900A4BDCC /* BoardViewController.swift */,
 				CC825A622081E39A00A4BDCC /* ProfileViewController.swift */,
 				668900BF20C04B9300D673EC /* DetailViewController.swift */,
+				D30289F22111BB9700D725EB /* EditClothesViewController.swift */,
 				D39B77012108752000C74FCB /* DetailEditingViewController.swift */,
 				CCD1C0932092FED1005F6885 /* AddClothesViewController.swift */,
 				668900CE20C0842A00D673EC /* ClosetListViewController.swift */,
@@ -363,6 +366,7 @@
 				D30286C320F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift in Sources */,
 				CCC295E9207F93F80021BF8E /* AppDelegate.swift in Sources */,
 				CC825A612081E38900A4BDCC /* BoardViewController.swift in Sources */,
+				D30289F32111BB9700D725EB /* EditClothesViewController.swift in Sources */,
 				66C5E3EA20C1744500314391 /* MyClosetsApi.swift in Sources */,
 				CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */,
 				CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */,
