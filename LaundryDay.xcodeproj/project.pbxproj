@@ -16,6 +16,8 @@
 		CC233A18210AFE9400F6DCDC /* ApiGatewayMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A17210AFE9400F6DCDC /* ApiGatewayMac.framework */; };
 		CC233A19210AFE9400F6DCDC /* ApiGatewayMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A17210AFE9400F6DCDC /* ApiGatewayMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC233A1C210AFEBF00F6DCDC /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A1B210AFEBF00F6DCDC /* NMapViewerSDK.framework */; };
+		CC39F03E211021EF00573235 /* SearchTheShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39F03D211021EF00573235 /* SearchTheShopViewController.swift */; };
+		CC39F04021114AD500573235 /* LaundryShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39F03F21114AD500573235 /* LaundryShop.swift */; };
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
 		CC7A2CFA210DCE6500FFF235 /* NaverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */; };
@@ -42,6 +44,7 @@
 		CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */; };
 		CCC83D6F20B304640031A766 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D6E20B304640031A766 /* UserApi.swift */; };
 		CCC83D7120B305EA0031A766 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC83D7020B305EA0031A766 /* UserInfo.swift */; };
+		CCE51161210ED90100C726B7 /* NSearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE51160210ED90100C726B7 /* NSearchApi.swift */; };
 		CCF8E4AE21048809006CF986 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF8E4AD21048809006CF986 /* AddClothesViewController.swift */; };
 		D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301470920F74A4C000BB5CE /* SSCheckMark.swift */; };
 		D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */; };
@@ -76,6 +79,8 @@
 		CC233A17210AFE9400F6DCDC /* ApiGatewayMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ApiGatewayMac.framework; sourceTree = "<group>"; };
 		CC233A1B210AFEBF00F6DCDC /* NMapViewerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapViewerSDK.framework; path = "../../maps.ios-master/Frameworks/NMapViewerSDK.framework"; sourceTree = "<group>"; };
 		CC233A21210B078300F6DCDC /* naverMapForSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = naverMapForSwift.h; sourceTree = "<group>"; };
+		CC39F03D211021EF00573235 /* SearchTheShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchTheShopViewController.swift; path = "/Users/mbp03/Desktop/zzz dvlpr/laundryday/LaundryDay/ViewControllers/SearchTheShopViewController.swift"; sourceTree = "<absolute>"; };
+		CC39F03F21114AD500573235 /* LaundryShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaundryShop.swift; path = Laundryday/LaundryShop.swift; sourceTree = SOURCE_ROOT; };
 		CC728F4820908962003B3805 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CC77448A20B58C090086464A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaverMapViewController.swift; path = Laundryday/ViewControllers/NaverMapViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -104,6 +109,7 @@
 		CCC83D6C20B2FEBB0031A766 /* MyItemsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsApi.swift; sourceTree = "<group>"; };
 		CCC83D6E20B304640031A766 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		CCC83D7020B305EA0031A766 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CCE51160210ED90100C726B7 /* NSearchApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSearchApi.swift; path = LaundryDay/NSearchApi.swift; sourceTree = SOURCE_ROOT; };
 		CCF8E4AD21048809006CF986 /* AddClothesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddClothesViewController.swift; path = ../../../../../Downloads/AddClothesViewController.swift; sourceTree = "<group>"; };
 		D301470920F74A4C000BB5CE /* SSCheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCheckMark.swift; sourceTree = "<group>"; };
 		D30286C020F60CCF0054D6B2 /* AddClothesToClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesToClosetViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				668900CE20C0842A00D673EC /* ClosetListViewController.swift */,
 				CC7A2CF9210DCE6500FFF235 /* NaverMapViewController.swift */,
 				CC7A2CFB210DD80000FFF235 /* MoreNMapViewController.swift */,
+				CC39F03D211021EF00573235 /* SearchTheShopViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 				CCC295F4207F93F90021BF8E /* Info.plist */,
 				CC825A702081E69400A4BDCC /* Storyboards */,
 				CC831C30208F1CAE002798A7 /* AuthService.swift */,
+				CCE51160210ED90100C726B7 /* NSearchApi.swift */,
 				CC728F4820908962003B3805 /* Config.swift */,
 				CCC83D6A20B2FEA30031A766 /* Api.swift */,
 				CCA8D65E20B331D000A33D90 /* HelperService.swift */,
@@ -237,6 +245,7 @@
 				D301470920F74A4C000BB5CE /* SSCheckMark.swift */,
 				66C5E3E520C1621E00314391 /* ClosetsApi.swift */,
 				CC233A21210B078300F6DCDC /* naverMapForSwift.h */,
+				CC39F03F21114AD500573235 /* LaundryShop.swift */,
 			);
 			path = LaundryDay;
 			sourceTree = "<group>";
@@ -403,6 +412,7 @@
 				668900C020C04B9300D673EC /* DetailViewController.swift in Sources */,
 				CCC83D6B20B2FEA30031A766 /* Api.swift in Sources */,
 				CCC83D7120B305EA0031A766 /* UserInfo.swift in Sources */,
+				CC39F03E211021EF00573235 /* SearchTheShopViewController.swift in Sources */,
 				CC825A632081E39A00A4BDCC /* ProfileViewController.swift in Sources */,
 				D30286C320F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift in Sources */,
 				CCC295E9207F93F80021BF8E /* AppDelegate.swift in Sources */,
@@ -411,7 +421,9 @@
 				CC92F2EB20AC8649006C04AB /* Clothes.swift in Sources */,
 				CC831C31208F1CAE002798A7 /* AuthService.swift in Sources */,
 				D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */,
+				CCE51161210ED90100C726B7 /* NSearchApi.swift in Sources */,
 				66C5E3E620C1621E00314391 /* ClosetsApi.swift in Sources */,
+				CC39F04021114AD500573235 /* LaundryShop.swift in Sources */,
 				CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

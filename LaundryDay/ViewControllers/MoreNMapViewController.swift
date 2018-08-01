@@ -53,7 +53,7 @@ class NMapViewResources: NSObject {
 
 //본 코드 시작
 
-class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOverlayDelegate, NMapLocationManagerDelegate {
+class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOverlayDelegate, NMapLocationManagerDelegate, MMapReverseGeocoderDelegate {
     
     var mapView: NMapView?
     
@@ -79,6 +79,8 @@ class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOver
         if let mapView = mapView {
             // set the delegate for map view
             mapView.delegate = self
+            //주소 표시하기
+            mapView.reverseGeocoderDelegate = self
             
             // set the application api key for Open MapViewer Library
             mapView.setClientId("w1PKeXUIDhM6E2GqUmgR")
@@ -129,12 +131,29 @@ class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOver
         mapView?.viewDidDisappear()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        mapView?.viewDidAppear()
+        
+        //주소 표시하기
+        requestAddressByCoordination(NGeoPoint(longitude: 126.978371, latitude: 37.5666091))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        mapView?.viewWillDisappear()
+        
+        stopLocationUpdating()
+    }
+
     
     
     
     
     
-    
+    // MARK: - NMapViewDelegate Methods
     
     open func onMapView(_ mapView: NMapView!, initHandler error: NMapError!) {
         if (error == nil) { // success
@@ -149,52 +168,90 @@ class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOver
         }
     }
     
-    /*
-    public func onMapView(_ mapView: NMapView!, initHandler error: NMapError!) {
-        if (error == nil) { // success
-            // set map center and level
-            mapView.setMapCenter(NGeoPoint(longitude:126.978371, latitude:37.5666091), atLevel:11)
+    open func onMapView(_ mapView: NMapView!, touchesEnded touches: Set<AnyHashable>!, with event: UIEvent!) {
+        
+        if let touch = event.allTouches?.first {
+            // Get the specific point that was touched
+            let scrPoint = touch.location(in: mapView)
             
-            // set for retina display
-            mapView.setMapEnlarged(true, mapHD: true)
-        } else { // fail
-            print("onMapView:initHandler: \(error.description)")
+            print("scrPoint: \(scrPoint)")
+            print("to: \(mapView.fromPoint(scrPoint))")
+            requestAddressByCoordination(mapView.fromPoint(scrPoint))
         }
-    }*/
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        mapView?.viewDidAppear()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        mapView?.viewWillDisappear()
-        
-        stopLocationUpdating()
-    }
+  
 
-    
     
     // MARK: - NMapPOIdataOverlayDelegate
     
     open func onMapOverlay(_ poiDataOverlay: NMapPOIdataOverlay!, imageForOverlayItem poiItem: NMapPOIitem!, selected: Bool) -> UIImage! {
-        return NMapViewResources.imageWithType(poiItem.poiFlagType, selected: selected) //nil
+        return NMapViewResources.imageWithType(poiItem.poiFlagType, selected: selected); //;붙임 갑자기(주소)
     }
     
     open func onMapOverlay(_ poiDataOverlay: NMapPOIdataOverlay!, anchorPointWithType poiFlagType: NMapPOIflagType) -> CGPoint {
-        return NMapViewResources.anchorPoint(withType: poiFlagType) //CGPoint(x: 0, y: 0)
+        return NMapViewResources.anchorPoint(withType: poiFlagType)
     }
     
     open func onMapOverlay(_ poiDataOverlay: NMapPOIdataOverlay!, calloutOffsetWithType poiFlagType: NMapPOIflagType) -> CGPoint {
-        return CGPoint.zero //CGPoint(x: 0, y: 0)
+        return CGPoint.zero
     }
     
     open func onMapOverlay(_ poiDataOverlay: NMapPOIdataOverlay!, imageForCalloutOverlayItem poiItem: NMapPOIitem!, constraintSize: CGSize, selected: Bool, imageForCalloutRightAccessory: UIImage!, calloutPosition: UnsafeMutablePointer<CGPoint>!, calloutHit calloutHitRect: UnsafeMutablePointer<CGRect>!) -> UIImage! {
         return nil
     }
+    
+    
+    // MARK: - MMapReverseGeocoderDelegate Methods
+    
+    open func location(_ location: NGeoPoint, didFind placemark: NMapPlacemark!) {
+        let address = placemark.address
+        
+        self.title = address
+        
+        let alert = UIAlertController(title: "ReverseGeocoder", message: address, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    open func location(_ location: NGeoPoint, didFailWithError error: NMapError!) {
+        print("location:(\(location.longitude), \(location.latitude)) didFailWithError: \(error.description)")
+    }
+    
+    // MARK: -
+    
+    func requestAddressByCoordination(_ point: NGeoPoint) {
+        mapView?.findPlacemark(atLocation: point)
+        setMarker(point)
+    }
+    
+    let UserFlagType: NMapPOIflagType = NMapPOIflagTypeReserved + 1
+    
+    func setMarker(_ point: NGeoPoint) {
+        
+        clearOverlay()
+        
+        if let mapOverlayManager = mapView?.mapOverlayManager {
+            
+            // create POI data overlay
+            if let poiDataOverlay = mapOverlayManager.newPOIdataOverlay() {
+                
+                poiDataOverlay.initPOIdata(1)
+                
+                poiDataOverlay.addPOIitem(atLocation: point, title: "마커 1", type: UserFlagType, iconIndex: 0, with: nil)
+                
+                poiDataOverlay.endPOIdata()
+            }
+        }
+    }
+    
+    func clearOverlay() {
+        if let mapOverlayManager = mapView?.mapOverlayManager {
+            mapOverlayManager.clearOverlay()
+        }
+    }
+    
+    
     
     // MARK: - NMapLocationManagerDelegate Methods
     
@@ -411,23 +468,7 @@ class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOver
         }
     }
     
-    /*
-    //현재위치 이동하기
-    if let lm = NMapLocationManager.getSharedInstance() {
-        // set delegate
-        lm.setDelegate(self)
-        
-        // start updating location
-        lm.startContinuousLocationInfo()
-        
-        mapView?.setAutoRotateEnabled(true, animate: true)
-        
-        // start updating heading
-        lm.startUpdatingHeading()
-    } 
-    
-    
- */
+}
 
    
     
@@ -442,4 +483,3 @@ class MoreNMapViewController: UIViewController,NMapViewDelegate, NMapPOIdataOver
     }
     */
 
-}
