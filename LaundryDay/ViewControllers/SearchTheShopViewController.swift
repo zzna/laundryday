@@ -104,7 +104,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     var item : LaundryShop? = nil
     
     //태그가 시작되는 시점에 호출
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURL: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         currentElement=elementName;
         if (elementName == "item") {
             item=LaundryShop()
@@ -118,11 +118,13 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     
     //태그가 끝나느 시점에 호출
     //아이템 객체를 리스트라는 동적 배열에 집어넣기
-    func parser(_parser: XMLParser, didEndElement elementName: String, namespaceURL: String?, qualifiedName qname: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qname: String?) {
         currentElement="";
         if (elementName=="item"){
             list.append(self.item!)
-            ShopList.reloadData()
+            DispatchQueue.main.async {
+                self.ShopList.reloadData()
+            }
         }
     }
     
@@ -159,7 +161,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
         //let telephone = cell!.viewWithTag(103) as? UILabel
         
         //몇번째 값을 가져다 쓰는지!
-        let row = self.list[indexPath.row];
+        let row = self.list[indexPath.row]
         
         //출력할때 html태그를 이용해 좀 더 formating된 형태로 출력하고자! 혹시 오류가 발생하면 그냥 뺴고 텍스트만 집어넣어라.
         /*
@@ -174,7 +176,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
         title?.text = row.title!
         roadAddress?.text = row.roadAddress!
         //telephone?.text = row.telephone!
-        
+        print(self.list[0].title)
         return cell!
     }
     

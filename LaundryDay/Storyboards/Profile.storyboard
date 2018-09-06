@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ui-SC-d2S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ui-SC-d2S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -281,7 +281,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-Bd-BPA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-Bd-BPA">
                                 <rect key="frame" x="0.0" y="140" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -291,11 +291,11 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="ikP-aO-Qkj"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="243" id="mnE-hx-P2r" customClass="SearchTheShopTableViewCell" customModule="LaundryDay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="243"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="110" id="mnE-hx-P2r">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="tableview" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mnE-hx-P2r" id="4OY-s2-ozz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="242.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="서울시 동작구 만양로 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozL-we-lML">
@@ -318,6 +318,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="shopLoadAddressLabel" destination="ozL-we-lML" id="qo9-Bk-xIV"/>
@@ -330,7 +331,7 @@
                                     <outlet property="delegate" destination="d4W-DQ-MiR" id="fw3-3G-AJN"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m24-v7-XlT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m24-v7-XlT">
                                 <rect key="frame" x="16" y="92" width="276" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NXm-pG-2ms"/>
@@ -339,8 +340,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEn-QJ-a7d">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEn-QJ-a7d">
                                 <rect key="frame" x="321" y="91" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6fL-R0-ei5"/>
+                                </constraints>
                                 <state key="normal" title="검색"/>
                                 <connections>
                                     <action selector="onSearchWith_Sender:" destination="d4W-DQ-MiR" eventType="touchUpInside" id="DEP-Yz-yZH"/>
@@ -353,6 +357,7 @@
                             <constraint firstItem="yEn-QJ-a7d" firstAttribute="leading" secondItem="m24-v7-XlT" secondAttribute="trailing" constant="29" id="22h-eT-Oy2"/>
                             <constraint firstItem="8Je-Bd-BPA" firstAttribute="leading" secondItem="Ce6-qB-WLw" secondAttribute="leading" id="C2u-TI-YYe"/>
                             <constraint firstItem="m24-v7-XlT" firstAttribute="top" secondItem="Ce6-qB-WLw" secondAttribute="top" constant="28" id="Jgp-L7-lfg"/>
+                            <constraint firstItem="8Je-Bd-BPA" firstAttribute="top" secondItem="m24-v7-XlT" secondAttribute="bottom" constant="18" id="M8n-JY-Lk4"/>
                             <constraint firstItem="8Je-Bd-BPA" firstAttribute="leading" secondItem="Ce6-qB-WLw" secondAttribute="leading" id="ahN-1L-yAM"/>
                             <constraint firstItem="8Je-Bd-BPA" firstAttribute="bottom" secondItem="Ce6-qB-WLw" secondAttribute="bottom" id="eaE-Fw-luA"/>
                             <constraint firstItem="m24-v7-XlT" firstAttribute="leading" secondItem="Ce6-qB-WLw" secondAttribute="leading" constant="16" id="gcL-Eh-O4P"/>
@@ -373,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyP-Wx-mHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4346" y="1912"/>
+            <point key="canvasLocation" x="4344.8000000000002" y="1911.9940029985009"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZBN-ix-FfV">
