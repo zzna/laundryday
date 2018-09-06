@@ -51,7 +51,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             return
         }
         print("실행됨")
-        let urlString = "https://openapi.naver.com/v1/search/local.xml?query=" + queryText.text!
+        let urlString = "https://openapi.naver.com/v1/search/local.xml?query=" + queryText.text! + " 세탁"
         //URL 인코딩 반드시 해줄 것! (특수문자나 한글일 경우) : 인코딩을 해서 보내면 디코딩해서 해석하고 자료를 보내준다.
         let urlwithPercentEscapes = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         let url = URL(string: urlwithPercentEscapes!)
@@ -88,15 +88,23 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             if success{
                 print("parse success!")
                 print(self.strXMLData)
+                DispatchQueue.main.async {
+                    self.ShopList.reloadData()
+                }
+                
                 //  IblNameData.text=strXMLData
             } else {
                 print("parse failure!")
             }
+            
             //let json = try! JSONSerialization.jsonObject(with: data, options: [])
             //print(json)
         }
         task.resume()
+        
+
     }
+    
     
     //XML delegate
     var currentElement : String? = ""
@@ -111,6 +119,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             item?.title = ""
             item?.roadAddress = ""
             //item?.telephone = ""
+            //item?.description = ""
             //item?.mapx = 0.0
             //item?.mapy = 0.0
         }
@@ -120,12 +129,12 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     //아이템 객체를 리스트라는 동적 배열에 집어넣기
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qname: String?) {
         currentElement="";
+        
         if (elementName=="item"){
-            list.append(self.item!)
-            DispatchQueue.main.async {
-                self.ShopList.reloadData()
-            }
+            self.list.append(self.item!)
+         
         }
+        
     }
     
     //태그와 태그 사이의 값 추출할때 호출 . 각 태그란 여기서 title, roadAddress, telephone
@@ -134,7 +143,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             if (currentElement == "title"){
                 item!.title! = item!.title! + string
             }else if (currentElement == "roadAddress"){
-                self.item!.roadAddress! = self.item!.roadAddress!+string
+                self.item!.roadAddress! = self.item!.roadAddress! + string
             }
         }
     }
@@ -150,15 +159,14 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count //아이템 갯수. 검색된 갯수만큼 출력하는 것
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     //특정 항목에 대한 셀 정보를 출력할 때. 각 몇번째 항목인지가 indexpath를 이용해 불러지고, indexpath안의 row로 ...
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as UITableViewCell?
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ShopTableViewCell
         
-        //여기의 태그값 101, 102, 103은 각 레이블 네번쨰 오른쪾 하이어라키-view-tag에 일치하게 들어가야 함.
-        let title = cell!.viewWithTag(101) as? UILabel
-        let roadAddress = cell!.viewWithTag(102) as? UILabel
-        //let telephone = cell!.viewWithTag(103) as? UILabel
+
         
         //몇번째 값을 가져다 쓰는지!
         let row = self.list[indexPath.row]
@@ -173,11 +181,10 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             print("An error occured")
             title?.text = row.title!
         }*/
-        title?.text = row.title!
-        roadAddress?.text = row.roadAddress!
+        cell.laundryShop = row
         //telephone?.text = row.telephone!
-        print(self.list[0].title)
-        return cell!
+
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

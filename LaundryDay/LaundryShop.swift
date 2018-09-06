@@ -37,9 +37,7 @@ import Foundation
 */
 class LaundryShop {
     //init(){}
-    init(){
-        
-    }
+    
     var title: String?
     var roadAddress: String?
     var telephone : String?
