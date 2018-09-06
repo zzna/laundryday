@@ -19,6 +19,8 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ShopList.dataSource = self
+        ShopList.delegate = self
         /*
         let button = UIButton(type: UIButtonType.system)
         button.frame = CGRect(x: 50, y:100, width:150, height:30)
@@ -93,7 +95,6 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
             //let json = try! JSONSerialization.jsonObject(with: data, options: [])
             //print(json)
         }
-        
         task.resume()
     }
     
