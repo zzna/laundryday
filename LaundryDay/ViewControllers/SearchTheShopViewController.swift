@@ -46,6 +46,7 @@ class SearchTheShopViewController: UIViewController, UITableViewDelegate, UITabl
     //https://openapi.naver.com/v1/search/local.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&sort=random
     
     @IBAction func onSearch(_Sender: AnyObject) {
+        list.removeAll()
         if (queryText.text == "" ) {
             print("내용없음")
             return
