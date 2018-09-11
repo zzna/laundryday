@@ -23,6 +23,7 @@ class ClosetViewController: UIViewController {
     var user: UserInfo!
     var items = [Clothes]()
     var closetId: String = "All"
+    var isShowingLikeItems = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,8 @@ class ClosetViewController: UIViewController {
         checkClosetId(closetID: closetId)
         
         collectionView.isUserInteractionEnabled = true
-
+        
+        configureLikeList()
         
         
         print("viewDidLoad")
@@ -76,10 +78,19 @@ class ClosetViewController: UIViewController {
         }
         Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childAdded, with: {snapshot in
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
-                
-                self.items.append(clothes)
-                self.collectionView.reloadData()
-                print("fetchMyItems reloadData")
+                if self.isShowingLikeItems {
+                    if clothes.isLiked != nil && clothes.isLiked! {
+                        self.items.append(clothes)
+                        self.collectionView.reloadData()
+                    } else {
+                        print("no items")
+                        self.collectionView.reloadData()
+                    }
+                } else {
+                    self.items.append(clothes)
+                    self.collectionView.reloadData()
+                }
+
             })
         })
         Api.MyItems.REF_MYITEMS.child(currentUser.uid).observe(.childRemoved, with: {snap in
@@ -96,10 +107,19 @@ class ClosetViewController: UIViewController {
 
         Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childAdded, with: { snapshot in
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
-                
-                self.items.append(clothes)
-                self.collectionView.reloadData()
-                print("fetchItemsInCloset reloadData")
+                if self.isShowingLikeItems {
+                    if clothes.isLiked != nil && clothes.isLiked! {
+                        self.items.append(clothes)
+                        self.collectionView.reloadData()
+                    } else {
+                        print("no items")
+                        self.collectionView.reloadData()
+                    }
+                } else {
+                    self.items.append(clothes)
+                    self.collectionView.reloadData()
+                }
+
             })
         })
         Api.Closets.REF_CLOSETS.child(closetId).child("items").observe(.childRemoved, with: {snap in
@@ -145,18 +165,25 @@ class ClosetViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.likeList))
         likeListBtn.addGestureRecognizer(tapGesture)
         likeListBtn.isUserInteractionEnabled = true
+        likeListBtn.setImage(UIImage(named: "like"), for: .normal)
+        isShowingLikeItems = false
+        
     }
     func configureAllList() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.allList))
         likeListBtn.addGestureRecognizer(tapGesture)
         likeListBtn.isUserInteractionEnabled = true
+        likeListBtn.setImage(UIImage(named: "likeSelected"), for: .normal)
+        isShowingLikeItems = true
     }
     @objc func likeList() {
-        
+        checkClosetId(closetID: closetId)
+        configureAllList()
         
     }
     @objc func allList() {
-        
+        checkClosetId(closetID: closetId)
+        configureLikeList()
     }
     
     
