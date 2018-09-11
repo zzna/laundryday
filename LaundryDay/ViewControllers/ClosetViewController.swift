@@ -80,14 +80,14 @@ class ClosetViewController: UIViewController {
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
                 if self.isShowingLikeItems {
                     if clothes.isLiked != nil && clothes.isLiked! {
-                        self.items.append(clothes)
+                        self.items.insert(clothes, at: 0)
                         self.collectionView.reloadData()
                     } else {
                         print("no items")
                         self.collectionView.reloadData()
                     }
                 } else {
-                    self.items.append(clothes)
+                    self.items.insert(clothes, at: 0)
                     self.collectionView.reloadData()
                 }
 
@@ -109,14 +109,14 @@ class ClosetViewController: UIViewController {
             Api.Clothes.observeClothes(withId: snapshot.key, completion: {clothes in
                 if self.isShowingLikeItems {
                     if clothes.isLiked != nil && clothes.isLiked! {
-                        self.items.append(clothes)
+                        self.items.insert(clothes, at: 0)
                         self.collectionView.reloadData()
                     } else {
                         print("no items")
                         self.collectionView.reloadData()
                     }
                 } else {
-                    self.items.append(clothes)
+                    self.items.insert(clothes, at: 0)
                     self.collectionView.reloadData()
                 }
 
