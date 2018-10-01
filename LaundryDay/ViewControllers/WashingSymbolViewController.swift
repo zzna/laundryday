@@ -17,7 +17,11 @@ class WashingSymbolViewController: UIViewController {
         self.tableView.tableHeaderView = headerView
 
     }
+    @IBAction func cancelBtn(_ sender: Any) {
+        ClosetListViewController.removeViewController(childVC: self)
 
+    }
+    
     var delegate: WashingSymbolViewControllerDelegate?
 
 }
