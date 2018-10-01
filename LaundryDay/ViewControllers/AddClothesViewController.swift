@@ -14,6 +14,9 @@ class AddClothesViewController: UIViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameTextField: UITextField!
+    
+    @IBOutlet weak var symbolStack: UIStackView!
+    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     
@@ -21,11 +24,18 @@ class AddClothesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //사진선택
         let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImage))
         productImageView.addGestureRecognizer(tapGesture)
         productImageView.isUserInteractionEnabled = true
-        // Do any additional setup after loading the view.
+        
+        //세탁기호선택
+        let tapGestureSymbol =  UITapGestureRecognizer(target: self, action: #selector(self.chooseWashingSymbols))
+        symbolStack.addGestureRecognizer(tapGestureSymbol)
+        symbolStack.isUserInteractionEnabled = true
+        
+        
     }
 
     @objc func handleSelectImage() {
@@ -50,6 +60,28 @@ class AddClothesViewController: UIViewController {
         self.present(actionSheet,animated: true,completion: nil)
         
     }
+    
+    @objc func chooseWashingSymbols() {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "WashingSymbolViewController") as? WashingSymbolViewController
+        vc?.delegate = self
+        displayChildViewController(vc: vc!)
+        view.addSubview((vc?.view)!)
+        vc?.didMove(toParentViewController: self)
+        vc?.view.frame.size.width = 300
+        vc?.view.frame.size.height = 500
+        vc?.view.center = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
+        
+    }
+    func displayChildViewController(vc: UIViewController) {
+        addChildViewController(vc)
+        self.view.addSubview(vc.view)
+        vc.didMove(toParentViewController: self)
+    }
+    
+    
+    
+    
     
     @IBAction func uploadButton_TUI(_ sender: Any) {
         ProgressHUD.show("Waiting")
@@ -89,6 +121,12 @@ class AddClothesViewController: UIViewController {
 }
 protocol AddClothesViewControllerDelegate {
     func changeClosetIdToAll(id: String)
+}
+
+extension AddClothesViewController: WashingSymbolViewControllerDelegate {
+    func selectedValue(value: String) {
+        var value = value
+    }
 }
 
 extension AddClothesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

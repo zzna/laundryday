@@ -16,7 +16,12 @@ class WashingSymbolViewController: UIViewController {
 
     }
 
+    var delegate: WashingSymbolViewControllerDelegate?
 
+}
+
+protocol WashingSymbolViewControllerDelegate {
+    func selectedValue(value: String)
 }
 
 extension WashingSymbolViewController: UITableViewDelegate, UITableViewDataSource {

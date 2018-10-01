@@ -825,6 +825,7 @@
                         <outlet property="cancelButton" destination="qDD-BX-HAG" id="HWA-fp-cFp"/>
                         <outlet property="productImageView" destination="r1X-8t-0I0" id="HE0-4N-KiD"/>
                         <outlet property="productNameTextField" destination="g24-bV-kqc" id="2C6-Zt-PCI"/>
+                        <outlet property="symbolStack" destination="Bel-mR-baM" id="ntP-Bk-ncC"/>
                         <outlet property="uploadButton" destination="6M3-tt-uOg" id="8a7-bc-JaR"/>
                     </connections>
                 </viewController>
@@ -835,7 +836,7 @@
         <!--Washing Symbol View Controller-->
         <scene sceneID="hHA-m9-eWU">
             <objects>
-                <viewController id="HXB-fg-hsM" customClass="WashingSymbolViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WashingSymbolViewController" id="HXB-fg-hsM" customClass="WashingSymbolViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZnB-ag-87W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -844,7 +845,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WashingSymbolTableViewCell" rowHeight="96" id="Xlo-Cs-pqt" customClass="WashingSymbolTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WashingSymbolTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WashingSymbolTableViewCell" rowHeight="96" id="Xlo-Cs-pqt" customClass="WashingSymbolTableViewCell" customModule="LaundryDay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xlo-Cs-pqt" id="jZ4-wj-D7i">
