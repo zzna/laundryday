@@ -10,9 +10,11 @@ import UIKit
 
 class WashingSymbolViewController: UIViewController {
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.tableHeaderView = headerView
 
     }
 
@@ -33,5 +35,7 @@ extension WashingSymbolViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "WashingSymbolTableViewCell", for: indexPath) as! WashingSymbolTableViewCell
         return cell
     }
+    
+    
     
 }
