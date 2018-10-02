@@ -12,9 +12,14 @@ class WashingSymbolViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var themeLabel: UILabel!
+    
+    var theme: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableHeaderView = headerView
+        themeLabel.text = theme
 
     }
     @IBAction func cancelBtn(_ sender: Any) {

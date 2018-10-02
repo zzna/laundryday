@@ -15,7 +15,11 @@ class AddClothesViewController: UIViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameTextField: UITextField!
     
-    @IBOutlet weak var symbolStack: UIStackView!
+    @IBOutlet weak var drySymbol: UIImageView!
+    @IBOutlet weak var washableSymbol: UIImageView!
+    @IBOutlet weak var ironingSymbol: UIImageView!
+    @IBOutlet weak var dryCleaningSymbol: UIImageView!
+    @IBOutlet weak var bleachingSymbol: UIImageView!
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
@@ -31,11 +35,29 @@ class AddClothesViewController: UIViewController {
         productImageView.isUserInteractionEnabled = true
         
         //세탁기호선택
-        let tapGestureSymbol =  UITapGestureRecognizer(target: self, action: #selector(self.chooseWashingSymbols))
-        symbolStack.addGestureRecognizer(tapGestureSymbol)
-        symbolStack.isUserInteractionEnabled = true
+        addtapGestureInSymbols()
         
         
+    }
+    func addtapGestureInSymbols() {
+        let tapGestureSymbolDry =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolWash =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolIron =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolClean =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolBleach =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+       
+        
+        drySymbol.addGestureRecognizer(tapGestureSymbolDry)
+        drySymbol.isUserInteractionEnabled = true
+        washableSymbol.addGestureRecognizer(tapGestureSymbolWash)
+        washableSymbol.isUserInteractionEnabled = true
+        ironingSymbol.addGestureRecognizer(tapGestureSymbolIron)
+        ironingSymbol.isUserInteractionEnabled = true
+        dryCleaningSymbol.addGestureRecognizer(tapGestureSymbolClean)
+        dryCleaningSymbol.isUserInteractionEnabled = true
+        bleachingSymbol.addGestureRecognizer(tapGestureSymbolBleach)
+        bleachingSymbol.isUserInteractionEnabled = true
+ 
     }
 
     @objc func handleSelectImage() {
@@ -61,22 +83,34 @@ class AddClothesViewController: UIViewController {
         
     }
     
-    @objc func chooseWashingSymbols() {
-        
+    @objc func chooseWashingSymbols(sender: UITapGestureRecognizer) {
+        let gesture = sender.view
+        let tag = gesture?.tag
+        let theme: String?
         let vc = storyboard?.instantiateViewController(withIdentifier: "WashingSymbolViewController") as? WashingSymbolViewController
         vc?.delegate = self
-        displayChildViewController(vc: vc!)
+        switch tag {
+        case 11:
+            theme = "dry"
+        case 12:
+            theme = "washable"
+        case 13:
+            theme = "ironing"
+        case 14:
+            theme = "dryCleaning"
+        case 15:
+            theme = "bleaching"
+        default:
+            theme = "none"
+        }
+        vc?.theme = theme
+        addChildViewController(vc!)
         view.addSubview((vc?.view)!)
         vc?.didMove(toParentViewController: self)
         vc?.view.frame.size.width = 300
         vc?.view.frame.size.height = 500
         vc?.view.center = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
         
-    }
-    func displayChildViewController(vc: UIViewController) {
-        addChildViewController(vc)
-        self.view.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
     }
     
     
@@ -119,8 +153,8 @@ class AddClothesViewController: UIViewController {
     
 
 }
-protocol AddClothesViewControllerDelegate {
-    func changeClosetIdToAll(id: String)
+@objc protocol AddClothesViewControllerDelegate {
+    @objc optional func changeClosetIdToAll(id: String)
 }
 
 extension AddClothesViewController: WashingSymbolViewControllerDelegate {
