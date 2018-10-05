@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46A5DEB72163BAC20069082D /* WashSymbolDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */; };
 		46EA794E2162281F003FEEFB /* WashingSymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */; };
 		46EA79502162284F003FEEFB /* WashingSymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */; };
 		46F58089214123DD00B6BCA0 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F58088214123DD00B6BCA0 /* AddClothesViewController.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
+		46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSymbolDescriptions.swift; sourceTree = "<group>"; };
 		46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolViewController.swift; sourceTree = "<group>"; };
 		46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolTableViewCell.swift; sourceTree = "<group>"; };
 		46F58088214123DD00B6BCA0 /* AddClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				66C5E3E720C167F300314391 /* Closet.swift */,
 				CC92F2EA20AC8649006C04AB /* Clothes.swift */,
 				CCC83D7020B305EA0031A766 /* UserInfo.swift */,
+				46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
 				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
+				46A5DEB72163BAC20069082D /* WashSymbolDescriptions.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
 				D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */,
 				D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */,

@@ -26,7 +26,6 @@ class WashingSymbolViewController: UIViewController {
         ClosetListViewController.removeViewController(childVC: self)
 
     }
-    
     var delegate: WashingSymbolViewControllerDelegate?
 
 }
