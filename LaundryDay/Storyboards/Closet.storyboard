@@ -865,27 +865,44 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WashingSymbolTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WashingSymbolTableViewCell" rowHeight="96" id="Xlo-Cs-pqt" customClass="WashingSymbolTableViewCell" customModule="LaundryDay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WashingSymbolTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WashingSymbolTableViewCell" rowHeight="107" id="Xlo-Cs-pqt" customClass="WashingSymbolTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xlo-Cs-pqt" id="jZ4-wj-D7i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHu-lA-Jm3">
-                                                    <rect key="frame" x="15" y="15" width="70" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oHu-lA-Jm3">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="G0c-Rb-nww"/>
+                                                        <constraint firstAttribute="width" constant="70" id="Xge-9M-99u"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-u1-RCZ">
-                                                    <rect key="frame" x="93" y="11" width="240" height="74"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-u1-RCZ">
+                                                    <rect key="frame" x="86" y="8" width="240" height="74"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="74" id="mRr-xi-g1N"/>
+                                                    </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ifg-u1-RCZ" secondAttribute="trailing" constant="49" id="IKk-5X-sh8"/>
+                                                <constraint firstItem="ifg-u1-RCZ" firstAttribute="top" secondItem="oHu-lA-Jm3" secondAttribute="top" id="Mrf-YS-ykb"/>
+                                                <constraint firstItem="ifg-u1-RCZ" firstAttribute="leading" secondItem="oHu-lA-Jm3" secondAttribute="trailing" constant="8" id="Mtx-FR-muW"/>
+                                                <constraint firstItem="oHu-lA-Jm3" firstAttribute="leading" secondItem="jZ4-wj-D7i" secondAttribute="leading" constant="8" id="amD-1A-0eH"/>
+                                                <constraint firstAttribute="bottom" secondItem="oHu-lA-Jm3" secondAttribute="bottom" constant="28.5" id="lUK-Zk-bPV"/>
+                                                <constraint firstItem="oHu-lA-Jm3" firstAttribute="top" secondItem="jZ4-wj-D7i" secondAttribute="top" constant="8" id="wBV-Lm-0gy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="symbolDescription" destination="ifg-u1-RCZ" id="OBb-U1-ShH"/>
+                                            <outlet property="symbolImage" destination="oHu-lA-Jm3" id="b4C-hn-aH7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

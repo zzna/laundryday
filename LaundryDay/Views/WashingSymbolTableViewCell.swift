@@ -10,10 +10,30 @@ import UIKit
 
 class WashingSymbolTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var symbolImage: UIImageView!
+    @IBOutlet weak var symbolDescription: UITextView!
+    var key: String?
+    var value: String?
+    var list: [String:String]?{
+        didSet {
+            changeToString()
+            updateView()
+        }
     }
+    func changeToString() {
+        list?.forEach {
+            ref in
+            key = ref.key
+            value = ref.value
+        }
+    }
+    
+    func updateView() {
+        symbolImage.image = UIImage(named: key!)
+        symbolDescription.text = value!
+        symbolDescription.isUserInteractionEnabled = false
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

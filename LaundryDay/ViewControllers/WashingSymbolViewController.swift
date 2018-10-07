@@ -15,11 +15,19 @@ class WashingSymbolViewController: UIViewController {
     @IBOutlet weak var themeLabel: UILabel!
     
     var theme: String!
-    
+    var list : [String:String]!
+    var eachSymbol = [[String:String]]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self
         self.tableView.tableHeaderView = headerView
         themeLabel.text = theme
+        list.forEach { ref  in
+            let key = ref.key
+            let value = ref.value
+            eachSymbol.append([key:value])
+            
+        }
 
     }
     @IBAction func cancelBtn(_ sender: Any) {
@@ -37,10 +45,13 @@ protocol WashingSymbolViewControllerDelegate {
 extension WashingSymbolViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return list.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WashingSymbolTableViewCell", for: indexPath) as! WashingSymbolTableViewCell
+        
+        cell.list = self.eachSymbol[indexPath.row]
+        
         return cell
     }
     

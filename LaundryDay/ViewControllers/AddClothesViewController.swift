@@ -87,23 +87,31 @@ class AddClothesViewController: UIViewController {
         let gesture = sender.view
         let tag = gesture?.tag
         let theme: String?
+        let list: [String:String]?
         let vc = storyboard?.instantiateViewController(withIdentifier: "WashingSymbolViewController") as? WashingSymbolViewController
         vc?.delegate = self
         switch tag {
         case 11:
             theme = "dry"
+            list = Api.WashSymbols.drySymbol
         case 12:
             theme = "washable"
+            list = Api.WashSymbols.washableSymbol
         case 13:
             theme = "ironing"
+            list = Api.WashSymbols.ironingSymbol
         case 14:
             theme = "dryCleaning"
+            list = Api.WashSymbols.dryCleaningSymbol
         case 15:
             theme = "bleaching"
+            list = Api.WashSymbols.bleachingSymbol
         default:
             theme = "none"
+            list = ["":""]
         }
         vc?.theme = theme
+        vc?.list = list
         addChildViewController(vc!)
         view.addSubview((vc?.view)!)
         vc?.didMove(toParentViewController: self)
