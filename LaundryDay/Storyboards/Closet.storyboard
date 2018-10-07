@@ -755,15 +755,21 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E22-hc-Eqr">
-                                                <rect key="frame" x="75" y="673" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E22-hc-Eqr">
+                                                <rect key="frame" x="127.5" y="440" width="120" height="120"/>
                                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="hda-As-gHo"/>
+                                                    <constraint firstAttribute="height" constant="120" id="pTE-vk-GEP"/>
+                                                </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-Jg-E1J">
+                                            <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aP-Jg-E1J">
                                                 <rect key="frame" x="203" y="623" width="120" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="KyS-qm-uqE"/>
+                                                    <constraint firstAttribute="width" constant="120" id="YU1-g8-6Sj"/>
+                                                </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-cg-mGe">
                                                 <rect key="frame" x="151" y="827" width="80" height="80"/>
@@ -787,9 +793,11 @@
                                             <constraint firstItem="g24-bV-kqc" firstAttribute="leading" secondItem="HkP-Vz-JGJ" secondAttribute="leading" constant="15" id="HWz-et-Ezz"/>
                                             <constraint firstItem="r1X-8t-0I0" firstAttribute="centerX" secondItem="HkP-Vz-JGJ" secondAttribute="centerX" id="OS0-RT-J6A"/>
                                             <constraint firstItem="g24-bV-kqc" firstAttribute="centerX" secondItem="HkP-Vz-JGJ" secondAttribute="centerX" id="UDP-Al-SD4"/>
+                                            <constraint firstItem="E22-hc-Eqr" firstAttribute="centerX" secondItem="HkP-Vz-JGJ" secondAttribute="centerX" id="flT-l0-Etv"/>
                                             <constraint firstAttribute="trailing" secondItem="g24-bV-kqc" secondAttribute="trailing" constant="15" id="l3h-Cv-aeH"/>
                                             <constraint firstAttribute="height" constant="1000" id="m4P-bb-Hqs"/>
                                             <constraint firstItem="g24-bV-kqc" firstAttribute="top" secondItem="r1X-8t-0I0" secondAttribute="bottom" constant="25" id="q3F-Xf-vvd"/>
+                                            <constraint firstItem="E22-hc-Eqr" firstAttribute="centerY" secondItem="HkP-Vz-JGJ" secondAttribute="centerY" id="qwo-Pr-1eX"/>
                                         </constraints>
                                     </view>
                                 </subviews>

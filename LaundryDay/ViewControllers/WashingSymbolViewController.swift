@@ -20,6 +20,7 @@ class WashingSymbolViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.tableHeaderView = headerView
         themeLabel.text = theme
         list.forEach { ref  in
@@ -54,6 +55,19 @@ extension WashingSymbolViewController: UITableViewDelegate, UITableViewDataSourc
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = eachSymbol[indexPath.row]
+        let selectedCellClosetId = selectedCell.keys.first
+        
+        if (delegate != nil) {
+            delegate?.selectedValue(value: selectedCellClosetId!)
+        }
+        
+        ClosetListViewController.removeViewController(childVC: self)
+        
+    }
+    
     
     
     

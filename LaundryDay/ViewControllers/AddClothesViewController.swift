@@ -25,7 +25,7 @@ class AddClothesViewController: UIViewController {
     @IBOutlet weak var uploadButton: UIButton!
     
     var selectedImage: UIImage?
-    
+    var selectedImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +36,7 @@ class AddClothesViewController: UIViewController {
         
         //세탁기호선택
         addtapGestureInSymbols()
+        
         
         
     }
@@ -94,21 +95,27 @@ class AddClothesViewController: UIViewController {
         case 11:
             theme = "dry"
             list = Api.WashSymbols.drySymbol
+            selectedImageView = gesture as? UIImageView
         case 12:
             theme = "washable"
             list = Api.WashSymbols.washableSymbol
+            selectedImageView = gesture as? UIImageView
         case 13:
             theme = "ironing"
             list = Api.WashSymbols.ironingSymbol
+            selectedImageView = gesture as? UIImageView
         case 14:
             theme = "dryCleaning"
             list = Api.WashSymbols.dryCleaningSymbol
+            selectedImageView = gesture as? UIImageView
         case 15:
             theme = "bleaching"
             list = Api.WashSymbols.bleachingSymbol
+            selectedImageView = gesture as? UIImageView
         default:
             theme = "none"
             list = ["":""]
+            selectedImageView = nil
         }
         vc?.theme = theme
         vc?.list = list
@@ -167,7 +174,10 @@ class AddClothesViewController: UIViewController {
 
 extension AddClothesViewController: WashingSymbolViewControllerDelegate {
     func selectedValue(value: String) {
-        var value = value
+        let imageName = value
+        selectedImageView?.image = UIImage(named: imageName)
+        selectedImageView?.reloadInputViews()
+        
     }
 }
 
