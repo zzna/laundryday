@@ -16,7 +16,7 @@
                 <viewController id="Zyf-l0-amK" customClass="ProfileViewController" customModule="LaundryDay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXu-gE-Zub">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUJ-yl-trB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="869"/>
@@ -122,6 +122,17 @@
                                             <segue destination="4DV-Jd-CYg" kind="embed" id="dfP-1g-W94"/>
                                         </connections>
                                     </containerView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-Py-grh">
+                                        <rect key="frame" x="0.0" y="451" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="art_1524014029" translatesAutoresizingMaskIntoConstraints="NO" id="ZxG-V4-Z77">
+                                                <rect key="frame" x="25" y="0.0" width="325" height="130"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98328930140000004" green="0.98298732160000002" blue="0.88961966859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <viewLayoutGuide key="safeArea" id="Z5k-gr-pJY"/>
@@ -403,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="art_1524014029" width="330" height="145.19999694824219"/>
         <image name="like" width="46" height="41"/>
     </resources>
 </document>
