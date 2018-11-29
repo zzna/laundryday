@@ -21,7 +21,6 @@
 		66C5E3EA20C1744500314391 /* MyClosetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5E3E920C1744500314391 /* MyClosetsApi.swift */; };
 		CC233A18210AFE9400F6DCDC /* ApiGatewayMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A17210AFE9400F6DCDC /* ApiGatewayMac.framework */; };
 		CC233A19210AFE9400F6DCDC /* ApiGatewayMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A17210AFE9400F6DCDC /* ApiGatewayMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CC233A1C210AFEBF00F6DCDC /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC233A1B210AFEBF00F6DCDC /* NMapViewerSDK.framework */; };
 		CC39F04021114AD500573235 /* LaundryShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC39F03F21114AD500573235 /* LaundryShop.swift */; };
 		CC728F4920908963003B3805 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC728F4820908962003B3805 /* Config.swift */; };
 		CC77448B20B58C090086464A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC77448A20B58C090086464A /* GoogleService-Info.plist */; };
@@ -74,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E3C45ED215B6FA0001065AB /* NMapViewerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapViewerSDK.framework; path = "../maps.ios-master/Frameworks/NMapViewerSDK.framework"; sourceTree = "<group>"; };
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
 		46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSymbolDescriptions.swift; sourceTree = "<group>"; };
 		46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		CCA8D65E20B331D000A33D90 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
 		CCC295E5207F93F80021BF8E /* LaundryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaundryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC295E8207F93F80021BF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCC295EF207F93F90021BF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Laundryday/Assets.xcassets; sourceTree = "<group>"; };
+		CCC295EF207F93F90021BF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCC295F2207F93F90021BF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCC295F4207F93F90021BF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCC83D6A20B2FEA30031A766 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC233A1C210AFEBF00F6DCDC /* NMapViewerSDK.framework in Frameworks */,
+				0E3C45EE215B6FA0001065AB /* NMapViewerSDK.framework in Frameworks */,
 				CC233A18210AFE9400F6DCDC /* ApiGatewayMac.framework in Frameworks */,
 				EB1C22131F99C043B11E17D1 /* Pods_LaundryDay.framework in Frameworks */,
 			);
@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CC233A1B210AFEBF00F6DCDC /* NMapViewerSDK.framework */,
+				0E3C45ED215B6FA0001065AB /* NMapViewerSDK.framework */,
 				C55F18E44790B284EB4FA295 /* Pods_LaundryDay.framework */,
 			);
 			name = Frameworks;
@@ -402,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Users/mjcho/Desktop/mj/maps.ios-master/Scripts/strip-frameworks.sh";
+			shellScript = "/Users/zzna/Documents/zzna/개발/ios/maps.ios-master/Scripts/strip-frameworks.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -590,7 +591,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"/Users/mjcho/Desktop/mj/maps.ios-master/Frameworks",
+					"/Users/zzna/Documents/zzna/개발/ios/maps.ios-master/Frameworks",
 				);
 				INFOPLIST_FILE = LaundryDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -651,7 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.laundryday.LaundryDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/mjcho/Desktop/mj/laundryday/LaundryDay/naverMapForSwift.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zzna/Documents/zzna/개발/ios/laundryday/LaundryDay/naverMapForSwift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -668,7 +669,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"/Users/mjcho/Desktop/mj/maps.ios-master/Frameworks",
+					"/Users/zzna/Documents/zzna/개발/ios/maps.ios-master/Frameworks",
 				);
 				INFOPLIST_FILE = LaundryDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -729,7 +730,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.laundryday.LaundryDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/mjcho/Desktop/mj/laundryday/LaundryDay/naverMapForSwift.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zzna/Documents/zzna/개발/ios/laundryday/LaundryDay/naverMapForSwift.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
