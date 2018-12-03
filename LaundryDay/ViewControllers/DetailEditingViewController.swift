@@ -31,6 +31,7 @@ class DetailEditingViewController: UIViewController {
     }
     @objc func deleteAction() {
         let actionSheet = UIAlertController(title: "삭제된 옷은 복구할 수 없습니다", message: "삭제하시겠습니까?", preferredStyle: .alert)
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: "예", style: .cancel, handler: {(alertAction) in
             print("touched yes")
             Api.Clothes.removeClothesInStorage(imageString: self.imageString!, onSuccess: {

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E3C45EE215B6FA0001065AB /* NMapViewerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3C45ED215B6FA0001065AB /* NMapViewerSDK.framework */; };
+		46A5DEB72163BAC20069082D /* WashSymbolDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */; };
+		46EA794E2162281F003FEEFB /* WashingSymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */; };
+		46EA79502162284F003FEEFB /* WashingSymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */; };
 		46F58089214123DD00B6BCA0 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F58088214123DD00B6BCA0 /* AddClothesViewController.swift */; };
 		46F5808B214123F000B6BCA0 /* SearchTheShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5808A214123EF00B6BCA0 /* SearchTheShopViewController.swift */; };
 		46F5809121413B8A00B6BCA0 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5809021413B8A00B6BCA0 /* ShopTableViewCell.swift */; };
@@ -73,6 +75,9 @@
 /* Begin PBXFileReference section */
 		0E3C45ED215B6FA0001065AB /* NMapViewerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapViewerSDK.framework; path = "../maps.ios-master/Frameworks/NMapViewerSDK.framework"; sourceTree = "<group>"; };
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
+		46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSymbolDescriptions.swift; sourceTree = "<group>"; };
+		46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolViewController.swift; sourceTree = "<group>"; };
+		46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolTableViewCell.swift; sourceTree = "<group>"; };
 		46F58088214123DD00B6BCA0 /* AddClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesViewController.swift; sourceTree = "<group>"; };
 		46F5808A214123EF00B6BCA0 /* SearchTheShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTheShopViewController.swift; sourceTree = "<group>"; };
 		46F5809021413B8A00B6BCA0 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 				46F5808A214123EF00B6BCA0 /* SearchTheShopViewController.swift */,
 				CC825A5C2081E30B00A4BDCC /* ClosetViewController.swift */,
 				CC825A602081E38900A4BDCC /* BoardViewController.swift */,
+				46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */,
 				CC825A622081E39A00A4BDCC /* ProfileViewController.swift */,
 				668900BF20C04B9300D673EC /* DetailViewController.swift */,
 				D30289F22111BB9700D725EB /* EditClothesViewController.swift */,
@@ -197,6 +203,7 @@
 				66C5E3E720C167F300314391 /* Closet.swift */,
 				CC92F2EA20AC8649006C04AB /* Clothes.swift */,
 				CCC83D7020B305EA0031A766 /* UserInfo.swift */,
+				46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				CC92F2ED20AC9E2D006C04AB /* ClosetCollectionViewCell.swift */,
 				D30286C220F614090054D6B2 /* AddClothesToClosetCollectionViewCell.swift */,
 				46F5809021413B8A00B6BCA0 /* ShopTableViewCell.swift */,
+				46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */,
 				668900CC20C0815800D673EC /* ClosetListTableViewCell.swift */,
 			);
 			path = Views;
@@ -410,16 +418,19 @@
 				668900CD20C0815800D673EC /* ClosetListTableViewCell.swift in Sources */,
 				CC825A572081DE8800A4BDCC /* SignUpViewController.swift in Sources */,
 				46F5809121413B8A00B6BCA0 /* ShopTableViewCell.swift in Sources */,
+				46EA794E2162281F003FEEFB /* WashingSymbolViewController.swift in Sources */,
 				D39B77022108752000C74FCB /* DetailEditingViewController.swift in Sources */,
 				CCA8D65F20B331D000A33D90 /* HelperService.swift in Sources */,
 				CC7A2CFC210DD80000FFF235 /* MoreNMapViewController.swift in Sources */,
 				CC825A552081DE6800A4BDCC /* SignInViewController.swift in Sources */,
 				66C5E3E820C167F300314391 /* Closet.swift in Sources */,
 				CC728F4920908963003B3805 /* Config.swift in Sources */,
+				46A5DEB72163BAC20069082D /* WashSymbolDescriptions.swift in Sources */,
 				CC92F2EE20AC9E2D006C04AB /* ClosetCollectionViewCell.swift in Sources */,
 				D3B9AAF0210086200004B4D9 /* TimeDelay.swift in Sources */,
 				D30286C120F60CCF0054D6B2 /* AddClothesToClosetViewController.swift in Sources */,
 				CCC83D6F20B304640031A766 /* UserApi.swift in Sources */,
+				46EA79502162284F003FEEFB /* WashingSymbolTableViewCell.swift in Sources */,
 				CC825A5D2081E30B00A4BDCC /* ClosetViewController.swift in Sources */,
 				CCA8D65B20B3225400A33D90 /* ClothesApi.swift in Sources */,
 				668900CF20C0842A00D673EC /* ClosetListViewController.swift in Sources */,

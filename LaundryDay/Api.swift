@@ -13,4 +13,5 @@ struct Api {
     static var Clothes = ClothesApi()
     static var Closets = ClosetsApi()
     static var MyClosets = MyClosetsApi()
+    static var WashSymbols = WashSymbolDescriptions()
 }

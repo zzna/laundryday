@@ -14,18 +14,51 @@ class AddClothesViewController: UIViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameTextField: UITextField!
+    
+    @IBOutlet weak var drySymbol: UIImageView!
+    @IBOutlet weak var washableSymbol: UIImageView!
+    @IBOutlet weak var ironingSymbol: UIImageView!
+    @IBOutlet weak var dryCleaningSymbol: UIImageView!
+    @IBOutlet weak var bleachingSymbol: UIImageView!
+    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     
     var selectedImage: UIImage?
-    
+    var selectedImageView: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //사진선택
         let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.handleSelectImage))
         productImageView.addGestureRecognizer(tapGesture)
         productImageView.isUserInteractionEnabled = true
-        // Do any additional setup after loading the view.
+        
+        //세탁기호선택
+        addtapGestureInSymbols()
+        
+        
+        
+    }
+    func addtapGestureInSymbols() {
+        let tapGestureSymbolDry =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolWash =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolIron =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolClean =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+        let tapGestureSymbolBleach =  UITapGestureRecognizer(target: self, action: #selector(chooseWashingSymbols(sender:)))
+       
+        
+        drySymbol.addGestureRecognizer(tapGestureSymbolDry)
+        drySymbol.isUserInteractionEnabled = true
+        washableSymbol.addGestureRecognizer(tapGestureSymbolWash)
+        washableSymbol.isUserInteractionEnabled = true
+        ironingSymbol.addGestureRecognizer(tapGestureSymbolIron)
+        ironingSymbol.isUserInteractionEnabled = true
+        dryCleaningSymbol.addGestureRecognizer(tapGestureSymbolClean)
+        dryCleaningSymbol.isUserInteractionEnabled = true
+        bleachingSymbol.addGestureRecognizer(tapGestureSymbolBleach)
+        bleachingSymbol.isUserInteractionEnabled = true
+ 
     }
 
     @objc func handleSelectImage() {
@@ -50,6 +83,54 @@ class AddClothesViewController: UIViewController {
         self.present(actionSheet,animated: true,completion: nil)
         
     }
+    
+    @objc func chooseWashingSymbols(sender: UITapGestureRecognizer) {
+        let gesture = sender.view
+        let tag = gesture?.tag
+        let theme: String?
+        let list: [String:String]?
+        let vc = storyboard?.instantiateViewController(withIdentifier: "WashingSymbolViewController") as? WashingSymbolViewController
+        vc?.delegate = self
+        switch tag {
+        case 11:
+            theme = "dry"
+            list = Api.WashSymbols.drySymbol
+            selectedImageView = gesture as? UIImageView
+        case 12:
+            theme = "washable"
+            list = Api.WashSymbols.washableSymbol
+            selectedImageView = gesture as? UIImageView
+        case 13:
+            theme = "ironing"
+            list = Api.WashSymbols.ironingSymbol
+            selectedImageView = gesture as? UIImageView
+        case 14:
+            theme = "dryCleaning"
+            list = Api.WashSymbols.dryCleaningSymbol
+            selectedImageView = gesture as? UIImageView
+        case 15:
+            theme = "bleaching"
+            list = Api.WashSymbols.bleachingSymbol
+            selectedImageView = gesture as? UIImageView
+        default:
+            theme = "none"
+            list = ["":""]
+            selectedImageView = nil
+        }
+        vc?.theme = theme
+        vc?.list = list
+        addChildViewController(vc!)
+        view.addSubview((vc?.view)!)
+        vc?.didMove(toParentViewController: self)
+        vc?.view.frame.size.width = 300
+        vc?.view.frame.size.height = 500
+        vc?.view.center = CGPoint(x: view.frame.width/2, y: view.frame.height/2)
+        
+    }
+    
+    
+    
+    
     
     @IBAction func uploadButton_TUI(_ sender: Any) {
         ProgressHUD.show("Waiting")
@@ -87,8 +168,17 @@ class AddClothesViewController: UIViewController {
     
 
 }
-protocol AddClothesViewControllerDelegate {
-    func changeClosetIdToAll(id: String)
+@objc protocol AddClothesViewControllerDelegate {
+    @objc optional func changeClosetIdToAll(id: String)
+}
+
+extension AddClothesViewController: WashingSymbolViewControllerDelegate {
+    func selectedValue(value: String) {
+        let imageName = value
+        selectedImageView?.image = UIImage(named: imageName)
+        selectedImageView?.reloadInputViews()
+        
+    }
 }
 
 extension AddClothesViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -40,8 +40,12 @@ class ProfileViewController: UIViewController{
     }
     
     override func viewDidLoad(){
+        
         super.viewDidLoad()
         //userInfoView.dataSource = self
+        
+        //네비게이션 컬러
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 72/255, green: 299/255, blue: 149/255, alpha: 1)
         fetchUser()
     }
     
