@@ -278,6 +278,33 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFg-oP-eLr">
+                                <rect key="frame" x="0.0" y="30" width="375" height="607"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUW-aC-y5B">
+                                        <rect key="frame" x="87.5" y="178.5" width="200" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="72V-uE-scs"/>
+                                            <constraint firstAttribute="width" constant="200" id="k3O-2Z-MLf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 옷을 추가하여 옷장을 채워보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNv-SH-C2s">
+                                        <rect key="frame" x="67" y="456" width="241.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cUW-aC-y5B" firstAttribute="centerX" secondItem="EFg-oP-eLr" secondAttribute="centerX" id="3Rq-iP-oKg"/>
+                                    <constraint firstAttribute="height" constant="607" id="At2-NL-Ato"/>
+                                    <constraint firstItem="cUW-aC-y5B" firstAttribute="centerY" secondItem="EFg-oP-eLr" secondAttribute="centerY" id="cTr-dW-z1M"/>
+                                    <constraint firstItem="XNv-SH-C2s" firstAttribute="top" secondItem="cUW-aC-y5B" secondAttribute="bottom" constant="27.5" id="ewI-97-ipO"/>
+                                    <constraint firstItem="XNv-SH-C2s" firstAttribute="centerX" secondItem="EFg-oP-eLr" secondAttribute="centerX" id="gUS-1L-wZR"/>
+                                    <constraint firstAttribute="width" constant="375" id="wEG-kZ-Nbf"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="niO-ep-TNN">
                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
@@ -328,6 +355,8 @@
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="bottom" secondItem="kE0-nI-yYn" secondAttribute="bottom" id="WNn-Vm-VOj"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="leading" secondItem="kE0-nI-yYn" secondAttribute="leading" id="elV-hy-s60"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="top" secondItem="niO-ep-TNN" secondAttribute="bottom" id="h6Q-Lt-Iec"/>
+                            <constraint firstItem="EFg-oP-eLr" firstAttribute="centerY" secondItem="MVd-n5-Ypx" secondAttribute="centerY" id="k9E-H0-DHx"/>
+                            <constraint firstItem="EFg-oP-eLr" firstAttribute="centerX" secondItem="MVd-n5-Ypx" secondAttribute="centerX" id="rFT-Ba-kdu"/>
                             <constraint firstItem="xhl-cc-Jjf" firstAttribute="trailing" secondItem="kE0-nI-yYn" secondAttribute="trailing" id="rGs-SI-AWM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kE0-nI-yYn"/>
@@ -338,11 +367,12 @@
                         <outlet property="closetListButton" destination="sL7-Rl-aag" id="7Uh-jK-XJK"/>
                         <outlet property="collectionView" destination="xhl-cc-Jjf" id="0yE-yS-AJ3"/>
                         <outlet property="likeListBtn" destination="Tfk-jZ-T6u" id="ZCK-c0-l3F"/>
+                        <outlet property="noItemView" destination="EFg-oP-eLr" id="rfI-aS-xx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNK-xx-rsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="1834"/>
+            <point key="canvasLocation" x="533.60000000000002" y="1833.7331334332835"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8aY-Fh-fSg">

@@ -14,6 +14,7 @@ class ClosetViewController: UIViewController {
     @IBOutlet weak var leadingViewConstraint: NSLayoutConstraint!
     var closetListShowing = false
     
+    @IBOutlet weak var noItemView: UIView!
     
     @IBOutlet weak var closetListView: UIView!
     @IBOutlet weak var closetListButton: UIButton!
@@ -28,13 +29,17 @@ class ClosetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchUser()
         checkClosetId(closetID: closetId)
         
-        collectionView.isUserInteractionEnabled = true
+        noItemView.isHidden = true
         
+        
+        collectionView.isUserInteractionEnabled = true
+        self.collectionView.layer.cornerRadius = 2
         configureLikeList()
         
         
@@ -44,7 +49,7 @@ class ClosetViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.tabBarController?.tabBar.isHidden = false
-        collectionView.reloadData()
+        reloadData()
     }
 
     
@@ -67,7 +72,7 @@ class ClosetViewController: UIViewController {
     func fetchUser() {
         Api.User.observeCurrentUser(completion: {user in
             self.user = user
-            self.collectionView.reloadData()
+            reloadData()
         })
         print("fetchUser 실행")
     }
@@ -81,14 +86,14 @@ class ClosetViewController: UIViewController {
                 if self.isShowingLikeItems {
                     if clothes.isLiked != nil && clothes.isLiked! {
                         self.items.insert(clothes, at: 0)
-                        self.collectionView.reloadData()
+                        reloadData()
                     } else {
                         print("no items")
-                        self.collectionView.reloadData()
+                        reloadData()
                     }
                 } else {
                     self.items.insert(clothes, at: 0)
-                    self.collectionView.reloadData()
+                    reloadData()
                 }
 
             })
@@ -97,9 +102,19 @@ class ClosetViewController: UIViewController {
             let snapId = snap.key
             if let index = self.items.index(where: {(item)-> Bool in item.id == snapId}) {
                 self.items.remove(at: index)
-                self.collectionView.reloadData()
+                reloadData()
             }
         })
+    }
+    //아이템 비어있을때 이미지 보여줄 것
+    func reloadData() {
+        if self.items.count = 0 {
+            noItemView.isHidden = false
+            
+        } else {
+            noItemView.isHidden = true
+            collectionView.reloadData()
+        }
     }
     
     
@@ -228,6 +243,7 @@ extension ClosetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width / 3 - 2, height: 150)
     }
+    
 }
 
 extension ClosetViewController: ClosetListViewControllerDelegate {
