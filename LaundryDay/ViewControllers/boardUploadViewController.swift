@@ -12,7 +12,7 @@ import FirebaseStorage
 
 class boardUploadViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var ImageView: UIImageView! //이전 탭에서 선택한 이미지를 보여주는 imageView
+    //@IBOutlet weak var ImageView: UIImageView! //이전 탭에서 선택한 이미지를 보여주는 imageView
     @IBOutlet weak var TextView: UITextView! //사용자가 글을 작성하는 textview
     @IBOutlet weak var TitleView: UITextView! //사용자가 제목을 작성하는 textview
     
@@ -72,7 +72,7 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
     //MARK: - ImageView
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false //UploadViewController가 보여지는 경우에는 NavigationBar표시
-        self.ImageView.image = image //AddNavigationController가 넘겨준 이미지를 ImageView에 표시
+        //self.ImageView.image = image //AddNavigationController가 넘겨준 이미지를 ImageView에 표시
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true //UploadViewController가 사라지면, Navigation Bar를 숨긴다. (다음 차례에 fusuma가 보일 때 NavigationBar를 미리 숨기기 위해)

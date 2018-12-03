@@ -8,6 +8,22 @@
 
 import UIKit
 
-class boardTimelineTableViewCell: NSObject {
-
+class boardTimelineTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var TextLabel: UILabel!
+    //@IBOutlet weak var ImageView: UIImageView!
+    
+    
+    override func awakeFromNib(){
+        super.awakeFromNib()
+        
+        // Initialization codey
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
 }
