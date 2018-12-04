@@ -25,6 +25,9 @@ class boardTimelineTableViewController: UITableViewController {
     
     //@IBOutlet weak var FooterLabel: UILabel!    //loading..메세지를 표시할 라벨
     
+    @IBAction func posting(_sender: UIButton) {
+        //버튼으로 화면 좀 넘기고싶다
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
