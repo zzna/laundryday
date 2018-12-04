@@ -15,8 +15,9 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
     //@IBOutlet weak var ImageView: UIImageView! //이전 탭에서 선택한 이미지를 보여주는 imageView
     @IBOutlet weak var TextView: UITextView! //사용자가 글을 작성하는 textview
     @IBOutlet weak var TitleView: UITextView! //사용자가 제목을 작성하는 textview
+    //@IBOutlet weak var boardCompleteButton: UIButton! //글 작성 완료버튼
     
-    var image = UIImage() //AddNavigationController에서 넘기는 image를 받을 변수
+    //var image = UIImage() //AddNavigationController에서 넘기는 image를 받을 변수
     let placeHolder = "개인 정보를 요구하는 행위는 금지됩니다." //아무 글짜도 없을 경우 보여주는 것
     
     var ref: DatabaseReference? //우리가 사용할 Firebase Database
@@ -27,16 +28,15 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
         ref = Database.database().reference() //Firebase Database 루트를 가리키는 레퍼런스
         storageRef = Storage.storage().reference() //Firebase Storage 루트를 가리키는 레퍼런스
         
-        /*
         self.TextView.delegate = self
         textViewDidEndEditing(TextView)
         var tapDismiss = UITapGestureRecognizer(target:self,action:"dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
- */
+ 
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:#selector(uploadPost))
         self.navigationItem.rightBarButtonItem = addButton
-        //버튼..?
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,14 +68,14 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         self.TextView.isEditable = false
     }
-    
+   
     //MARK: - ImageView
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false //UploadViewController가 보여지는 경우에는 NavigationBar표시
+        //self.navigationController?.isNavigationBarHidden = false //UploadViewController가 보여지는 경우에는 NavigationBar표시
         //self.ImageView.image = image //AddNavigationController가 넘겨준 이미지를 ImageView에 표시
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true //UploadViewController가 사라지면, Navigation Bar를 숨긴다. (다음 차례에 fusuma가 보일 때 NavigationBar를 미리 숨기기 위해)
+        //self.navigationController?.isNavigationBarHidden = true //UploadViewController가 사라지면, Navigation Bar를 숨긴다.
     }
     @objc func uploadPost(){
         var curRef = self.ref?.child("posts").childByAutoId() //Database 루트 아래 posts 아래 새로운 게시글을 참조한다.
@@ -91,7 +91,7 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
         let date = Date()
         let IntValueOfDate = Int(date.timeIntervalSince1970) //1970년대 이후부터 현재까지 흐른 시간을 숫자 하나로 얻음
         curRef?.child("date").setValue("\(IntValueOfDate)") //새로운 게시글의 datefmf IntValueOfDate로 업로드
-        
+        /*
         let imageRef = storageRef?.child((curRef?.key)!+".jpg") //Firebase Storage 루트에 "curRef?.key+.jpg"에 해당하는 참조를 만든다
         
         guard var uploadData = UIImageJPEGRepresentation(self.image, 0.1) else{
@@ -103,7 +103,7 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
             } else {
                 // Metadata는 size, content-type, download URL과 같은 컨텐트의 메타데이터를 가진다
             }
-        })
+        }) */
         self.tabBarController?.selectedIndex = 0 //탭을 전환해 본래 타임라인으로 돌아간다. 는 탭을 안만들꺼니까 수정하게찌
     }
 

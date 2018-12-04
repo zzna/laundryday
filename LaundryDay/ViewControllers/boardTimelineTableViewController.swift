@@ -9,27 +9,44 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
-// import FirebaseStorageUI  //error "no such module:FIrebaseStorageUI"
+//import FirebaseStorageUI  //error "no such module:FIrebaseStorageUI"
 
 class boardTimelineTableViewController: UITableViewController {
+    //addNav
+    //var boardUploadController = boardUploadViewController()
+    //let storyBoard = UIStoryboard(name: "Board", bundle: nil)
+    
+    
     var ref:DatabaseReference?
     var storageRef:StorageReference?
     
     var posts = [Post]()                //테이블 뷰에 표시될 포스트들을 담는 배열
     var loadedPosts = [Post]()          //Firebase에서 로드된 포스트들
     
-    @IBOutlet weak var FooterLabel: UILabel!    //loading..메세지를 표시할 라벨
+    //@IBOutlet weak var FooterLabel: UILabel!    //loading..메세지를 표시할 라벨
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        boardUploadController = storyBoard.instantiateInitialViewController(withIdentifier: "boardUploadViewController") as! boardUploadViewController
+        boardUploadController.navigationItem.title = "업로드"
+        */
         ref = Database.database().reference()    //Firebase Database 루트를 가리키는 레퍼런스
         storageRef = Storage.storage().reference()    //Firebase Storage 루트를 가리키는 레퍼런스
         
+        
+        
+        
         loadPosts()     //Firebase에서 포스트들을 불러들임
+        
+        
         
         refreshControl = UIRefreshControl()         //최신글을 불러 들이기 위한 refreshControl
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(boardTimelineTableViewController.refresh), for: UIControlEvents.valueChanged) //refreshControl이 호출될 경우, boardTimelineViewController.refresh()가 호출되도록 한다.
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,7 +66,7 @@ class boardTimelineTableViewController: UITableViewController {
         let post = posts[indexPath.row]
         cell.TextLabel.text = post.text
         //cell.ImageView.image = post.imageView.image
-        cell.TextLabel.text = post.title
+        //cell.TextLabel.text = post.title
         
         return cell
     }
@@ -70,11 +87,11 @@ class boardTimelineTableViewController: UITableViewController {
                 if let text = dicDatum["text"],
                     let date = Int(dicDatum["date"]!){
                     let post = Post(text,date)
-                    
+                    /*
                     //Get Image
                     let imageRef = self.storageRef?.child("\(snapshotDatum.key).jpg")
-                    post.imageView.sd_setImage(with: imageRef!, placeholderImage: UIImage(), completion:{(image,error,cacheType,imageURL) in self.tableView.reloadData() })
-                    
+                    post.imageView.sd_setImage(with: imageRef!, placeholderImage: UIImage(), completed:{(image,error,cacheType,imageURL) in self.tableView.reloadData() })
+                    */
                     self.loadedPosts += [post]
                 }
             }
@@ -103,12 +120,11 @@ class boardTimelineTableViewController: UITableViewController {
                 let dicDatum = snapshotDatum.value as! [String:String]
                 if let text = dicDatum["text"],
                     let date = Int(dicDatum["date"]!){
-                    let post = Post(text,date,title)
-                    
+                    let post = Post(text,date)
+                    /*
                     //Get Image from URL
                     let imageRef = self.storageRef?.child("\(snapshotDatum.key).jpg")
-                    post.imageView.sd_setImage(with: imageRef!, placeholderImage: UIImage())
-                    
+                    post.imageView.*/
                     freshPostsChunk += [post]
                     
                     
@@ -141,7 +157,7 @@ class boardTimelineTableViewController: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let  height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
-        let distanceFromBottom = scrollView.contentSize.height + self.FooterLabel.frame.height - contentYoffset
+        let distanceFromBottom = scrollView.contentSize.height /*+ self.FooterLabel.frame.height*/ - contentYoffset
         if distanceFromBottom < height {
             print(" you reached end of the table")
             loadPastPosts()

@@ -11,10 +11,11 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'ProgressHUD'
 pod 'SDWebImage'
+pod 'FirebaseUI/Storage'
 
 # Pods for boardTimeline
-pod 'FirebaseUI/Storage'
-pod 'Fusuma'
+#pod 'FirebaseUI/Storage'
+#pod 'Fusuma'
 
   # Pods for LaundryDay
 

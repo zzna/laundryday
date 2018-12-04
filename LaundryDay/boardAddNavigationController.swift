@@ -10,13 +10,14 @@ import UIKit
 //import Fusuma
 
 class boardAddNavigationController: UINavigationController/*,FusumaDelegate*/ {
-    /*
-    let fusuma = FusumaViewController() //이미지 선택을 위한 Fusuma컨트롤러
-    var uploadController = UploadViewController() //텍스트 입력, 게시글 업로드를 위한 컨트롤러
-    let storyBoard = UIStoryboard(name: "Main", bundle: nil) //Main.storyboard를 가리킴
+   
+    //let fusuma = FusumaViewController() //이미지 선택을 위한 Fusuma컨트롤러
+    var uploadController = boardUploadViewController() //텍스트 입력, 게시글 업로드를 위한 컨트롤러
+    
+    //let storyBoard = UIStoryboard(name: "Main", bundle: nil) //Main.storyboard를 가리킴
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() /*
         fusumaTintColor = UIColor.black
         fusumaBaseTintColor = UIColor.black
         fusumaBackgroundColor = UIColor.white
@@ -28,12 +29,13 @@ class boardAddNavigationController: UINavigationController/*,FusumaDelegate*/ {
         fusuma.defaultMode = .library
         
         fusuma.hidesBottomBarWhenPushed = true
-        
-        uploadController = storyBoard.instantiateViewController(withIdentifier: "UploadViewController") as! UploadViewController
+        */
+        uploadController = storyBoard.instantiateViewController(withIdentifier: "boardUploadViewController") as! boardUploadViewController
         uploadController.navigationItem.title = "업로드"
-        
-        self.pushViewController(fusuma, animated: false)
+    
+        //self.pushViewController(fusuma, animated: false)
     }
+/*
     override func viewWillAppear(_ animated: Bool) {
         self.isNavigationBarHidden = true
         self.popToViewController(fusuma, animated: false)

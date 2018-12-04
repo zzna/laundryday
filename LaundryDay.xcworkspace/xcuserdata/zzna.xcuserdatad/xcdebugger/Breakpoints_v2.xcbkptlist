@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LaundryDay/ViewControllers/boardUploadViewController.swift"
+            timestampString = "565620407.537886"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "boardUploadViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LaundryDay.boardUploadViewController"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565620407.758558"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LaundryDay.boardUploadViewController&gt;"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565620407.760281"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LaundryDay/ViewControllers/boardUploadViewController.swift"
+            timestampString = "565620407.538003"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "boardUploadViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.boardCompleteButton.getter : weak Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565618690.914802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.boardCompleteButton.setter : weak Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565618690.917188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LaundryDay.boardUploadViewController"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565618690.919114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "285">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LaundryDay.boardUploadViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LaundryDay.boardUploadViewController&gt;"
+                  moduleName = "LaundryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzna/Documents/zzna/%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF/ios/laundryday/LaundryDay/ViewControllers/boardUploadViewController.swift"
+                  timestampString = "565618690.920996"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
