@@ -29,6 +29,9 @@
                                 <rect key="frame" x="172" y="444" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="goPostingWith_Sender:" destination="CXf-0z-2NX" eventType="touchUpInside" id="5jb-Fj-tAW"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-ma-ucI">
                                 <rect key="frame" x="67" y="154" width="240" height="128"/>
@@ -49,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX4-fQ-DM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5073" y="1092"/>
+            <point key="canvasLocation" x="4961" y="1790"/>
         </scene>
         <!--Board Timeline Table View Controller-->
         <scene sceneID="JWc-ai-Qkl">
@@ -60,13 +63,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hYl-Pl-WOW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardTimelineCell" rowHeight="128" id="hYl-Pl-WOW" customClass="boardTimelineTableViewCell" customModule="LaundryDay" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hYl-Pl-WOW" id="08r-lm-ZZX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cx0-Uf-WN9">
+                                            <rect key="frame" x="24" y="25" width="335" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGW-9r-o55">
+                                            <rect key="frame" x="24" y="76" width="335" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cx0-Uf-WN9" firstAttribute="top" secondItem="08r-lm-ZZX" secondAttribute="topMargin" constant="14" id="FE6-uB-czO"/>
+                                        <constraint firstItem="cx0-Uf-WN9" firstAttribute="leading" secondItem="08r-lm-ZZX" secondAttribute="leadingMargin" constant="8" id="Hqp-Gp-IvE"/>
+                                        <constraint firstItem="sGW-9r-o55" firstAttribute="trailing" secondItem="08r-lm-ZZX" secondAttribute="trailingMargin" id="JHC-Ob-Kkj"/>
+                                        <constraint firstItem="cx0-Uf-WN9" firstAttribute="trailing" secondItem="08r-lm-ZZX" secondAttribute="trailingMargin" id="LEC-ay-riW"/>
+                                        <constraint firstItem="sGW-9r-o55" firstAttribute="leading" secondItem="08r-lm-ZZX" secondAttribute="leadingMargin" constant="8" id="OZY-bG-yrj"/>
+                                        <constraint firstItem="sGW-9r-o55" firstAttribute="top" secondItem="cx0-Uf-WN9" secondAttribute="bottom" constant="30" id="cFm-UU-bWc"/>
+                                        <constraint firstAttribute="bottom" secondItem="sGW-9r-o55" secondAttribute="bottom" constant="31" id="yGm-CD-02e"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="TextLabel" destination="sGW-9r-o55" id="Rml-P0-Viz"/>
+                                    <outlet property="titleLabel" destination="cx0-Uf-WN9" id="uGt-PZ-T5t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -78,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj5-de-d1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4268" y="1790.5547226386807"/>
+            <point key="canvasLocation" x="4268" y="1789.6551724137933"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EeR-Mt-CTb">
