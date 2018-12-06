@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="njZ-Qv-Ye5">
+            <objects>
+                <viewController id="WRe-9H-P1d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XQ5-3e-h8B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KS6-gR-4pD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buS-la-WW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4620" y="1790"/>
+        </scene>
         <!--boardUploadViewController-->
         <scene sceneID="C9I-9j-R49">
             <objects>
@@ -52,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX4-fQ-DM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4961" y="1790"/>
+            <point key="canvasLocation" x="5338" y="1790"/>
         </scene>
         <!--Board Timeline Table View Controller-->
         <scene sceneID="JWc-ai-Qkl">
@@ -117,7 +132,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj5-de-d1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4268" y="1789.6551724137933"/>
+            <point key="canvasLocation" x="3977" y="1790"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EeR-Mt-CTb">

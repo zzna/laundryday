@@ -17,7 +17,7 @@ class boardTimelineTableViewController: UITableViewController {
     let postingBoard = UIStoryboard(name: "Board", bundle: nil)
     
     
-    
+    var postId:Int = 0
     var ref:DatabaseReference?
     var storageRef:StorageReference?
     
