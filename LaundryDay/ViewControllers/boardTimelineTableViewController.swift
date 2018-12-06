@@ -13,8 +13,9 @@ import FirebaseStorage
 
 class boardTimelineTableViewController: UITableViewController {
     //addNav
-    //var boardUploadController = boardUploadViewController()
-    //let storyBoard = UIStoryboard(name: "Board", bundle: nil)
+    //boardUploadController = boardUploadViewController()
+    let postingBoard = UIStoryboard(name: "Board", bundle: nil)
+    
     
     
     var ref:DatabaseReference?
@@ -25,8 +26,9 @@ class boardTimelineTableViewController: UITableViewController {
     
     //@IBOutlet weak var FooterLabel: UILabel!    //loading..메세지를 표시할 라벨
     
-    @IBAction func posting(_sender: UIButton) {
-        //버튼으로 화면 좀 넘기고싶다
+    @objc func posting() {
+        let uploader = postingBoard.instantiateViewController(withIdentifier: "postingViewController")
+        self.present(uploader, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -49,6 +51,9 @@ class boardTimelineTableViewController: UITableViewController {
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl?.addTarget(self, action: #selector(boardTimelineTableViewController.refresh), for: UIControlEvents.valueChanged) //refreshControl이 호출될 경우, boardTimelineViewController.refresh()가 호출되도록 한다.
         
+        let btn = UIBarButtonItem(title: "추가하기", style: .plain, target: self, action: #selector(self.posting))
+        self.navigationItem.rightBarButtonItem = btn
+
         
     }
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,6 @@
 		0E82EB6921B587D00013797F /* boardUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82EB6821B587D00013797F /* boardUploadViewController.swift */; };
 		0E82EB6F21B5882C0013797F /* boardTimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82EB6E21B5882C0013797F /* boardTimelineTableViewController.swift */; };
 		0E82EB7121B588480013797F /* boardTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82EB7021B588480013797F /* boardTimelineTableViewCell.swift */; };
-		0EF4EC1921B6A99300E35F51 /* boardAddNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF4EC1821B6A99300E35F51 /* boardAddNavigationController.swift */; };
 		46A5DEB72163BAC20069082D /* WashSymbolDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */; };
 		46EA794E2162281F003FEEFB /* WashingSymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */; };
 		46EA79502162284F003FEEFB /* WashingSymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA794F2162284F003FEEFB /* WashingSymbolTableViewCell.swift */; };
@@ -85,7 +84,6 @@
 		0E82EB6821B587D00013797F /* boardUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardUploadViewController.swift; sourceTree = "<group>"; };
 		0E82EB6E21B5882C0013797F /* boardTimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardTimelineTableViewController.swift; sourceTree = "<group>"; };
 		0E82EB7021B588480013797F /* boardTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardTimelineTableViewCell.swift; sourceTree = "<group>"; };
-		0EF4EC1821B6A99300E35F51 /* boardAddNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardAddNavigationController.swift; sourceTree = "<group>"; };
 		3B3389B95CD66B5797DF95CE /* Pods-LaundryDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LaundryDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LaundryDay/Pods-LaundryDay.debug.xcconfig"; sourceTree = "<group>"; };
 		46A5DEB62163BAC20069082D /* WashSymbolDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSymbolDescriptions.swift; sourceTree = "<group>"; };
 		46EA794D2162281F003FEEFB /* WashingSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingSymbolViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				CC7A2CFB210DD80000FFF235 /* MoreNMapViewController.swift */,
 				0E82EB6E21B5882C0013797F /* boardTimelineTableViewController.swift */,
 				0E82EB6821B587D00013797F /* boardUploadViewController.swift */,
-				0EF4EC1821B6A99300E35F51 /* boardAddNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 				D301470A20F74A4C000BB5CE /* SSCheckMark.swift in Sources */,
 				CCE51161210ED90100C726B7 /* NSearchApi.swift in Sources */,
 				66C5E3E620C1621E00314391 /* ClosetsApi.swift in Sources */,
-				0EF4EC1921B6A99300E35F51 /* boardAddNavigationController.swift in Sources */,
 				CC39F04021114AD500573235 /* LaundryShop.swift in Sources */,
 				CCC83D6D20B2FEBB0031A766 /* MyItemsApi.swift in Sources */,
 				0E82EB6721B587250013797F /* boardData.swift in Sources */,

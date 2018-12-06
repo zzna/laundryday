@@ -15,7 +15,7 @@ class boardUploadViewController: UIViewController, UITextViewDelegate {
     //@IBOutlet weak var ImageView: UIImageView! //이전 탭에서 선택한 이미지를 보여주는 imageView
     @IBOutlet weak var TextView: UITextView! //사용자가 글을 작성하는 textview
     @IBOutlet weak var TitleView: UITextView! //사용자가 제목을 작성하는 textview
-    //@IBOutlet weak var boardCompleteButton: UIButton! //글 작성 완료버튼
+    @IBOutlet weak var boardCompleteButton: UIButton! //글 작성 완료버튼
     
     //var image = UIImage() //AddNavigationController에서 넘기는 image를 받을 변수
     let placeHolder = "개인 정보를 요구하는 행위는 금지됩니다." //아무 글짜도 없을 경우 보여주는 것
