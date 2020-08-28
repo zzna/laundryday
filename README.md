@@ -5,6 +5,6 @@
 https://ppallae.github.io/laundryday/
 
 
-iod App development proj.
+ios App development proj.
 
 @jeongahsuh @minjeongcho
