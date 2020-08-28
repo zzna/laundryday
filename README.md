@@ -6,5 +6,7 @@ more information ㅎㅇㅎ// click here -->
 
 https://ppallae.github.io/laundryday/
 
+
+dev
 @zzna
-@m1ncheongcho
+@MinJeongChoKO
